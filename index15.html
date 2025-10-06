@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QuantumTask — Web Solutions</title>
+<meta name="description" content="QuantumTask builds high-impact, scalable websites and web apps.">
+<style>
+:root{
+  --bg:#0b1220; --card:#0f172a; --text:#e6ebff; --muted:#9aa4b2; --line:rgba(255,255,255,.1);
+  --brand1:#06b6d4; --brand2:#7c3aed;
+  --s1:8px; --s2:12px; --s3:16px; --s4:20px; --s5:28px; --s6:40px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:radial-gradient(800px 400px at 80% 10%,rgba(124,58,237,.14),transparent),var(--bg);color:var(--text);font:16px/1.5 system-ui,Segoe UI,Roboto,Inter,Arial}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+body{overflow-x:hidden}
+
+/* Container margins */
+.container{padding-left:clamp(16px,5vw,32px);padding-right:clamp(16px,5vw,32px);max-width:1200px;margin:0 auto}
+section.container{margin-top:var(--s5)}
+@media(min-width:1280px){.container{max-width:1280px}}
+@media(max-width:860px){section.container{margin-top:var(--s4)}}
+
+/* Cards / text */
+.card{padding:var(--s3) var(--s4);border-radius:16px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.kicker{letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-size:12px;margin:0 0 var(--s2)}
+.section-title{font-size:28px;margin:0 0 var(--s2)}
+.muted{color:var(--muted)}
+.btn{border:1px solid var(--line);background:transparent;color:inherit;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap}
+.btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));border:0;color:#fff}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:1000;background:linear-gradient(180deg,rgba(15,23,42,.92),rgba(15,23,42,.86));backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.header-row{display:flex;align-items:center;gap:12px;padding:10px 0}
+.brand{display:flex;align-items:center;gap:8px;min-width:0}
+.brand-text{font-weight:800;font-size:20px;white-space:nowrap}
+.logo{height:72px;width:auto;transition:filter .15s ease, transform .12s ease;image-rendering:auto}
+.logo.glow:hover{filter:drop-shadow(0 0 10px rgba(124,58,237,.8)) drop-shadow(0 0 18px rgba(6,182,212,.6));transform:translateY(-1px);cursor:pointer}
+@media(max-width:860px){ .logo{height:34px} } /* ensure visible on mobile */
+
+/* Nav + socials */
+.nav{margin-left:auto;display:flex;gap:10px;align-items:center}
+.socials{display:flex;gap:10px;margin-left:6px}
+.soc{display:inline-flex;padding:6px;border:1px solid var(--line);border-radius:10px}
+.soc:hover{background:rgba(255,255,255,.06)}
+
+/* Three dots */
+.btn-icon.dots{display:none;margin-left:auto;border:1px solid var(--line);background:transparent;border-radius:12px;padding:8px 10px}
+.btn-icon.dots span{display:block;width:4px;height:4px;background:#e6ebff;border-radius:50%;margin:3px 0}
+
+/* Hero */
+.hero{max-width:900px;margin-top:var(--s4)}
+.hero h1{font-size:42px;line-height:1.12;margin:8px 0 var(--s2)}
+.hero h1 strong{background:linear-gradient(90deg,var(--brand1),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s2)}
+.legal-links{margin-top:8px}
+
+/* Grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;list-style:decimal inside;margin:0;padding:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px}
+.kpi .num{font-size:30px;font-weight:900;min-width:3ch;display:inline-block}
+.pricing{margin-top:var(--s2)}
+.price-line{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.price-amt{font-size:38px;font-weight:900;color:#dbe3ff}
+
+/* Horizontal scroll for numbers on narrow screens */
+@media(max-width:520px){
+  .kpis{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px}
+  .kpi{flex:0 0 auto;min-width:180px}
+  .kpis::-webkit-scrollbar{height:6px}
+  .kpis::-webkit-scrollbar-thumb{background:rgba(255,255,255,.15);border-radius:6px}
+}
+
+/* Testimonials */
+.qt-t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+.qt-t-card{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(255,255,255,.02)}
+.qt-t-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.qt-t-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#60a5fa)}
+.qt-t-stars{margin-left:auto;font-size:14px;letter-spacing:1px}
+
+/* Legal modal */
+.qt-mask{position:fixed;inset:0;background:rgba(0,0,0,.6);display:block;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.qt-legal{position:fixed;left:50%;bottom:5%;transform:translateX(-50%);width:min(860px,94vw);max-height:80vh;display:block;opacity:0;pointer-events:none;z-index:2000;background:#0f131a;color:#e8eaef;border:1px solid var(--line);border-radius:12px;transition:opacity .2s ease}
+.qt-legal .bar{display:flex;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.qt-legal .body{padding:12px 16px;overflow:auto;max-height:60vh}
+.qt-btn{border:1px solid var(--line);background:transparent;color:inherit;border-radius:10px;padding:8px 12px;cursor:pointer}
+.qt-open .qt-mask{opacity:1;pointer-events:auto}
+.qt-open .qt-legal{opacity:1;pointer-events:auto}
+
+/* Footer */
+.site-footer{margin:var(--s6) 0 var(--s5);text-align:center;font-size:14px;color:var(--muted)}
+
+/* Mobile menu sheet */
+@media(max-width:860px){
+  .brand-text{font-size:18px}
+  .btn-icon.dots{display:inline-flex}
+  .nav{
+    position:fixed;right:clamp(12px,5vw,20px);top:60px;display:flex;flex-direction:column;
+    gap:10px;background:#0f172a;border:1px solid var(--line);border-radius:12px;padding:12px;
+    width:min(92vw,420px);max-height:70vh;overflow:auto;box-shadow:0 12px 28px rgba(0,0,0,.45);
+    transform:translateY(-6px) scale(.98);opacity:0;pointer-events:none;transition:opacity .15s ease,transform .15s ease;z-index:1500;
+  }
+  body.nav-open .nav{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+}
+
+/* Reveal visible by default; optional animation */
+.reveal{opacity:1;transform:none}
+.animate .reveal{opacity:0;transform:translateY(6px);transition:opacity .35s ease,transform .35s ease}
+.animate .reveal.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.animate .reveal{opacity:1;transform:none;transition:none}.logo{transition:none}}
+/* WhatsApp buttons */
+.wa-fab{
+  position:fixed; right:clamp(14px,4vw,24px); bottom:clamp(14px,4vh,24px);
+  display:inline-flex; align-items:center; justify-content:center;
+  width:56px; height:56px; border-radius:50%;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff; border:1px solid var(--line); box-shadow:0 10px 24px rgba(0,0,0,.35);
+  transition:transform .12s ease, filter .15s ease; z-index:1800;
+}
+.wa-fab:hover{ transform:translateY(-1px); filter:drop-shadow(0 0 10px rgba(37,211,102,.4)); }
+@media (max-width:520px){ .wa-fab{ width:52px; height:52px; } }
+@media (max-width:860px){ .socials .soc{ padding:8px } }/* Logo size override */
+img.logo{height:72px;width:auto;max-width:100%}
+@media (max-width:860px){
+  img.logo{height:56px} /* pick what you want: 56px, 48px, etc. */
+}</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="container header-row">
+    <a class="brand" href="#" id="brandHome" aria-label="Go to QuantumTask home">
+      <img src="./logo.png?v=2" alt="QuantumTask logo" class="logo glow">
+      <span class="brand-text">QuantumTask</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a class="btn" href="#about">About</a>
+      <a class="btn" href="#offers">Offers</a>
+      <a class="btn" href="#process">Process</a>
+      <a class="btn" href="#fit">Find your fit</a>
+      <a class="btn" href="#faq">FAQ</a>
+      <a class="btn primary" href="mailto:sales@quantumtask.io?subject=Start%20my%20project">Start</a>
+      <div class="socials" aria-label="Social links">
+        <a href="https://x.com/quantumtask" aria-label="X" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.9 3H22l-9.6 11.2L21.6 21H16l-6-4.9L4.5 21H2l9-10.5L2.7 3H8l5.4 4.6L18.9 3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/quantumtask" aria-label="LinkedIn" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v13H0V8zm7.5 0H12v1.9h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.8V21h-5v-6.1c0-1.5 0-3.5-2.2-3.5s-2.6 1.7-2.6 3.4V21h-5V8z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/quantumtask" aria-label="Instagram" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2zM12 9.5A2.5 2.5 0 1 1 9.5 12 2.5 2.5 0 0 1 12 9.5z"/></svg>
+        </a><a href="https://wa.me/27788935870?text=Hi%20QuantumTask%2C%20I%27d%20like%20to%20start%20a%20project." aria-label="WhatsApp" class="soc" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+    <path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.4 0 .04 5.35.04 11.96c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6a11.93 11.93 0 0 0 5.82 1.49h.01c6.62 0 11.98-5.35 11.98-11.96a11.9 11.9 0 0 0-3.49-8.45zM12.02 21.8h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.68.95.98-3.58-.24-.37a9.83 9.83 0 0 1-1.53-5.26c0-5.43 4.42-9.85 9.85-9.85 2.63 0 5.09 1.02 6.95 2.88a9.78 9.78 0 0 1 2.89 6.96c0 5.43-4.42 9.85-9.84 9.85zm5.63-7.36c-.31-.16-1.84-.91-2.13-1.02-.28-.1-.49-.16-.7.16-.21.31-.81 1.01-.99 1.22-.18.21-.36.24-.67.08-.31-.16-1.29-.48-2.46-1.52-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.4-.03-.56-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.52h-.6c-.21 0-.56.08-.85.4-.28.31-1.09 1.06-1.09 2.59 0 1.53 1.12 3.01 1.27 3.22.16.21 2.2 3.35 5.32 4.7.74.32 1.32.51 1.77.65.74.24 1.41.21 1.94.13.59-.09 1.84-.75 2.1-1.47.26-.72.26-1.34.18-1.47-.08-.13-.28-.21-.59-.37z"/>
+  </svg>
+</a>
+      </div>
+    </nav>
+
+    <button class="btn-icon dots" id="menuBtn" aria-label="More"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="container hero card reveal">
+    <p class="kicker">Web solutions</p>
+    <h1>Build powerful web experiences <strong>faster</strong>.</h1>
+    <p class="muted">High-impact, scalable websites and platforms tailored to your vision.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:sales@quantumtask.io?subject=Start%20my%20project">Start your project</a>
+      <a class="btn" href="mailto:sales@quantumtask.io">Email us</a>
+    </div>
+    <p class="muted legal-links">Legal: <a href="#privacy" data-legal="privacy">Privacy</a> · <a href="#terms" data-legal="terms">Terms</a></p>
+  </section>
+
+  <section id="process" class="container card reveal">
+    <p class="kicker">How we work</p>
+    <h2 class="section-title">Simple, fast delivery</h2>
+    <ol class="steps">
+      <li class="card">Brief &amp; scope → fixed milestones</li>
+      <li class="card">Design &amp; build → weekly drops</li>
+      <li class="card">QA, launch, measure → iterate</li>
+    </ol>
+  </section>
+
+  <section id="about" class="container">
+    <h2 class="section-title">About QuantumTask</h2>
+    <div class="grid">
+      <article class="card"><h3>What we do</h3><p class="muted">Design and engineer performant websites and web apps with modern stacks.</p></article>
+      <article class="card"><h3>How we work</h3><p class="muted">Clear milestones, rapid iteration, analytics, and quality gates at every step.</p></article>
+      <article class="card"><h3>Value</h3><p class="muted">Accessibility, SEO, telemetry, and security baked in from day one.</p></article>
+    </div>
+  </section>
+
+  <section id="offers" class="container">
+    <p class="kicker">What we offer</p>
+    <h2 class="section-title">Services &amp; packages</h2>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>Landing pages</h3><p class="muted">High-speed, SEO-ready pages with analytics.</p>
+        <ul class="muted"><li>1–3 sections</li><li>Form + email capture</li><li>1 week</li></ul>
+        <div style="margin-top:10px"><a class="btn primary" href="mailto:sales@quantumtask.io?subject=Landing%20page">Get quote</a></div>
+      </article>
+      <article class="card reveal">
+        <h3>Business websites</h3><p class="muted">Full site with CMS, blog, and tracking.</p>
+        <ul class="muted"><li>5–8 pages</li><li>CMS + SEO</li><li>2–3 weeks</li></ul>
+        <div style="margin-top:10px"><a class="btn primary" href="mailto:sales@quantumtask.io?subject=Business%20website">Get quote</a></div>
+      </article>
+      <article class="card reveal">
+        <h3>E-commerce</h3><p class="muted">Storefront, checkout, and automations.</p>
+        <ul class="muted"><li>Catalog + cart</li><li>Payments</li><li>3–4 weeks</li></ul>
+        <div style="margin-top:10px"><a class="btn primary" href="mailto:sales@quantumtask.io?subject=Ecommerce%20site">Get quote</a></div>
+      </article>
+      <article class="card reveal">
+        <h3>Maintenance</h3><p class="muted">Updates, monitoring, fixes.</p>
+        <ul class="muted"><li>Uptime watch</li><li>Security patches</li><li>Monthly report</li></ul>
+        <div style="margin-top:10px"><a class="btn" href="mailto:sales@quantumtask.io?subject=Maintenance">Ask about plans</a></div>
+      </article>
+      <article class="card reveal">
+        <h3>Automation</h3><p class="muted">CRM, forms, and workflow integrations.</p>
+        <ul class="muted"><li>Make/Zapier</li><li>CRM setup</li><li>Webhook flows</li></ul>
+        <div style="margin-top:10px"><a class="btn" href="mailto:sales@quantumtask.io?subject=Automation">Ask about plans</a></div>
+      </article>
+      <article class="card reveal">
+        <h3>SEO &amp; analytics</h3><p class="muted">Technical SEO and measurement.</p>
+        <ul class="muted"><li>Core Web Vitals</li><li>GA4 + events</li><li>Dashboards</li></ul>
+        <div style="margin-top:10px"><a class="btn" href="mailto:sales@quantumtask.io?subject=SEO%20and%20analytics">Ask about plans</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="fit" class="container card reveal">
+    <p class="kicker">Find your outsourcing fit</p>
+    <h2 class="section-title">Industry-tailored solutions</h2>
+    <div class="selector">
+      <label class="muted" for="industry">Industry</label>
+      <select id="industry" class="select">
+        <option value="customer-support" selected>Customer Support</option>
+        <option value="e-commerce">E-commerce</option>
+        <option value="saas">SaaS</option>
+        <option value="finance">Finance</option>
+        <option value="healthcare">Healthcare</option>
+        <option value="logistics">Logistics</option>
+        <option value="real-estate">Real Estate</option>
+      </select>
+      <label class="muted" for="tier">Plan</label>
+      <select id="tier" class="select">
+        <option value="starter" selected>Starter</option>
+        <option value="growth">Growth</option>
+        <option value="pro">Pro</option>
+      </select>
+    </div>
+    <div class="kpis" id="kpis">
+      <div class="kpi"><div class="muted">CSAT</div><div class="num" id="kpi_csat">90</div>%</div>
+      <div class="kpi"><div class="muted">First-contact resolution</div><div class="num" id="kpi_fcr">75</div>%</div>
+      <div class="kpi"><div class="muted">Avg handle time</div><div class="num" id="kpi_aht">5.7</div> min</div>
+      <div class="kpi"><div class="muted">SLA</div><div class="num" id="kpi_sla">94</div>%</div>
+    </div>
+    <div class="pricing">
+      <div class="muted">From</div>
+      <div class="price-line"><div class="price-amt" id="priceAmount">$899</div><div class="muted">per agent / month</div></div>
+      <div class="muted" id="priceNote">Customer Support · Starter</div>
+    </div>
+  </section>
+
+  <section class="container">
+    <p class="kicker">What clients say</p>
+    <h2 class="section-title">Recent feedback</h2>
+    <div class="qt-t-grid" id="qt-t-grid" aria-live="polite"></div>
+  </section>
+
+  <section id="faq" class="container card reveal">
+    <h2 class="section-title">FAQ</h2>
+    <p class="muted">Have a question? Email <a href="mailto:sales@quantumtask.io">sales@quantumtask.io</a>.</p>
+  </section>
+</main>
+
+<footer class="container site-footer">
+  © <span id="year"></span> QuantumTask · <a href="#privacy" data-legal="privacy">Privacy</a> · <a href="#terms" data-legal="terms">Terms</a>
+</footer>
+
+<!-- Legal modal -->
+<div class="qt-mask" id="qtLegalMask" hidden></div>
+<section class="qt-legal" id="qtLegal" role="dialog" aria-modal="true" aria-labelledby="qtLegalTitle" hidden>
+  <div class="bar"><h3 id="qtLegalTitle">Legal</h3><button class="qt-btn" id="qtLegalClose" type="button">Close</button></div>
+  <div class="body" id="qtLegalBody"></div>
+</section>
+
+<script>
+/* ---------- Data ---------- */
+const PRICING={
+  'customer-support': { price: 899, csat: 90, fcr: 75, aht: 5.7, sla: 94 },
+  'e-commerce':       { price: 999, csat: 90, fcr: 76, aht: 5.5, sla: 94 },
+  'saas':             { price:1099, csat: 91, fcr: 77, aht: 5.9, sla: 95 },
+  'finance':          { price:1299, csat: 92, fcr: 78, aht: 6.2, sla: 95 },
+  'healthcare':       { price:1399, csat: 94, fcr: 80, aht: 5.8, sla: 96 },
+  'logistics':        { price:1199, csat: 88, fcr: 72, aht: 6.7, sla: 92 },
+  'real-estate':      { price:1199, csat: 89, fcr: 74, aht: 6.5, sla: 93 },
+};
+const TIERS = { starter:1.00, growth:1.25, pro:1.50 };
+
+/* ---------- Helpers ---------- */
+const $ = (id) => document.getElementById(id);
+const txt = (id, v) => { const el=$(id); if(el) el.textContent=v; };
+
+function animateNumber(el, to, decimals){
+  if(!el) return;
+  const clean = v => typeof v==='number' ? v : parseFloat(String(v).replace(/[^0-9.\-]/g,''))||0;
+  const from = clean(el.textContent);
+  const target = clean(to);
+  const start = performance.now();
+  const dur = 900;
+  const step = (t)=>{
+    const p = Math.min(1,(t-start)/dur), e = 1-Math.pow(1-p,3);
+    const v = from + (target-from)*e;
+    el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString();
+    if(p<1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+/* ---------- Pricing + KPIs ---------- */
+function recalc(){
+  const ind = $('industry').value;
+  const tier = $('tier').value;
+  const base = PRICING[ind] || PRICING['customer-support'];
+  animateNumber($('priceAmount'), base.price*TIERS[tier], 0);
+  txt('priceNote', ind.replace('-', ' ') + ' · ' + tier[0].toUpperCase()+tier.slice(1));
+  animateNumber($('kpi_csat'), base.csat, 0);
+  animateNumber($('kpi_fcr'),  base.fcr,  0);
+  animateNumber($('kpi_aht'),  base.aht,  1);
+  animateNumber($('kpi_sla'),  base.sla,  0);
+}
+
+/* ---------- Testimonials ---------- */
+function loadTestimonials(){
+  const DATA = [
+    {name:"Lerato M.", role:"CX Lead · E-commerce", stars:5, text:"Went live in 3 weeks. CSAT lifted and our queue time halved."},
+    {name:"Daniel K.", role:"Ops Manager · SaaS", stars:5, text:"Handovers are clean. Weekly QA keeps quality consistent."},
+    {name:"Aisha P.", role:"Support Director · Fintech", stars:4, text:"Chargeback handling improved and first contact resolution is up."},
+    {name:"Marco V.", role:"Head of CX · Logistics", stars:5, text:"Night shift coverage is seamless. Good comms and reporting."},
+    {name:"Naledi T.", role:"Care Manager · Healthcare", stars:4, text:"Scheduling and eligibility checks are accurate and fast."},
+    {name:"Ethan R.", role:"Founder · Real Estate", stars:5, text:"Lead qualify + scheduling removed a huge burden from our team."}
+  ];
+  const grid = $('qt-t-grid');
+  if(!grid) return;
+  const pick = (arr,n)=>{ const a=arr.slice(),o=[]; while(a.length&&o.length<n)o.push(a.splice(Math.random()*a.length|0,1)[0]); return o; };
+  grid.innerHTML = pick(DATA,3).map(t=>`
+    <article class="qt-t-card reveal">
+      <div class="qt-t-head">
+        <div class="qt-t-avatar" aria-hidden="true"></div>
+        <div>
+          <div class="qt-t-name">${t.name}</div>
+          <div class="qt-t-role">${t.role}</div>
+        </div>
+        <div style="margin-left:auto" aria-label="${t.stars} star rating" class="qt-t-stars">${"★".repeat(t.stars)}${"☆".repeat(5-t.stars)}</div>
+      </div>
+      <p class="muted">“${t.text}”</p>
+    </article>
+  `).join("");
+}
+
+/* ---------- Legal overlay ---------- */
+function initLegal(){
+  const mask = $('qtLegalMask');
+  const panel = $('qtLegal');
+  const body = $('qtLegalBody');
+  const title = $('qtLegalTitle');
+  const close = $('qtLegalClose');
+
+  const open = (kind)=>{
+    title.textContent = kind==='privacy'?'Privacy Policy':'Terms of Service';
+    body.innerHTML = kind==='privacy'
+      ? '<p>We process minimal data to deliver services. Access is role-limited and logged. Removal requests honored. Contact <a href="mailto:sales@quantumtask.io">sales@quantumtask.io</a>.</p>'
+      : '<p>Engagement is governed by a signed SOW. SLAs, pricing, and data handling are defined in your SOW. Contact <a href="mailto:sales@quantumtask.io">sales@quantumtask.io</a>.</p>';
+    document.body.classList.add('qt-open');
+    mask.hidden = false; panel.hidden = false;
+  };
+  const shut = ()=>{
+    document.body.classList.remove('qt-open');
+    mask.hidden = true; panel.hidden = true;
+  };
+
+  close.addEventListener('click', shut);
+  mask.addEventListener('click', shut);
+
+  // Open via inline links
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('a[data-legal]');
+    if(!a) return;
+    e.preventDefault();
+    e.stopPropagation();
+    open(a.getAttribute('data-legal'));
+  });
+
+  // Deep link support
+  const h = (location.hash||'').toLowerCase().replace('#','');
+  if(h==='privacy' || h==='terms') open(h);
+}
+
+/* ---------- Reveal on view (optional) ---------- */
+function initReveal(){
+  document.body.classList.add('animate'); // animations without hiding defaults
+  const targets = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }});
+  }, {root:null, rootMargin:"0px 0px -10% 0px", threshold:0.12});
+  targets.forEach(el=>io.observe(el));
+  const hero = document.querySelector('.hero'); if(hero){ hero.classList.add('show'); }
+}
+
+/* ---------- Header (logo refresh, 3-dots) ---------- */
+function initHeader(){
+  // Logo click → refresh
+  const brandHome = $('brandHome');
+  if(brandHome){
+    brandHome.addEventListener('click', (e)=>{
+      e.preventDefault();
+      location.reload();
+    });
+  }
+
+  // Three dots toggle, with click-outside guard
+  const btn = $('menuBtn');
+  const nav = $('nav');
+  if(btn && nav){
+    btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      e.stopPropagation();
+      document.body.classList.toggle('nav-open');
+    }, { passive:false });
+
+    document.addEventListener('click', (e)=>{
+      if(!document.body.classList.contains('nav-open')) return;
+      if(e.target.closest('#nav') || e.target.closest('#menuBtn')) return;
+      document.body.classList.remove('nav-open');
+    });
+
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape') document.body.classList.remove('nav-open');
+    });
+  }
+}
+
+/* ---------- Smooth anchor offset ---------- */
+function initAnchors(){
+  const header = document.querySelector('header.top');
+  const headerH = () => (header ? header.getBoundingClientRect().height : 0) + 12;
+
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(!el) return;
+      e.preventDefault();
+      const y = el.getBoundingClientRect().top + window.scrollY - headerH();
+      history.pushState(null,'','#'+id);
+      window.scrollTo({ top:y, behavior:'smooth' });
+    });
+  });
+
+  if(location.hash){
+    const id = location.hash.slice(1);
+    const el = document.getElementById(id);
+    if(el){
+      setTimeout(()=>{
+        const y = el.getBoundingClientRect().top + window.scrollY - headerH();
+        window.scrollTo({ top:y, behavior:'smooth' });
+      }, 0);
+    }
+  }
+}
+
+/* ---------- Init ---------- */
+document.addEventListener('DOMContentLoaded', ()=>{
+  // Ensure logo loads on mobile: keep simple relative path and explicit height
+  const logo = document.querySelector('.logo');
+  if(logo) { logo.setAttribute('loading','eager'); logo.decoding='sync'; }
+
+  const y = $('year'); if(y) y.textContent = new Date().getFullYear();
+
+  // Explicit listeners for selects (fixes some mobile browsers)
+  const industrySel = $('industry');
+  const tierSel = $('tier');
+  if(industrySel) industrySel.addEventListener('change', recalc);
+  if(tierSel) tierSel.addEventListener('change', recalc);
+
+  // Safety: create dots if missing
+  if(!$('menuBtn')){
+    const btn = document.createElement('button');
+    btn.className='btn-icon dots'; btn.id='menuBtn'; btn.setAttribute('aria-label','More');
+    btn.innerHTML='<span></span><span></span><span></span>';
+    document.querySelector('.header-row').appendChild(btn);
+  }
+
+  recalc();
+  loadTestimonials();
+  initLegal();
+  initReveal();
+  initHeader();
+  initAnchors();
+});
+</script>
+<a class="wa-fab" href="https://wa.me/27788935870?text=Hi%20QuantumTask%2C%20I%27d%20like%20to%20start%20a%20project." aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+    <path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.4 0 .04 5.35.04 11.96c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6a11.93 11.93 0 0 0 5.82 1.49h.01c6.62 0 11.98-5.35 11.98-11.96a11.9 11.9 0 0 0-3.49-8.45zM12.02 21.8h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.68.95.98-3.58-.24-.37a9.83 9.83 0 0 1-1.53-5.26c0-5.43 4.42-9.85 9.85-9.85 2.63 0 5.09 1.02 6.95 2.88a9.78 9.78 0 0 1 2.89 6.96c0 5.43-4.42 9.85-9.84 9.85zm5.63-7.36c-.31-.16-1.84-.91-2.13-1.02-.28-.1-.49-.16-.7.16-.21.31-.81 1.01-.99 1.22-.18.21-.36.24-.67.08-.31-.16-1.29-.48-2.46-1.52-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.4-.03-.56-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.52h-.6c-.21 0-.56.08-.85.4-.28.31-1.09 1.06-1.09 2.59 0 1.53 1.12 3.01 1.27 3.22.16.21 2.2 3.35 5.32 4.7.74.32 1.32.51 1.77.65.74.24 1.41.21 1.94.13.59-.09 1.84-.75 2.1-1.47.26-.72.26-1.34.18-1.47-.08-.13-.28-.21-.59-.37z"/>
+  </svg>
+</a></body>
+</html>
