@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--
+    Updated meta title and description to reflect the repositioned QuantumTask product.
+    The previous copy focused on a web‑development BPO; the new copy highlights
+    project and task management for web‑design agencies, including freelancing,
+    hours tracking and retainer reporting. These changes were requested by the
+    user to more accurately represent the SaaS offering.
+  -->
+  <title>QuantumTask — Manage Web Design &amp; Dev Retainers</title>
+  <meta name="description" content="Manage design and development retainers in one dashboard. Assign vetted freelancers, track hours and budgets, surface unused time, and send automated client reports under your brand. Zero mark‑ups, clear seat-based pricing.">
+<style>
+:root{
+  --bg:#0b1220; --card:#0f172a; --text:#e6ebff; --muted:#9aa4b2; --line:rgba(255,255,255,.1);
+  --brand1:#06b6d4; --brand2:#7c3aed;
+  --s1:8px; --s2:12px; --s3:16px; --s4:20px; --s5:28px; --s6:40px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:radial-gradient(800px 400px at 80% 10%,rgba(124,58,237,.14),transparent),var(--bg);color:var(--text);font:16px/1.5 system-ui,Segoe UI,Roboto,Inter,Arial}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;height:auto;display:block}
+body{overflow-x:hidden}
+
+/* Container */
+.container{padding-left:clamp(16px,5vw,32px);padding-right:clamp(16px,5vw,32px);max-width:1200px;margin:0 auto}
+section.container{margin-top:var(--s5)}
+@media(min-width:1280px){.container{max-width:1280px}}
+@media(max-width:860px){section.container{margin-top:var(--s4)}}
+
+/* Cards / text */
+.card{padding:var(--s3) var(--s4);border-radius:16px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.015));box-shadow:0 6px 18px rgba(0,0,0,.25)}
+.kicker{letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-size:12px;margin:0 0 var(--s2)}
+.section-title{font-size:28px;margin:0 0 var(--s2)}
+.muted{color:var(--muted)}
+.btn{border:1px solid var(--line);background:transparent;color:inherit;border-radius:12px;padding:10px 14px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;flex:0 0 auto}
+.btn.primary{background:linear-gradient(90deg,var(--brand1),var(--brand2));border:0;color:#fff}
+
+/* Header */
+header.top{position:sticky;top:0;z-index:1000;background:linear-gradient(180deg,rgba(15,23,42,.92),rgba(15,23,42,.86));backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.header-row{display:flex;align-items:center;gap:12px;padding:10px 0;flex-wrap:nowrap}
+.brand{display:flex;align-items:center;gap:8px;min-width:0}
+.brand-text{font-weight:800;font-size:20px;white-space:nowrap}
+.logo{height:48px;width:auto;transition:filter .15s ease, transform .12s ease}
+@media(max-width:860px){ .logo{height:34px} }
+.logo.glow:hover,
+a.brand:hover .logo.glow,
+a.brand:focus-visible .logo.glow{
+  filter:drop-shadow(0 0 10px rgba(124,58,237,.8)) drop-shadow(0 0 18px rgba(6,182,212,.6));
+  transform:translateY(-1px);
+  cursor:pointer;
+}
+
+/* Nav + socials */
+.nav{margin-left:auto;display:flex;gap:10px;align-items:center;flex-wrap:nowrap;white-space:nowrap}
+.socials{display:flex;gap:10px;margin-left:6px}
+.soc{display:inline-flex;padding:6px;border:1px solid var(--line);border-radius:10px}
+.soc:hover{background:rgba(255,255,255,.06)}
+
+/* Three dots */
+.btn-icon.dots{display:none;margin-left:auto;border:1px solid var(--line);background:transparent;border-radius:12px;padding:8px 10px}
+.btn-icon.dots span{display:block;width:4px;height:4px;background:#e6ebff;border-radius:50%;margin:3px 0}
+
+/* Desktop nav reset */
+@media(min-width:861px){
+  .nav{position:static;flex-direction:row;background:transparent;border:0;padding:0;width:auto;max-height:none;overflow:visible;box-shadow:none;transform:none;opacity:1;pointer-events:auto}
+  .btn-icon.dots{display:none}
+}
+
+/* Mobile menu sheet */
+@media(max-width:860px){
+  .brand-text{font-size:18px}
+  .btn-icon.dots{display:inline-flex}
+  .nav{
+    position:fixed;right:clamp(12px,5vw,20px);top:60px;display:flex;flex-direction:column;
+    gap:10px;background:#0f172a;border:1px solid var(--line);border-radius:12px;padding:12px;
+    width:min(92vw,420px);max-height:70vh;overflow:auto;box-shadow:0 12px 28px rgba(0,0,0,.45);
+    transform:translateY(-6px) scale(.98);opacity:0;pointer-events:none;transition:opacity .15s ease,transform .15s ease;z-index:1500;
+  }
+  body.nav-open .nav{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+}
+
+/* Hero */
+.hero{max-width:900px;margin-top:var(--s4)}
+.hero h1{font-size:42px;line-height:1.12;margin:8px 0 var(--s2)}
+.hero h1 strong{background:linear-gradient(90deg,var(--brand1),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s2)}
+.legal-links{margin-top:8px}
+
+/* Grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;list-style:decimal inside;margin:0;padding:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:10px}
+.kpi .num{font-size:30px;font-weight:900;min-width:3ch;display:inline-block}
+
+/* Testimonials */
+.qt-t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+.qt-t-card{border:1px solid var(--line);border-radius:12px;padding:12px;background:rgba(255,255,255,.02)}
+.qt-t-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.qt-t-avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#06b6d4,#60a5fa)}
+/* Allow the avatar element to display a real photo; ensure the image fills the
+   circle and is clipped appropriately. */
+.qt-t-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:50%;
+}
+/* Initial-letter avatar variant */
+.qt-t-avatar.initial{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#0ea5e9,#7c3aed);
+  color:#fff;
+  font-weight:800;
+  font-size:16px;
+}
+.qt-t-avatar.initial span{
+  line-height:1;
+}
+.qt-t-stars{margin-left:auto;font-size:14px;letter-spacing:1px}
+
+/* Overlay framework */
+.qt-mask{position:fixed;inset:0;background:rgba(0,0,0,.6);display:block;opacity:0;pointer-events:none;transition:opacity .2s ease;z-index:1900}
+.modal-open .qt-mask{opacity:1;pointer-events:auto}
+
+/* Legal modal */
+.qt-legal{position:fixed;left:50%;bottom:5%;transform:translateX(-50%);width:min(860px,94vw);max-height:80vh;display:block;opacity:0;pointer-events:none;z-index:2000;background:#0f131a;color:#e8eaef;border:1px solid var(--line);border-radius:12px;transition:opacity .2s ease}
+.qt-legal .bar{display:flex;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.qt-legal .body{padding:12px 16px;overflow:auto;max-height:60vh}
+.legal-open .qt-legal{opacity:1;pointer-events:auto}
+
+/* Booking modal */
+.qt-book{position:fixed;left:50%;top:10%;transform:translateX(-50%);width:min(760px,94vw);max-height:80vh;display:block;opacity:0;pointer-events:none;z-index:2000;background:#0f131a;color:#e8eaef;border:1px solid var(--line);border-radius:12px;transition:opacity .2s ease}
+.qt-book .bar{display:flex;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.qt-book .body{padding:12px 16px;overflow:auto;max-height:60vh}
+.book-open .qt-book{opacity:1;pointer-events:auto}
+
+.qt-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;margin-bottom:10px}
+.qt-input,.qt-select,.qt-textarea{width:100%;background:#0f172a;border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--text)}
+.qt-actions{display:flex;align-items:center;gap:10px;margin-top:6px}
+.qt-btn{border:1px solid var(--line);background:transparent;color:inherit;border-radius:10px;padding:8px 12px;cursor:pointer}
+
+/* WhatsApp FAB */
+.wa-fab{
+  position:fixed; right:clamp(14px,4vw,24px); bottom:clamp(14px,4vh,24px);
+  display:inline-flex; align-items:center; justify-content:center;
+  width:56px; height:56px; border-radius:50%;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#fff; border:1px solid var(--line); box-shadow:0 10px 24px rgba(0,0,0,.35);
+  transition:transform .12s ease, filter .15s ease; z-index:1800;
+}
+.wa-fab:hover{ transform:translateY(-1px); filter:drop-shadow(0 0 10px rgba(37,211,102,.4)); }
+@media (max-width:520px){ .wa-fab{ width:52px; height:52px; } }
+@media (max-width:860px){ .socials .soc{ padding:8px } }
+
+/* Global desktop glow for buttons */
+@media (min-width: 861px){
+  .btn{ transition:filter .15s ease, transform .12s ease }
+  .btn:hover, .btn:focus-visible{
+    filter:drop-shadow(0 0 10px rgba(124,58,237,.8)) drop-shadow(0 0 18px rgba(6,182,212,.6));
+    transform:translateY(-1px);
+  }
+}
+
+/* --- New modern layout enhancements --- */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:var(--s4);
+}
+.hero .hero-content{
+  display:flex;
+  flex-direction:column;
+  gap:var(--s2);
+}
+.hero .hero-illustration img{
+  max-width:100%;
+  height:auto;
+  border-radius:12px;
+  box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+@media(max-width:860px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+  .hero .hero-illustration{
+    display:none;
+  }
+}
+
+.pricing-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:var(--s4);
+  margin-top:var(--s3);
+}
+.pricing-card{
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:var(--s4);
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.pricing-card h3{
+  margin:0;
+  font-size:24px;
+  font-weight:700;
+}
+.pricing-card .price{
+  font-size:36px;
+  font-weight:800;
+  background:linear-gradient(90deg,var(--brand1),var(--brand2));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.pricing-card ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+.pricing-card ul li{
+  margin:4px 0;
+}
+
+/* Reveal on scroll */
+.reveal{opacity:0;transform:translateY(8px)}
+.animate .reveal{transition:opacity .45s ease,transform .45s ease}
+.reveal.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .reveal,.reveal.show{opacity:1;transform:none;transition:none}
+}
+
+.qt-textarea{min-height:120px}
+
+/* ---------------------------------------------------------------------
+   Decorative elements for the hero section (desktop only)
+
+   On desktop screens (width ≥ 861px) the hero shows a glowing logo on the
+   left and a large “QT” on the right. The hero gains a positioning context
+   so these absolute elements can sit in the gutters outside the card.
+------------------------------------------------------------------------- */
+@media (min-width: 861px) {
+  .hero {
+    position: relative;
+  }
+  .hero .decor-left {
+    position: absolute;
+    top: 50%;
+    /* Position slightly into the negative space so part of the logo is visible
+       across all desktop widths. */
+    left: -220px;
+    transform: translateY(-50%);
+    width: 250px;
+    opacity: 0.35;
+    pointer-events: none;
+  }
+  .hero .decor-right {
+    position: absolute;
+    top: 50%;
+    /* Anchor the element so its left edge starts at the hero’s right edge.
+       A small margin pushes it slightly further out. */
+    left: 100%;
+    margin-left: 20px;
+    transform: translateY(-50%);
+    font-size: 160px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    background: linear-gradient(90deg, var(--brand1), var(--brand2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0.2;
+    pointer-events: none;
+  }
+}
+
+/* Allow the header booking button to wrap so full label shows */
+#bookOpen{white-space:normal;line-height:1.2}
+
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="container header-row">
+    <a class="brand" href="#" id="brandHome" aria-label="Go to QuantumTask home">
+      <img src="./logo.png?v=2" alt="QuantumTask logo" class="logo glow">
+      <span class="brand-text">QuantumTask</span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a class="btn" href="#services">Services</a>
+      <a class="btn" href="#retainers">Retainers</a>
+      <a class="btn" href="#process">Process</a>
+      <a class="btn" href="#stack">Stack</a>
+      <a class="btn" href="#pricing">Pricing</a>
+      <a class="btn" href="#faq">FAQ</a>
+      <a class="btn" href="#" id="bookOpen">Book free consultation</a>
+      <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Start my web dev retainer" data-context="Header">Start</a>
+      <div class="socials" aria-label="Social links">
+        <a href="https://x.com/quantumtask" aria-label="X" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M18.9 3H22l-9.6 11.2L21.6 21H16l-6-4.9L4.5 21H2l9-10.5L2.7 3H8l5.4 4.6L18.9 3z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/company/quantumtask" aria-label="LinkedIn" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v13H0V8zm7.5 0H12v1.9h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.8V21h-5v-6.1c0-1.5 0-3.5-2.2-3.5s-2.6 1.7-2.6 3.4V21h-5V8z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/_quantumtask_" aria-label="Instagram" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/></svg>
+        </a>
+        <a href="https://wa.me/27788935870?text=Hi%20QuantumTask%2C%20I%27d%20like%20to%20discuss%20a%20web%20development%20retainer." aria-label="WhatsApp" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.4 0 .04 5.35.04 11.96c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6a11.93 11.93 0 0 0 5.82 1.49h.01c6.62 0 11.98-5.35 11.98-11.96a11.9 11.9 0 0 0-3.49-8.45zM12.02 21.8h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.68.95.98-3.58-.24-.37a9.83 9.83 0 0 1-1.53-5.26c0-5.43 4.42-9.85 9.85-9.85 2.63 0 5.09 1.02 6.95 2.88a9.78 9.78 0 0 1 2.89 6.96c0 5.43-4.42 9.85-9.84 9.85zm5.63-7.36c-.31-.16-1.84-.91-2.13-1.02-.28-.1-.49-.16-.7.16-.21.31-.81 1.01-.99 1.22-.18.21-.36.24-.67.08-.31-.16-1.29-.48-2.46-1.52-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.4-.03-.56-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.52h-.6c-.21 0-.56.08-.85.4-.28.31-1.09 1.06-1.09 2.59 0 1.53 1.12 3.01 1.27 3.22.16.21 2.2 3.35 5.32 4.7 .74 .32 1.32 .51 1.77 .65 .74 .24 1.41 .21 1.94 .13 .59 -.09 1.84 -.75 2.1 -1.47 .26 -.72 .26 -1.34 .18 -1.47 -.08 -.13 -.28 -.21 -.59 -.37z"/></svg>
+        </a>
+      </div>
+    </nav>
+
+    <button class="btn-icon dots" id="menuBtn" aria-label="More"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="container hero card reveal">
+    <div class="hero-content">
+      <p class="kicker">Agency‑managed design &amp; development retainers</p>
+      <h1>Manage your design and dev retainers — all in one place.</h1>
+      <p class="muted">Hire, track, and deliver through your own managed freelancer team. QuantumTask runs your full‑service design &amp; development operation under your agency’s brand.</p>
+      <ul class="muted">
+        <li>Assign vetted designers and developers to client projects</li>
+        <li>Log hours, track budgets, and surface unused retainers</li>
+        <li>Generate automated client reports and SLA summaries</li>
+        <li>Zero mark‑ups, clear seat‑based pricing</li>
+        <li>Scale from 5 to 500 clients without losing oversight</li>
+      </ul>
+      <p class="muted">Trusted by agencies running multi‑client retainers across 100+ active freelancers.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#" id="bookOpenHero">Start a 14‑day free trial</a>
+        <a class="btn" href="mailto:sales@quantumtask.io" data-mailto data-topic="Web dev retainer quote" data-context="Hero">Import websites &amp; tasks in minutes</a>
+      </div>
+      <p class="muted legal-links">Legal: <a href="#privacy" data-legal="privacy">Privacy</a> · <a href="#terms" data-legal="terms">Terms</a></p>
+    </div>
+    <div class="hero-illustration">
+      <!-- Replaced the previous illustration with a photorealistic team photo to better convey a professional, collaborative atmosphere. The new image depicts a diverse group of developers working together on laptops in a modern office. -->
+      <img src="./hero_photo.png" alt="Abstract technology illustration with code and UI elements">
+    </div>
+    <!-- Desktop-only decorative elements for the hero. A glowing QuantumTask logo
+         appears in the left gutter and a large “QT” gradient mark appears in
+         the right gutter. These are hidden on small screens via media queries. -->
+    <img src="./quantumtask_glow.png" alt="" class="decor-left">
+    <div class="decor-right">QT</div>
+  </section>
+
+  <section id="services" class="container reveal">
+    <p class="kicker">What we do</p>
+    <h2 class="section-title">Core services</h2>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>Frontend development</h3>
+        <p class="muted">React, Next.js, Vue, responsive builds, accessibility, and component libraries.</p>
+        <ul class="muted"><li>Design handoff</li><li>UI kits</li><li>Core Web Vitals</li></ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Quote" data-service="Frontend development" data-context="Services">Get quote</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <h3>Backend & APIs</h3>
+        <p class="muted">Node, Python, API design, auth, integrations, and data pipelines.</p>
+        <ul class="muted"><li>REST/GraphQL</li><li>Queues</li><li>Monitoring</li></ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Quote" data-service="Backend & APIs" data-context="Services">Get quote</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <h3>CMS & e‑commerce</h3>
+        <p class="muted">Shopify, WooCommerce, WordPress, headless CMS, and migrations.</p>
+        <ul class="muted"><li>Themes & apps</li><li>Checkout flows</li><li>SEO setup</li></ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Quote" data-service="CMS & e‑commerce" data-context="Services">Get quote</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <h3>Maintenance & support</h3>
+        <p class="muted">Bug fixes, updates, uptime, security patches, and content changes.</p>
+        <ul class="muted"><li>Ticket queue</li><li>Release notes</li><li>Monthly report</li></ul>
+        <div style="margin-top:10px">
+          <a class="btn" href="mailto:sales@quantumtask.io" data-mailto data-topic="Plans inquiry" data-service="Maintenance & support" data-context="Services">Ask about plans</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <h3>Performance & SEO tech</h3>
+        <p class="muted">CWV optimization, image/CDN strategy, schema, and site health.</p>
+        <ul class="muted"><li>LCP/CLS tuning</li><li>Audit fixes</li><li>Dashboards</li></ul>
+        <div style="margin-top:10px">
+          <a class="btn" href="mailto:sales@quantumtask.io" data-mailto data-topic="Plans inquiry" data-service="Performance & SEO tech" data-context="Services">Ask about plans</a>
+        </div>
+      </article>
+      <article class="card reveal">
+        <h3>DevOps & hosting</h3>
+        <p class="muted">Cloud deploys, CI/CD, backups, monitoring, and incident response.</p>
+        <ul class="muted"><li>Vercel/Netlify</li><li>AWS/GCP</li><li>Infra as code</li></ul>
+        <div style="margin-top:10px">
+          <a class="btn" href="mailto:sales@quantumtask.io" data-mailto data-topic="Plans inquiry" data-service="DevOps & hosting" data-context="Services">Ask about plans</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="process" class="container card reveal">
+    <p class="kicker">How we work</p>
+    <h2 class="section-title">Retainer workflow</h2>
+    <ol class="steps">
+      <li class="card">Discovery → goals, stack, repos, access</li>
+      <li class="card">Backlog & SOPs → ticket template, DoD, QA rubric</li>
+      <li class="card">Pilot sprint → velocity baseline and cadence</li>
+      <li class="card">Operate → monthly reporting, roadmap, reviews</li>
+    </ol>
+  </section>
+
+  <section id="stack" class="container card reveal">
+    <p class="kicker">Stack</p>
+    <h2 class="section-title">Tools we work with</h2>
+    <div class="grid">
+      <article class="card"><h3>Frontend</h3><p class="muted">React, Next.js, Vue, Tailwind, TypeScript.</p></article>
+      <article class="card"><h3>Backend</h3><p class="muted">Node, Express/Nest, Python, PostgreSQL, Redis.</p></article>
+      <article class="card"><h3>CMS & commerce</h3><p class="muted">Shopify, WordPress/Woo, headless CMS.</p></article>
+      <article class="card"><h3>Ops</h3><p class="muted">Vercel, Netlify, AWS, CI/CD, Sentry, Datadog.</p></article>
+      <article class="card"><h3>Collab</h3><p class="muted">GitHub/GitLab, Jira, Linear, Notion, Slack.</p></article>
+      <article class="card"><h3>QA</h3><p class="muted">Playwright, Cypress, Lighthouse, monitors.</p></article>
+    </div>
+  </section>
+
+  <section id="retainers" class="container card reveal">
+    <p class="kicker">Retainers</p>
+    <h2 class="section-title">Pick a plan</h2>
+    <div class="selector">
+      <label class="muted" for="plan">Plan</label>
+      <select id="plan" class="select">
+        <option value="starter" selected>Starter · 20h/mo</option>
+        <option value="growth">Growth · 50h/mo</option>
+        <option value="scale">Scale · 100h/mo</option>
+      </select>
+    </div>
+    <div class="kpis" id="kpis">
+      <div class="kpi"><div class="muted">Monthly hours</div><div class="num" id="kpi_hours">20</div> h</div>
+      <div class="kpi"><div class="muted">Lead time to merge</div><div class="num" id="kpi_lead">3.0</div> days</div>
+      <div class="kpi"><div class="muted">First response SLA</div><div class="num" id="kpi_resp">24</div> h</div>
+      <div class="kpi"><div class="muted">Deployment success</div><div class="num" id="kpi_deploy">98</div>%</div>
+    </div>
+  </section>
+
+  <section id="pricing" class="container reveal">
+    <p class="kicker">Pricing</p>
+    <h2 class="section-title">Simple monthly retainers (USD)</h2>
+    <div class="pricing-grid">
+      <article class="pricing-card">
+        <h3>Starter</h3>
+        <div class="price">$1,499</div>
+        <p class="muted">20 hours included per month</p>
+        <ul class="muted">
+          <li>Lead time: 3 days</li>
+          <li>First response SLA: 24 h</li>
+          <li>Deployment success: 98%</li>
+        </ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Pricing request" data-context="Pricing" data-plan="Starter">Get detailed pricing</a>
+        </div>
+      </article>
+      <article class="pricing-card">
+        <h3>Growth</h3>
+        <div class="price">$2,999</div>
+        <p class="muted">50 hours included per month</p>
+        <ul class="muted">
+          <li>Lead time: 2 days</li>
+          <li>First response SLA: 8 h</li>
+          <li>Deployment success: 98.5%</li>
+        </ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Pricing request" data-context="Pricing" data-plan="Growth">Get detailed pricing</a>
+        </div>
+      </article>
+      <article class="pricing-card">
+        <h3>Scale</h3>
+        <div class="price">$5,997</div>
+        <p class="muted">100 hours included per month</p>
+        <ul class="muted">
+          <li>Lead time: 1.5 days</li>
+          <li>First response SLA: 4 h</li>
+          <li>Deployment success: 99%</li>
+        </ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Pricing request" data-context="Pricing" data-plan="Scale">Get detailed pricing</a>
+        </div>
+      </article>
+    </div>
+    <p class="muted" style="margin-top:6px">Simple pricing: per‑team seat + client‑dashboard access. No hidden freelancer mark‑ups. Monthly retainer tracking, unused‑hour alerts, and automated client reporting.</p>
+  </section>
+
+  <section class="container reveal">
+    <p class="kicker">What clients say</p>
+    <h2 class="section-title">Recent feedback</h2>
+    <div class="qt-t-grid" id="qt-t-grid" aria-live="polite"></div>
+  </section>
+
+  <section id="faq" class="container card reveal">
+    <h2 class="section-title">FAQ</h2>
+    <ul class="muted">
+      <li><strong>Code ownership:</strong> You own all code on your repos. We use PRs and reviews.</li>
+      <li><strong>Hours:</strong> Tracked in tickets and timesheets. Monthly report included.</li>
+      <li><strong>Security:</strong> Least‑privilege access, MFA, secrets management, and backups.</li>
+      <li><strong>SLA:</strong> First response and lead‑time targets depend on plan.</li>
+    </ul>
+    <p class="muted">More questions? <a href="mailto:sales@quantumtask.io" data-mailto data-topic="General inquiry" data-context="FAQ">Email us</a>.</p>
+  </section>
+</main>
+
+<footer class="container site-footer">
+  © <span id="year"></span> QuantumTask · <a href="#privacy" data-legal="privacy">Privacy</a> · <a href="#terms" data-legal="terms">Terms</a>
+</footer>
+
+<!-- Shared overlay mask -->
+<div class="qt-mask" id="qtMask" hidden></div>
+
+<!-- Legal modal -->
+<section class="qt-legal" id="qtLegal" role="dialog" aria-modal="true" aria-labelledby="qtLegalTitle" hidden>
+  <div class="bar"><h3 id="qtLegalTitle">Legal</h3><button class="qt-btn" id="qtLegalClose" type="button">Close</button></div>
+  <div class="body" id="qtLegalBody"></div>
+</section>
+
+<!-- Booking modal -->
+<section class="qt-book" id="qtBook" role="dialog" aria-modal="true" aria-labelledby="bookTitle" hidden>
+  <div class="bar">
+    <h3 id="bookTitle">Book a free consultation</h3>
+    <button class="qt-btn" id="qtBookClose" type="button">Close</button>
+  </div>
+  <form class="body" id="qtBookForm">
+    <div class="qt-grid">
+      <label class="muted">Name
+        <input type="text" id="bookName" class="qt-input" autocomplete="name" required>
+      </label>
+      <label class="muted">Email
+        <input type="email" id="bookEmail" class="qt-input" autocomplete="email" required>
+      </label>
+    </div>
+    <div class="qt-grid">
+      <label class="muted">Date
+        <input type="date" id="bookDate" class="qt-input" required>
+      </label>
+      <label class="muted">Time
+        <input type="time" id="bookTime" class="qt-input" step="900" required>
+      </label>
+      <label class="muted">Duration
+        <select id="bookDuration" class="qt-select">
+          <option value="15">15 min</option>
+          <option value="30" selected>30 min</option>
+        </select>
+      </label>
+    </div>
+    <label class="muted">Notes (optional)
+      <textarea id="bookNotes" class="qt-textarea" rows="3" placeholder="Context or goals"></textarea>
+    </label>
+    <div class="qt-actions">
+      <button class="btn primary" type="submit">Request booking</button>
+      <span class="muted">We will confirm by email.</span>
+    </div>
+  </form>
+</section>
+
+<script>
+/* ---------- Data ---------- */
+const RETAINERS={
+  'starter': { price:1499, hours:20, lead:3.0, resp:24, deploy:98 },
+  'growth':  { price:2999, hours:50, lead:2.0, resp:8,  deploy:98.5 },
+  'scale':   { price:5997, hours:100,lead:1.5, resp:4,  deploy:99 }
+};
+
+// ----------------------------------------------------------------------
+// Make.com integration
+//
+// Provide your Make.com webhook URL here to automatically send booking
+// form submissions to a scenario. If left empty, the booking form will
+// simply show a confirmation alert without sending data anywhere. To
+// integrate, copy the unique webhook URL from your Make.com scenario
+// (e.g. https://hook.make.com/abc123...) and assign it to the constant
+// below.
+const MAKE_WEBHOOK_URL = "";
+
+const TESTIMONIALS = [
+  {
+    name: "Lerato M.",
+    role: "E‑commerce Lead",
+    stars: 5,
+    text: "Feature velocity doubled and CWV passed on all templates.",
+    avatar: "avatar1.png"
+  },
+  {
+    name: "Daniel K.",
+    role: "SaaS Ops",
+    stars: 5,
+    text: "Retainer model works. Tickets clear weekly and deploys are steady.",
+    avatar: "avatar2.png"
+  },
+  {
+    name: "Aisha P.",
+    role: "Fintech PM",
+    stars: 4,
+    text: "Migrations and support handled without downtime.",
+    avatar: "avatar3.png"
+  },
+  {
+    name: "Marco V.",
+    role: "Logistics CTO",
+    stars: 5,
+    text: "CI/CD and infra cleanup cut incidents significantly.",
+    avatar: "avatar4.png"
+  }
+];
+
+/* ---------- Helpers ---------- */
+const $ = (id) => document.getElementById(id);
+const txt = (id, v) => { const el=$(id); if(el) el.textContent=v; };
+
+function animateNumber(el, to, decimals){
+  if(!el) return;
+  const clean = v => typeof v==='number' ? v : parseFloat(String(v).replace(/[^0-9.\-]/g,''))||0;
+  const from = clean(el.textContent);
+  const target = clean(to);
+  const start = performance.now();
+  const dur = 900;
+  const step = (t)=>{
+    const p = Math.min(1,(t-start)/dur), e = 1-Math.pow(1-p,3);
+    const v = from + (target-from)*e;
+    el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString();
+    if(p<1) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
+
+/* ---------- Pricing + KPIs ---------- */
+function recalc(){
+  const code = ($('plan')||{value:'starter'}).value;
+  const cfg = RETAINERS[code] || RETAINERS.starter;
+  animateNumber($('kpi_hours'), cfg.hours, 0);
+  animateNumber($('kpi_lead'),  cfg.lead,  1);
+  animateNumber($('kpi_resp'),  cfg.resp,  0);
+  animateNumber($('kpi_deploy'),cfg.deploy,1);
+  // Update KPIs only; pricing elements are static in this build.
+  // If you later add elements with ids `priceAmount` or `priceNote`, you can
+  // re-enable the following lines to animate them. Currently removed to
+  // prevent errors when these elements are absent.
+  // update pricing CTA plan tag
+  const cta = document.querySelector('#pricing a[data-mailto]');
+  if(cta){ cta.setAttribute('data-plan', txtPlan(code)); }
+}
+function txtPlan(code){
+  return code==='starter'?'Starter · 20h/mo':code==='growth'?'Growth · 50h/mo':'Scale · 100h/mo';
+}
+
+/* ---------- Testimonials ---------- */
+function loadTestimonials(){
+  const grid = $('qt-t-grid');
+  if(!grid) return;
+
+  // Show ALL recent feedback, in the order defined in TESTIMONIALS.
+  grid.innerHTML = TESTIMONIALS.map(t=>{
+    const isAisha = /^Aisha\b/i.test(t.name);
+    const avatarMarkup = isAisha
+      // Letter avatar for Aisha ("A")
+      ? `<div class="qt-t-avatar initial" role="img" aria-label="${t.name} avatar: letter A"><span>A</span></div>`
+      // Photo avatar for everyone else, bind face to name with proper alt text
+      : `<div class="qt-t-avatar" role="img" aria-label="${t.name} headshot"><img src="./${t.avatar}" alt="${t.name} headshot" loading="lazy" decoding="async"></div>`;
+
+    return `
+    <article class="qt-t-card reveal">
+      <div class="qt-t-head">
+        ${avatarMarkup}
+        <div>
+          <div class="qt-t-name">${t.name}</div>
+          <div class="qt-t-role">${t.role}</div>
+        </div>
+        <div style="margin-left:auto" aria-label="${t.stars} star rating" class="qt-t-stars">${"★".repeat(t.stars)}${"☆".repeat(5-t.stars)}</div>
+      </div>
+      <p class="muted">“${t.text}”</p>
+    </article>
+    `;
+  }).join("");
+}
+
+/* ---------- Overlay control ---------- */
+function closeAllModals(){
+  document.body.classList.remove('modal-open','legal-open','book-open');
+  const mask=$('qtMask'); if(mask) mask.hidden=true;
+  const legal=$('qtLegal'); if(legal) legal.hidden=true;
+  const book=$('qtBook'); if(book) book.hidden=true;
+}
+
+/* ---------- Legal overlay ---------- */
+function initLegal(){
+  const mask = $('qtMask');
+  const panel = $('qtLegal');
+  const body = $('qtLegalBody');
+  const title = $('qtLegalTitle');
+  const close = $('qtLegalClose');
+
+  const PRIVACY=`
+  <h4>Privacy Policy</h4>
+  <p>We collect only what is needed to deliver and improve our services.</p>
+  <ul>
+    <li><strong>Data we collect:</strong> contact details you send us, project briefs, usage analytics, and server logs.</li>
+    <li><strong>How we use it:</strong> to reply, provide quotes, deliver work, billing, support, and security.</li>
+    <li><strong>Sharing:</strong> with essential processors (email, analytics, payment) under contract, or if required by law. We do not sell data.</li>
+    <li><strong>Retention:</strong> project records kept for legal and operational reasons; marketing emails only with consent. You can request deletion.</li>
+    <li><strong>Security:</strong> access is role‑limited and logged; encryption in transit; regular updates.</li>
+    <li><strong>Your rights:</strong> access, correct, delete, or restrict processing. Contact <a href="mailto:sales@quantumtask.io" data-mailto data-topic="Privacy request" data-context="Legal">sales@quantumtask.io</a>.</li>
+  </ul>
+  <p>Last updated: October 2025.</p>`;
+
+  const TERMS=`
+  <h4>Terms of Service</h4>
+  <ul>
+    <li><strong>Scope:</strong> Each engagement is defined in a Statement of Work (SOW) or quote.</li>
+    <li><strong>Payments:</strong> Deposits may apply. Invoices due within 7 days unless stated otherwise.</li>
+    <li><strong>Client duties:</strong> Provide timely feedback, assets, repo access, and credentials needed to deliver.</li>
+    <li><strong>IP:</strong> On full payment you own final code; we retain pre‑existing tools and know‑how.</li>
+    <li><strong>Changes:</strong> Out‑of‑scope work is quoted before we proceed.</li>
+    <li><strong>Warranties:</strong> Work is provided with reasonable care. No implied warranties.</li>
+    <li><strong>Liability:</strong> Capped at the fees paid in the 3 months before the claim. No indirect or consequential damages.</li>
+    <li><strong>Confidentiality:</strong> Both parties protect non‑public information.</li>
+    <li><strong>Termination:</strong> Either party may terminate for material breach after notice. Retainers cancel with 30 days' notice.</li>
+    <li><strong>Governing law:</strong> Set in the SOW; otherwise South Africa.</li>
+  </ul>
+  <p>Questions? <a href="mailto:sales@quantumtask.io" data-mailto data-topic="Terms question" data-context="Legal">Contact us</a>.</p>`;
+
+  const open = (kind)=>{
+    closeAllModals();
+    title.textContent = kind==='privacy'?'Privacy Policy':'Terms of Service';
+    body.innerHTML = kind==='privacy'?PRIVACY:TERMS;
+    document.body.classList.add('modal-open','legal-open');
+    mask.hidden = false; panel.hidden = false;
+  };
+  const shut = closeAllModals;
+
+  close.addEventListener('click', shut);
+  mask.addEventListener('click', shut);
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') shut(); });
+
+  document.addEventListener('click', (e)=>{
+    const a = e.target.closest('a[data-legal]');
+    if(!a) return;
+    e.preventDefault();
+    e.stopPropagation();
+    open(a.getAttribute('data-legal'));
+  });
+
+  const h = (location.hash||'').toLowerCase().replace('#','');
+  if(h==='privacy' || h==='terms') open(h);
+}
+
+/* ---------- Booking overlay ---------- */
+function initBooking(){
+  const openBtn = $('bookOpen');
+  const openBtnHero = $('bookOpenHero');
+  const mask = $('qtMask');
+  const modal = $('qtBook');
+  const close = $('qtBookClose');
+  const form = $('qtBookForm');
+
+  const d = new Date(); const y=d.getFullYear(), m=String(d.getMonth()+1).padStart(2,'0'), day=String(d.getDate()).padStart(2,'0');
+  const dateEl = $('bookDate'); if(dateEl) dateEl.min = `${y}-${m}-${day}`;
+
+  const open = ()=>{
+    closeAllModals();
+    document.body.classList.add('modal-open','book-open'); 
+    mask.hidden=false; modal.hidden=false; 
+  };
+  const shut = closeAllModals;
+
+  [openBtn, openBtnHero].forEach(btn=>{ if(btn){ btn.addEventListener('click', e=>{ e.preventDefault(); open(); }); } });
+  close.addEventListener('click', shut);
+  mask.addEventListener('click', shut);
+  document.addEventListener('keydown', e=>{ if(e.key==='Escape') shut(); });
+
+  form.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const name=$('bookName').value.trim();
+    const email=$('bookEmail').value.trim();
+    const date=$('bookDate').value;
+    const time=$('bookTime').value;
+    const duration=parseInt($('bookDuration').value,10);
+    const notes=($('bookNotes').value||'').trim();
+    if(!name||!email||!date||!time){ alert('Please complete all required fields.'); return; }
+
+    // ---- Make.com webhook integration ----
+    // Build a payload from the form fields. If a webhook URL has been set on
+    // MAKE_WEBHOOK_URL, the data will be posted as JSON to Make.com. This
+    // allows you to trigger automations (e.g. create tasks, send Slack
+    // notifications) whenever someone books a consultation. Errors are
+    // logged to the console but do not interrupt the form flow.
+    const payload = { name, email, date, time, duration, notes };
+    if(MAKE_WEBHOOK_URL){
+      fetch(MAKE_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(err => console.error('Make.com webhook error', err));
+    }
+
+    const start=new Date(`${date}T${time}:00`);
+    const end=new Date(start.getTime()+duration*60000);
+
+    const subject=`Free ${duration} min consultation request`;
+    const body=[
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `When: ${start.toString()}`,
+      `Duration: ${duration} minutes`,
+      notes?`Notes: ${notes}`:'',
+      '',
+      `From page: ${location.href}`
+    ].filter(Boolean).join('\n');
+    window.location.href=`mailto:sales@quantumtask.io?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const ics = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//QuantumTask//Booking//EN
+BEGIN:VEVENT
+UID:consult-${Date.now()}@quantumtask.io
+DTSTAMP:${start.toISOString().replace(/[-:]/g,'').split('.')[0]}Z
+DTSTART:${start.toISOString().replace(/[-:]/g,'').split('.')[0]}Z
+DTEND:${end.toISOString().replace(/[-:]/g,'').split('.')[0]}Z
+SUMMARY:QuantumTask consultation
+DESCRIPTION:Free consultation with ${name} (${email})${notes?` — ${notes}`:''}
+LOCATION:Online
+END:VEVENT
+END:VCALENDAR`;
+    const blob=new Blob([ics],{type:'text/calendar'});
+    const url=URL.createObjectURL(blob);
+    const a=document.createElement('a'); a.href=url; a.download='quantumtask-consultation.ics';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+
+    shut();
+  });
+}
+
+/* ---------- Mailto enhancer for all email buttons ---------- */
+function initMailto(){
+  function buildBody(a){
+    const topic = a.getAttribute('data-topic') || 'General inquiry';
+    const service = a.getAttribute('data-service');
+    const context = a.getAttribute('data-context');
+    const plan = a.getAttribute('data-plan');
+    const lines = [
+      service ? `Service: ${service}` : null,
+      plan ? `Plan: ${plan}` : null,
+      `Topic: ${topic}`,
+      '',
+      'Message:',
+      '',
+      `From page: ${location.href}`,
+      context ? `Context: ${context}` : null
+    ].filter(Boolean);
+    return lines.join('\n');
+  }
+  document.querySelectorAll('a[data-mailto]').forEach(a=>{
+    a.addEventListener('click',(e)=>{
+      e.preventDefault();
+      const subject = a.getAttribute('data-topic') || 'Inquiry';
+      // If this button sits inside #pricing, attach current plan
+      if(a.closest('#pricing')){
+        const code = ($('plan')||{value:'starter'}).value;
+        a.setAttribute('data-plan', txtPlan(code));
+      }
+      const body = buildBody(a);
+      const addr = (a.getAttribute('href')||'').startsWith('mailto:') ? (a.getAttribute('href').split(':')[1].split('?')[0]) : 'sales@quantumtask.io';
+      const url = `mailto:${addr}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = url;
+    });
+  });
+}
+
+/* ---------- Reveal on view ---------- */
+function initReveal(){
+  document.body.classList.add('animate');
+  const targets = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }});
+  }, {root:null, rootMargin:"0px 0px -10% 0px", threshold:0.12});
+  targets.forEach(el=>io.observe(el));
+  const hero = document.querySelector('.hero'); if(hero){ hero.classList.add('show'); }
+}
+
+/* ---------- Header ---------- */
+function initHeader(){
+  const brandHome = $('brandHome');
+  if(brandHome){
+    brandHome.addEventListener('click', (e)=>{
+      e.preventDefault();
+      location.reload();
+    });
+  }
+  const btn = $('menuBtn');
+  const nav = $('nav');
+  if(btn && nav){
+    btn.addEventListener('click', (e)=>{
+      e.preventDefault();
+      e.stopPropagation();
+      document.body.classList.toggle('nav-open');
+    }, { passive:false });
+    document.addEventListener('click', (e)=>{
+      if(!document.body.classList.contains('nav-open')) return;
+      if(e.target.closest('#nav') || e.target.closest('#menuBtn')) return;
+      document.body.classList.remove('nav-open');
+    });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape') document.body.classList.remove('nav-open');
+    });
+
+    // When a navigation link is tapped on mobile, close the fly‑out menu.
+    // Without this, the menu remains open after selecting an item, leaving
+    // the three‑dot button and overlay visible.  We loop through each
+    // anchor inside the navigation and remove the nav‑open class on click.
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+      });
+    });
+  }
+}
+
+/* ---------- Smooth anchors ---------- */
+function initAnchors(){
+  const header = document.querySelector('header.top');
+  const headerH = () => (header ? header.getBoundingClientRect().height : 0) + 12;
+
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', (e)=>{
+      const id = a.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(!el) return;
+      e.preventDefault();
+      const y = el.getBoundingClientRect().top + window.scrollY - headerH();
+      history.pushState(null,'','#'+id);
+      window.scrollTo({ top:y, behavior:'smooth' });
+    });
+  });
+
+  if(location.hash){
+    const id = location.hash.slice(1);
+    const el = document.getElementById(id);
+    if(el){
+      setTimeout(()=>{
+        const y = el.getBoundingClientRect().top + window.scrollY - headerH();
+        window.scrollTo({ top:y, behavior:'smooth' });
+      }, 0);
+    }
+  }
+}
+
+/* ---------- Init ---------- */
+document.addEventListener('DOMContentLoaded', ()=>{
+  const logo = document.querySelector('.logo');
+  if(logo) { logo.setAttribute('loading','eager'); logo.decoding='sync'; }
+
+  const y = $('year'); if(y) y.textContent = new Date().getFullYear();
+
+  const planSel = $('plan');
+  if(planSel) planSel.addEventListener('change', recalc);
+
+  document.body.classList.remove('nav-open');
+
+  recalc();
+  loadTestimonials();
+  initLegal();
+  initBooking();
+  // Auto-grow booking notes textarea
+  const notesEl = document.getElementById('bookNotes');
+  if(notesEl){
+    const grow = () => { notesEl.style.height = 'auto'; notesEl.style.height = (notesEl.scrollHeight+2) + 'px'; };
+    notesEl.addEventListener('input', grow);
+    // Initial grow after paint
+    setTimeout(grow, 0);
+  }
+
+  initMailto();
+  initReveal();
+  initHeader();
+  initAnchors();
+});
+</script>
+<a class="wa-fab" href="https://wa.me/27788935870?text=Hi%20QuantumTask%2C%20I%27d%20like%20to%20discuss%20a%20web%20development%20retainer." aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+    <path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.4 0 .04 5.35.04 11.96c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6a11.93 11.93 0 0 0 5.82 1.49h.01c6.62 0 11.98-5.35 11.98-11.96a11.9 11.9 0 0 0-3.49-8.45zM12.02 21.8h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.68.95.98-3.58-.24-.37a9.83 9.83 0 0 1-1.53-5.26c0-5.43 4.42-9.85 9.85-9.85 2.63 0 5.09 1.02 6.95 2.88a9.78 9.78 0 0 1 2.89 6.96c0 5.43-4.42 9.85-9.84 9.85zm5.63-7.36c-.31-.16-1.84-.91-2.13-1.02-.28-.1-.49-.16-.7.16-.21.31-.81 1.01-.99 1.22-.18.21-.36.24-.67.08-.31-.16-1.29-.48-2.46-1.52-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.4-.03-.56-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.52h-.6c-.21 0-.56.08-.85.4-.28.31-1.09 1.06-1.09 2.59 0 1.53 1.12 3.01 1.27 3.22.16.21 2.2 3.35 5.32 4.7 .74 .32 1.32 .51 1.77 .65 .74 .24 1.41 .21 1.94 .13 .59 -.09 1.84 -.75 2.1 -1.47 .26 -.72 .26 -1.34 .18 -1.47 -.08 -.13 -.28 -.21 -.59 -.37z"/>
+  </svg>
+</a>
+</body>
+</html>
