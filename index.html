@@ -1,0 +1,974 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>QuantumTask — Design & Development Retainers</title>
+<meta name="description" content="Agency-managed front-end & back-end retainers with dark neon UI. Icon-to-details transitions on hover/tap, KPI selectors, testimonials, FAQ, legal modal, and Calendly booking." />
+<style>
+  :root{
+    /* Dark neon palette */
+    --bg:#0a0f1f;
+    --bg-grad-1: rgba(0,208,255,.10);
+    --bg-grad-2: rgba(180,76,255,.10);
+    --card:#0f1428;
+    --card-2:#101737;
+    --text:#e8eeff;
+    --muted:#9aa3bf;
+    --line:#202b4e;
+    --brand1:#00d0ff;
+    --brand2:#b44cff;
+    --btnText:#071022;
+
+    --s1:8px; --s2:12px; --s3:16px; --s4:22px; --s5:32px; --s6:48px;
+    --radius:16px; --radius-lg:20px;
+    --glow:0 10px 30px rgba(91,63,255,.25),0 8px 20px rgba(0,208,255,.18);
+    --elev:0 8px 22px rgba(0,0,0,.28);
+    --ease:cubic-bezier(.21,.61,.35,1);
+  }
+
+  /* Responsive adjustments for small screens */
+  @media (max-width:600px) {
+    /* Shrink logo and brand text so header fits nicely on mobile */
+    .brand img {
+      width:32px;
+      height:32px;
+      margin-right:4px;
+    }
+    .brand span {
+      font-size:20px;
+    }
+  }
+
+  *{box-sizing:border-box}
+  html,body{
+    margin:0;
+    background:
+      radial-gradient(1100px 760px at 60% -10%,var(--bg-grad-1),transparent),
+      radial-gradient(900px 760px at -10% 120%,var(--bg-grad-2),transparent),
+      var(--bg);
+    color:var(--text);
+    font:16px/1.55 Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;height:auto;display:block}
+  a{color:inherit;text-decoration:none}
+  .container{max-width:1180px;margin:0 auto;padding:0 clamp(16px,5vw,28px)}
+  section.container{margin-top:var(--s5)}
+  .muted{color:var(--muted)}
+  .kicker{letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-size:12px;margin:0 0 var(--s2)}
+  .section-title{font-size:28px;margin:0 0 var(--s2);font-weight:800}
+
+  /* Header */
+  header.top{
+    position:sticky;top:0;z-index:1000;
+    background:rgba(10,14,33,.82);
+    backdrop-filter:saturate(120%) blur(8px);
+    border-bottom:1px solid var(--line)
+  }
+  .header-row{display:flex;align-items:center;gap:12px;padding:10px 0}
+  /* Make brand (logo + text) inline without grey background */
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:transparent; /* Remove grey box */
+    padding:0; /* Remove extra padding so logo and text sit closer */
+    border-radius:0;
+  }
+  /* Increase the logo size slightly */
+  .brand .logo{height:48px;width:auto}
+  .brand-text{font-weight:800;white-space:nowrap}
+  nav.nav{margin-left:auto;display:flex;gap:10px;align-items:center;flex-wrap:nowrap;white-space:nowrap}
+  .btn{
+    border:1px solid var(--line);
+    background:rgba(255,255,255,.02);
+    color:var(--text);
+    border-radius:12px;
+    padding:10px 14px;
+    font-weight:600;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:filter .2s var(--ease), transform .12s var(--ease), box-shadow .15s var(--ease);
+    cursor:pointer;
+  }
+  .btn.primary{
+    background:linear-gradient(90deg,var(--brand1),var(--brand2));
+    border:0;color:var(--btnText);box-shadow:var(--glow)
+  }
+  .btn:hover{filter:brightness(1.06)}
+  .btn:focus-visible{outline:2px solid var(--brand1);outline-offset:2px}
+
+  /* Mobile trigger */
+  .btn-icon.dots{display:none;margin-left:auto;border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:12px;padding:8px 10px}
+  .btn-icon.dots span{display:block;width:4px;height:4px;background:var(--text);border-radius:50%;margin:3px 0}
+
+  /* Mobile nav */
+  @media (max-width:860px){
+    nav.nav{
+      position:fixed;right:clamp(12px,5vw,20px);top:60px;flex-direction:column;gap:10px;
+      background:rgba(10,14,33,.96);border:1px solid var(--line);border-radius:12px;padding:12px;
+      width:min(92vw,420px);max-height:70vh;overflow:auto;box-shadow:0 12px 28px rgba(0,0,0,.45);
+      transform:translateY(-6px) scale(.98);opacity:0;pointer-events:none;transition:opacity .15s var(--ease), transform .15s var(--ease);z-index:1500;
+    }
+    body.nav-open nav.nav{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+    .btn-icon.dots{display:inline-flex}
+  }
+
+  /* Hero */
+  .hero{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:var(--s4);align-items:center;
+    background:linear-gradient(180deg,var(--card),var(--card-2));
+    border:1px solid var(--line);border-radius:var(--radius-lg);padding:var(--s5);
+    box-shadow:var(--elev);
+  }
+  .hero h1{font-size:44px;line-height:1.12;margin:6px 0 var(--s2)}
+  .hero h1 strong{
+    background:linear-gradient(90deg,var(--brand1),var(--brand2));
+    -webkit-background-clip:text;background-clip:text;color:transparent
+  }
+  .hero-illustration img{
+    border-radius:12px;box-shadow:var(--glow);
+    transition:transform .6s var(--ease); will-change:transform;
+  }
+  .hero-illustration img:hover{transform:scale(1.06) rotate(-.30deg)}
+  @media (max-width:900px){.hero{grid-template-columns:1fr}.hero-illustration{display:none}}
+
+  /* Cards */
+  .card{background:linear-gradient(180deg,var(--card),#0c1228);border:1px solid var(--line);border-radius:var(--radius);padding:var(--s4);box-shadow:var(--elev)}
+
+  /* Grids */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+
+  /* Core services — card layout and icon sizing */
+  .service-card{
+    position:relative;
+    background:linear-gradient(180deg,var(--card),#0c1228);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 18px 20px;
+    min-height:224px;
+    box-shadow:var(--elev);
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform .22s var(--ease);
+  }
+  .service-card:focus-visible{outline:2px solid var(--brand1);outline-offset:2px}
+  .service-card:hover{transform:translateY(-2px)}
+  /* Larger service icons and centered layout */
+  .svc-icon-wrap{
+    /* Use max-height for smoother collapse to avoid twitch on hover */
+    max-height:140px;
+    margin:0 0 16px 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    transition:max-height .26s var(--ease), margin .26s var(--ease), opacity .22s var(--ease);
+  }
+  .svc-icon{
+    width:140px;
+    height:140px;
+    flex:0 0 140px;
+    opacity:1;
+    transition:opacity .22s var(--ease), transform .26s var(--ease);
+    filter:drop-shadow(0 10px 22px rgba(0,0,0,.38));
+  }
+  .svc-title{
+    text-align:center;
+    width:100%;
+    margin:0;
+    font-size:18px;
+    font-weight:800;
+  }
+  .svc-details{
+    opacity:0;
+    max-height:0;
+    overflow:hidden;
+    transform:translateY(6px);
+    transition:opacity .26s var(--ease), max-height .26s var(--ease), transform .26s var(--ease);
+    margin-top:10px;
+  }
+  .service-card ul{margin:6px 0 0 18px}
+  .service-card li{color:var(--muted);margin:2px 0}
+  .service-card .btn{margin-top:10px}
+  @media (hover:hover) and (pointer:fine){
+    .service-card:hover .svc-icon{opacity:0;transform:translateY(-4px) scale(.98)}
+    .service-card:hover .svc-icon-wrap{
+      max-height:0;
+      margin:0;
+      opacity:0;
+    }
+    .service-card:hover .svc-details{opacity:1;max-height:520px;transform:none}
+  }
+  .service-card.open .svc-icon{opacity:0;transform:translateY(-4px) scale(.98)}
+  .service-card.open .svc-icon-wrap{
+    max-height:0;
+    margin:0;
+    opacity:0;
+  }
+  .service-card.open .svc-details{opacity:1;max-height:520px;transform:none}
+  /* On small screens, keep icons visible when card is open */
+  @media (max-width:600px){
+    /* Align service card content centrally on narrow screens */
+    .service-card{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
+    }
+    .svc-details{
+      text-align:center;
+    }
+    .service-card.open .svc-icon-wrap{
+      max-height:140px;
+      margin:0 0 16px 0;
+      opacity:1;
+    }
+    .service-card.open .svc-icon{
+      opacity:1;
+      transform:none;
+    }
+    .service-card.open .svc-details{
+      opacity:1;
+      max-height:520px;
+      transform:none;
+    }
+  }
+
+  /* Steps, pricing, KPIs */
+  /* Steps list (retainer workflow) */
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:14px;
+    list-style:none;
+    padding-left:0;
+    counter-reset:step;
+  }
+  .steps li{
+    position:relative;
+    padding-left:2.2em;
+  }
+  .steps li::before{
+    counter-increment:step;
+    content:counter(step) ".";
+    position:absolute;
+    left:0.75em;
+    top:16px;
+    transform:none;
+    font-weight:700;
+    color:var(--brand1);
+  }
+  .price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+  .price-card h3{margin:0 0 6px}
+  .price{font-size:28px;font-weight:800;margin:6px 0}
+  .small{font-size:12px;color:var(--muted)}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px}
+  .kpi .num{font-size:30px;font-weight:900;min-width:3ch;display:inline-block}
+
+  /* Testimonials */
+  .qt-t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px}
+  .qt-t-card{border:1px solid var(--line);border-radius:12px;padding:12px;background:linear-gradient(180deg,var(--card),#0c1228);box-shadow:var(--elev)}
+  .qt-t-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .qt-t-avatar{width:36px;height:36px;border-radius:50%;overflow:hidden;background:linear-gradient(135deg,var(--brand1),var(--brand2));flex-shrink:0}
+  .qt-t-avatar img{width:100%;height:100%;object-fit:cover}
+  .qt-t-avatar.initial{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px}
+  .qt-t-stars{margin-left:auto;font-size:14px;letter-spacing:1px}
+
+  /* FAQ interactive */
+  .faq-item{border-bottom:1px solid var(--line);padding:var(--s3) 0;cursor:pointer}
+  .faq-item:last-child{border-bottom:0}
+  .faq-item h3{margin:0;font-size:18px;display:flex;align-items:center;justify-content:space-between}
+  .faq-item .arrow{display:inline-block;width:12px;height:12px;margin-left:8px;border-left:2px solid var(--text);border-bottom:2px solid var(--text);transform:rotate(-45deg);transition:transform .25s var(--ease)}
+  .faq-item.open .arrow{transform:rotate(135deg)}
+  .faq-answer{max-height:0;overflow:hidden;transition:max-height .35s var(--ease);color:var(--muted);margin-top:6px}
+  .faq-item.open .faq-answer{max-height:400px}
+
+  /* Footer */
+  .site-footer{
+    /* Center footer content horizontally and allow wrapping */
+    color:var(--muted);
+    margin:var(--s6) 0;
+    width:100%;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  /* Fade-in on scroll */
+  .fade-in{opacity:0;transform:translateY(10px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+  .fade-in.show{opacity:1;transform:none}
+
+  /* Overlay + Legal modal */
+  .qt-mask{position:fixed;inset:0;background:rgba(0,0,0,.5);backdrop-filter:blur(2px);z-index:1800}
+  .qt-legal{position:fixed;left:50%;bottom:5%;transform:translateX(-50%);width:min(860px,94vw);max-height:80vh;display:block;opacity:0;pointer-events:none;z-index:2000;background:linear-gradient(180deg,var(--card),#0c1228);color:var(--text);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.45)}
+  .qt-legal .bar{display:flex;justify-content:space-between;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line)}
+  .qt-legal .body{padding:12px 16px;overflow:auto;max-height:60vh}
+/* Header layout */
+header{position:sticky;top:0;z-index:90;background:rgba(8,12,24,.72);
+  backdrop-filter:saturate(120%) blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:12px;padding:12px 0}
+.brand{display:inline-flex;align-items:center;margin-right:auto;font-weight:800}
+
+/* Kebab */
+.kebab-wrap{position:relative;z-index:100}
+.kebab{width:40px;height:40px;display:grid;place-content:center;
+  border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.05);
+  cursor:pointer;list-style:none}
+.kebab::-webkit-details-marker{display:none}
+.kebab:before{content:"";width:4px;height:4px;border-radius:50%;background:#d6def6;
+  box-shadow:0 6px 0 #d6def6,0 -6px 0 #d6def6}
+.kebab+.menu{position:absolute;right:0;top:calc(100% + 10px);display:grid;gap:8px;padding:10px;
+  min-width:200px;background:rgba(10,14,26,.96);backdrop-filter:saturate(120%) blur(8px);
+  border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,.35)}
+.kebab-wrap[open] .menu{animation:fadeIn .12s ease-out}
+.kebab+.menu a{padding:10px 12px;border-radius:10px;border:1px solid transparent;color:#e7ecff}
+.kebab+.menu a:hover{background:rgba(255,255,255,.05);border-color:var(--line)}
+@keyframes fadeIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="container nav" aria-label="Primary">
+    <!-- Logo + brand -->
+    <a class="brand" href="#" aria-label="QuantumTask home">
+      <img src="quantumtask_glow.png" alt="" width="48" height="48" style="vertical-align:middle;margin-right:6px">
+      <span style="font-size: 24px;">QuantumTask</span>
+    </a>
+
+    <!-- Kebab (3 dots) -->
+    <details class="kebab-wrap">
+      <summary class="kebab" aria-label="Open menu" role="button"></summary>
+      <div class="menu card" role="menu">
+        <a role="menuitem" href="#services" onclick="this.closest('details').removeAttribute('open')">Services</a>
+        <a role="menuitem" href="#retainers" onclick="this.closest('details').removeAttribute('open')">Retainers</a>
+        <a role="menuitem" href="#process" onclick="this.closest('details').removeAttribute('open')">Process</a>
+        <a role="menuitem" href="#stack" onclick="this.closest('details').removeAttribute('open')">Stack</a>
+        <a role="menuitem" href="#pricing" onclick="this.closest('details').removeAttribute('open')">Pricing</a>
+        <a role="menuitem" href="#faq" onclick="this.closest('details').removeAttribute('open')">FAQ</a>
+      </div>
+    </details>
+
+    <!-- Only CTA that stays in header -->
+    <a class="btn primary"
+       href="https://calendly.com/app/scheduling/meeting_types/user/me"
+       target="_blank" rel="noopener">
+      Book free consultation
+    </a>
+  <a href="https://x.com/cj_quantumtask" aria-label="X" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="36" height="36" aria-hidden="true"><path fill="currentColor" d="M18.9 3H22l-9.6 11.2L21.6 21H16l-6-4.9L4.5 21H2l9-10.5L2.7 3H8l5.4 4.6L18.9 3z"/></svg>
+        </a>
+        <!-- Updated LinkedIn link to Christopher Oberholzer's personal page -->
+        <a href="https://www.linkedin.com/in/christopher-oberholzer-37abb7383/" aria-label="LinkedIn" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="36" height="36" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v13H0V8zm7.5 0H12v1.9h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.8V21h-5v-6.1c0-1.5 0-3.5-2.2-3.5s-2.6 1.7-2.6 3.4V21h-5V8z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/_quantumtask_" aria-label="Instagram" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="36" height="36" aria-hidden="true"><path fill="currentColor" d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm6.5-.9a1.1 1.1 0 1 0 0 2.2 1.1 1.1 0 0 0 0-2.2z"/></svg>
+        </a>
+        <a href="https://wa.me/27788935870?text=Hi%20QuantumTask%2C%20I%27d%20like%20to%20discuss%20a%20web%20development%20retainer." aria-label="WhatsApp" class="soc" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="36" height="36" aria-hidden="true"><path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.4 0 .04 5.35.04 11.96c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6a11.93 11.93 0 0 0 5.82 1.49h.01c6.62 0 11.98-5.35 11.98-11.96a11.9 11.9 0 0 0-3.49-8.45zM12.02 21.8h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.68.95.98-3.58-.24-.37a9.83 9.83 0 0 1-1.53-5.26c0-5.43 4.42-9.85 9.85-9.85 2.63 0 5.09 1.02 6.95 2.88a9.78 9.78 0 0 1 2.89 6.96c0 5.43-4.42 9.85-9.84 9.85zm5.63-7.36c-.31-.16-1.84-.91-2.13-1.02-.28-.1-.49-.16-.7.16-.21.31-.81 1.01-.99 1.22-.18.21-.36.24-.67.08-.31-.16-1.29-.48-2.46-1.52-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.4-.03-.56-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.52h-.6c-.21 0-.56.08-.85.4-.28.31-1.09 1.06-1.09 2.59 0 1.53 1.12 3.01 1.27 3.22.16.21 2.2 3.35 5.32 4.7 .74 .32 1.32 .51 1.77 .65 .74 .24 1.41 .21 1.94 .13 .59 -.09 1.84 -.75 2.1 -1.47 .26 -.72 .26 -1.34 .18 -1.47 -.08 -.13 -.28 -.21 -.59 -.37z"/></svg>
+        </a></nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="container hero fade-in">
+    <div>
+      <p class="kicker">Outsource your web design & development</p>
+      <h1>Web projects — <strong>clean, fast, dependable.</strong></h1>
+      <p class="muted">We match your projects with vetted freelance designers and developers for seamless delivery.</p>
+      <ul class="muted">
+        <li>Flexible monthly retainers tailored to your needs</li>
+        <li>Regular status updates & progress reports</li>
+        <li>Performance monitoring & uptime visibility</li>
+      </ul>
+      <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap">
+        <a class="btn primary" href="#" id="bookOpenHero">Book consultation</a>
+        <a class="btn" href="mailto:sales@quantumtask.io" data-mailto data-topic="Web dev retainer quote" data-context="Hero">Get a quote</a>
+      </div>
+      <p class="muted" style="margin-top:8px;font-size:14px;">Legal: <a href="#privacy" data-legal="privacy">Privacy</a> · <a href="#terms" data-legal="terms">Terms</a></p>
+    </div>
+    <div class="hero-illustration">
+      <img src="./hero_source.png" alt="Abstract neon interface" loading="lazy" />
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section id="why" class="container fade-in">
+    <p class="kicker">Why choose us</p>
+    <h2 class="section-title">Built for agencies and startups</h2>
+    <div class="grid">
+      <article class="card"><h3>Full‑stack expertise</h3><p class="muted">UI/UX, responsive front‑end, back‑end and APIs in one place.</p></article>
+      <article class="card"><h3>Seamless collaboration</h3><p class="muted">We handle briefs, milestones and communication so you can focus on growth.</p></article>
+      <article class="card"><h3>Flexible & transparent</h3><p class="muted">Adapt your retainer as projects evolve — no hidden fees, just clear reporting.</p></article>
+    </div>
+  </section>
+
+  <!-- HIGH-INTENSITY -->
+  <section id="intensity" class="container card fade-in">
+    <p class="kicker">High-intensity</p>
+    <h2 class="section-title">Mission-critical tasks</h2>
+    <p class="muted">Database migrations, large-scale integrations, and high-traffic scaling done with care.</p>
+    <div class="grid" style="margin-top:var(--s3);">
+      <article class="card"><h3>Complex migrations</h3><p class="muted">Zero-downtime CMS and DB moves with thorough testing.</p></article>
+      <article class="card"><h3>High-traffic scaling</h3><p class="muted">Infra design, tuning and observability for spikes.</p></article>
+      <article class="card"><h3>Data & pipeline engineering</h3><p class="muted">Ingestion, transformation and analytics at scale.</p></article>
+    </div>
+  </section>
+
+  <!-- CORE SERVICES -->
+  <section id="services" class="container fade-in">
+    <p class="kicker">What we do</p>
+    <h2 class="section-title">Core services</h2>
+
+    <div class="grid">
+      <!-- Frontend -->
+      <article class="service-card" tabindex="0" aria-expanded="false">
+        <div class="svc-icon-wrap">
+          <img class="svc-icon" src="./frontend_icon.png" alt="Frontend icon" width="140" height="140" />
+        </div>
+        <h3 class="svc-title">Frontend development</h3>
+        <div class="svc-details">
+          <p class="muted">React, Next.js, Vue, responsive builds, accessibility & component libraries.</p>
+          <ul><li>Design handoff</li><li>UI kits</li><li>Core Web Vitals</li></ul>
+          <a class="btn" href="mailto:sales@quantumtask.io?subject=Frontend%20quote">Get quote</a>
+        </div>
+      </article>
+
+      <!-- Backend -->
+      <article class="service-card" tabindex="0" aria-expanded="false">
+        <div class="svc-icon-wrap">
+          <img class="svc-icon" src="./backend_icon.png" alt="Backend & APIs icon" width="140" height="140" />
+        </div>
+        <h3 class="svc-title">Backend & APIs</h3>
+        <div class="svc-details">
+          <p class="muted">Node, Python, API design, authentication, integrations & data pipelines.</p>
+          <ul><li>REST/GraphQL</li><li>Queues</li><li>Monitoring</li></ul>
+          <a class="btn" href="mailto:sales@quantumtask.io?subject=Backend%20%26%20APIs%20quote">Get quote</a>
+        </div>
+      </article>
+
+      <!-- CMS -->
+      <article class="service-card" tabindex="0" aria-expanded="false">
+        <div class="svc-icon-wrap">
+          <img class="svc-icon" src="./cms_icon.png" alt="CMS & e-commerce icon" width="140" height="140" />
+        </div>
+        <h3 class="svc-title">CMS & e-commerce</h3>
+        <div class="svc-details">
+          <p class="muted">Shopify, WooCommerce, WordPress, headless CMS & migrations.</p>
+          <ul><li>Themes & apps</li><li>Checkout flows</li><li>SEO setup</li></ul>
+          <a class="btn" href="mailto:sales@quantumtask.io?subject=CMS%20%26%20ecommerce%20quote">Get quote</a>
+        </div>
+      </article>
+
+      <!-- Maintenance -->
+      <article class="service-card" tabindex="0" aria-expanded="false">
+        <div class="svc-icon-wrap">
+          <img class="svc-icon" src="./maintenance_icon.png" alt="Maintenance icon" width="140" height="140" />
+        </div>
+        <h3 class="svc-title">Maintenance & support</h3>
+        <div class="svc-details">
+          <p class="muted">Bug fixes, updates, uptime, security patches & content changes.</p>
+          <ul><li>Ticket queue</li><li>Release notes</li><li>Monthly report</li></ul>
+          <a class="btn" href="mailto:sales@quantumtask.io?subject=Maintenance%20plans">Ask about plans</a>
+        </div>
+      </article>
+
+      <!-- Performance -->
+      <article class="service-card" tabindex="0" aria-expanded="false">
+        <div class="svc-icon-wrap">
+          <img class="svc-icon" src="./performance_icon.png" alt="Performance & SEO icon" width="140" height="140" />
+        </div>
+        <h3 class="svc-title">Performance & SEO tech</h3>
+        <div class="svc-details">
+          <p class="muted">CWV optimisation, CDN strategy, schema & site health.</p>
+          <ul><li>LCP/CLS tuning</li><li>Audit fixes</li><li>Dashboards</li></ul>
+          <a class="btn" href="mailto:sales@quantumtask.io?subject=Performance%20%26%20SEO%20plans">Ask about plans</a>
+        </div>
+      </article>
+
+      <!-- DevOps -->
+      <article class="service-card" tabindex="0" aria-expanded="false">
+        <div class="svc-icon-wrap">
+          <img class="svc-icon" src="./devops_icon.png" alt="DevOps & hosting icon" width="140" height="140" />
+        </div>
+        <h3 class="svc-title">DevOps & hosting</h3>
+        <div class="svc-details">
+          <p class="muted">Cloud deploys, CI/CD, backups, monitoring & incident response.</p>
+          <ul><li>Vercel/Netlify</li><li>AWS/GCP</li><li>Infra as code</li></ul>
+          <a class="btn" href="mailto:sales@quantumtask.io?subject=DevOps%20%26%20Hosting%20plans">Ask about plans</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process" class="container card fade-in">
+    <p class="kicker">How we work</p>
+    <h2 class="section-title">Retainer workflow</h2>
+    <ol class="steps">
+      <li class="card">Discovery → goals, stack, repos and access</li>
+      <li class="card">Backlog & SOPs → ticket template, DoD and QA rubric</li>
+      <li class="card">Pilot sprint → velocity baseline and cadence</li>
+      <li class="card">Operate → monthly reporting, roadmap and reviews</li>
+    </ol>
+  </section>
+
+  <!-- STACK -->
+  <section id="stack" class="container card fade-in">
+    <p class="kicker">Stack</p>
+    <h2 class="section-title">Tools we work with</h2>
+    <div class="grid">
+      <article class="card"><h3>Frontend</h3><p class="muted">React, Next.js, Vue, Tailwind, TypeScript.</p></article>
+      <article class="card"><h3>Backend</h3><p class="muted">Node, Express/Nest, Python, PostgreSQL, Redis.</p></article>
+      <article class="card"><h3>CMS & commerce</h3><p class="muted">Shopify, WordPress/Woo, headless CMS.</p></article>
+      <article class="card"><h3>Ops</h3><p class="muted">Vercel, Netlify, AWS, CI/CD, Sentry, Datadog.</p></article>
+      <article class="card"><h3>Collab</h3><p class="muted">GitHub/GitLab, Jira, Linear, Notion, Slack.</p></article>
+      <article class="card"><h3>QA</h3><p class="muted">Playwright, Cypress, Lighthouse, monitors.</p></article>
+    </div>
+  </section>
+
+  <!-- RETAINERS + KPIs -->
+  <section id="retainers" class="container card fade-in">
+    <p class="kicker">Retainers</p>
+    <h2 class="section-title">Choose your monthly hours</h2>
+    <div class="selector" style="margin-bottom:var(--s3);display:flex;align-items:center;gap:8px;">
+      <label class="muted" for="plan">Hours</label>
+      <select id="plan" class="select" style="padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:#0b1330;color:var(--text);">
+        <option value="starter" selected>Starter · 20h/mo</option>
+        <option value="growth">Growth · 50h/mo</option>
+        <option value="scale">Scale · 100h/mo</option>
+      </select>
+    </div>
+    <div class="kpis" id="kpis">
+      <div class="kpi"><div class="muted">Monthly hours</div><div class="num" id="kpi_hours">20</div> h</div>
+      <div class="kpi"><div class="muted">Lead time to merge</div><div class="num" id="kpi_lead">3.0</div> days</div>
+      <div class="kpi"><div class="muted">First response SLA</div><div class="num" id="kpi_resp">24</div> h</div>
+      <div class="kpi"><div class="muted">Deployment success</div><div class="num" id="kpi_deploy">98</div>%</div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="container fade-in">
+    <p class="kicker">Pricing</p>
+    <h2 class="section-title">Monthly retainers tailored to you</h2>
+    <div class="price-grid">
+      <div class="card price-card">
+        <h3>Starter</h3>
+        <p class="muted">20 hours included per month</p>
+        <ul class="muted">
+          <li>Lead time: 3 days</li>
+          <li>First response SLA: 24 h</li>
+          <li>Deployment success: 98%</li>
+        </ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Pricing request" data-context="Pricing" data-plan="Starter">Request a quote</a>
+        </div>
+      </div>
+      <div class="card price-card">
+        <h3>Growth</h3>
+        <p class="muted">50 hours included per month</p>
+        <ul class="muted">
+          <li>Lead time: 2 days</li>
+          <li>First response SLA: 8 h</li>
+          <li>Deployment success: 98.5%</li>
+        </ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Pricing request" data-context="Pricing" data-plan="Growth">Request a quote</a>
+        </div>
+      </div>
+      <div class="card price-card">
+        <h3>Scale</h3>
+        <p class="muted">100 hours included per month</p>
+        <ul class="muted">
+          <li>Lead time: 1.5 days</li>
+          <li>First response SLA: 4 h</li>
+          <li>Deployment success: 99%</li>
+        </ul>
+        <div style="margin-top:10px">
+          <a class="btn primary" href="mailto:sales@quantumtask.io" data-mailto data-topic="Pricing request" data-context="Pricing" data-plan="Scale">Request a quote</a>
+        </div>
+      </div>
+    </div>
+    <p class="muted" style="margin-top:6px">Every project is unique — contact us to discuss a retainer that fits your needs.</p>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="container fade-in">
+    <p class="kicker">What clients say</p>
+    <h2 class="section-title">Recent feedback</h2>
+    <div class="qt-t-grid" id="qt-t-grid" aria-live="polite"></div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container card fade-in">
+    <h2 class="section-title">FAQ</h2>
+    <div class="faq-item">
+      <h3>What is QuantumTask?<span class="arrow"></span></h3>
+      <div class="faq-answer">QuantumTask is a managed service for agencies and startups that provides full-stack designers and developers on retainer. We take care of front-end, back-end, DevOps and maintenance tasks under your brand.</div>
+    </div>
+    <div class="faq-item">
+      <h3>Do you support back-end and API work?<span class="arrow"></span></h3>
+      <div class="faq-answer">Yes. We handle Node, Python and modern server-side stacks. We design, build and maintain APIs, data pipelines and infrastructure as code.</div>
+    </div>
+    <div class="faq-item">
+      <h3>How do we monitor hours and progress?<span class="arrow"></span></h3>
+      <div class="faq-answer">Every retainer includes a dashboard showing hours used, tasks in progress, budgets and milestones. Automated reports keep everyone informed.</div>
+    </div>
+    <div class="faq-item">
+      <h3>What industries do you serve?<span class="arrow"></span></h3>
+      <div class="faq-answer">SaaS, e-commerce, fintech, logistics, education, nonprofits and more.</div>
+    </div>
+    <div class="faq-item">
+      <h3>Is my data secure?<span class="arrow"></span></h3>
+      <div class="faq-answer">Least-privilege access, MFA, secrets management and regular audits. Your code and data remain your property.</div>
+    </div>
+    <div class="faq-item">
+      <h3>How quickly can we start?<span class="arrow"></span></h3>
+      <div class="faq-answer">After discovery we assign a pilot team within days to establish cadence.</div>
+    </div>
+    <div class="faq-item">
+      <h3>How does pricing work for back-end tasks?<span class="arrow"></span></h3>
+      <div class="faq-answer">Covered under standard retainers. Allocate hours across front- and back-end as needed.</div>
+    </div>
+    <div class="faq-item">
+      <h3>Code ownership<span class="arrow"></span></h3>
+      <div class="faq-answer">You own all code in your repositories. We collaborate via pull requests.</div>
+    </div>
+  </section>
+</main>
+
+<footer class="container site-footer">
+  © <span id="year"></span> QuantumTask · <a href="#privacy" data-legal="privacy">Privacy</a> · <a href="#terms" data-legal="terms">Terms</a>
+</footer>
+
+<!-- Shared overlay mask -->
+<div class="qt-mask" id="qtMask" hidden></div>
+<!-- Legal modal -->
+<section class="qt-legal" id="qtLegal" role="dialog" aria-modal="true" aria-labelledby="qtLegalTitle" hidden>
+  <div class="bar">
+    <h3 id="qtLegalTitle">Legal</h3>
+    <button class="btn" id="qtLegalClose" type="button" style="background:none;border:1px solid var(--line);color:var(--text);">Close</button>
+  </div>
+  <div class="body" id="qtLegalBody"></div>
+</section>
+
+<!-- WhatsApp floating button -->
+<a class="wa-fab" href="https://wa.me/27788935870?text=Hi%20QuantumTask%2C%20I%27d%20like%20to%20discuss%20a%20web%20development%20retainer." aria-label="Chat on WhatsApp" target="_blank" rel="noopener" style="position:fixed; right:clamp(14px,4vw,24px); bottom:clamp(14px,4vh,24px); display:inline-flex; align-items:center; justify-content:center; width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,#25D366,#128C7E); color:#fff; border:1px solid var(--line); box-shadow:0 10px 24px rgba(0,0,0,.45); transition:transform .12s ease, filter .15s ease; z-index:1800;">
+  <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path fill="currentColor" d="M20.52 3.48A11.94 11.94 0 0 0 12.02 0C5.4 0 .04 5.35.04 11.96c0 2.11.55 4.17 1.6 5.99L0 24l6.2-1.6a11.93 11.93 0 0 0 5.82 1.49h.01c6.62 0 11.98-5.35 11.98-11.96a11.9 11.9 0 0 0-3.49-8.45zM12.02 21.8h-.01a9.83 9.83 0 0 1-5.01-1.37l-.36-.21-3.68.95.98-3.58-.24-.37a9.83 9.83 0 0 1-1.53-5.26c0-5.43 4.42-9.85 9.85-9.85 2.63 0 5.09 1.02 6.95 2.88a9.78 9.78 0 0 1 2.89 6.96c0 5.43-4.42 9.85-9.84 9.85zm5.63-7.36c-.31-.16-1.84-.91-2.13-1.02-.28-.1-.49-.16-.7.16-.21.31-.81 1.01-.99 1.22-.18.21-.36.24-.67.08-.31-.16-1.29-.48-2.46-1.52-.91-.81-1.52-1.81-1.7-2.12-.18-.31-.02-.48.14-.64.14-.14.31-.36.47-.54.16-.18.21-.31.31-.52.1-.21.05-.4-.03-.56-.08-.16-.7-1.68-.96-2.3-.25-.6-.5-.52-.7-.52h-.6c-.21 0-.56.08-.85.4-.28.31-1.09 1.06-1.09 2.59 0 1.53 1.12 3.01 1.27 3.22.16.21 2.2 3.35 5.32 4.7 .74 .32 1.32 .51 1.77 .65 .74 .24 1.41 .21 1.94 .13 .59 -.09 1.84 -.75 2.1 -1.47 .26 -.72 .26 -1.34 .18 -1.47 -.08 -.13 -.28 -.21 -.59 -.37z"/></svg>
+</a>
+
+<script>
+  /* Plans */
+  const RETAINERS = {
+    'starter': { price:1499, hours:20, lead:3.0, resp:24, deploy:98 },
+    'growth':  { price:2999, hours:50, lead:2.0, resp:8,  deploy:98.5 },
+    'scale':   { price:5997, hours:100,lead:1.5, resp:4,  deploy:99 }
+  };
+
+  /* Testimonials */
+  const TESTIMONIALS = [
+    { name:"Client A", role:"E-commerce Lead", stars:5, text:"Feature velocity doubled and CWV passed on all templates.", avatar:"avatar1.png" },
+    { name:"Client B", role:"SaaS Operations", stars:5, text:"Retainer model works. Tickets clear weekly and deploys are steady.", avatar:"avatar2.png" },
+    { name:"Client C", role:"Fintech Project Manager", stars:4, text:"Migrations and support handled without downtime.", avatar:null },
+    { name:"Client D", role:"Logistics CTO", stars:5, text:"CI/CD and infra cleanup cut incidents significantly.", avatar:"avatar4.png" }
+  ];
+
+  /* Helpers */
+  const $ = (id) => document.getElementById(id);
+  function animateNumber(el, to, decimals) {
+    if (!el) return;
+    const clean = v => typeof v === 'number' ? v : parseFloat(String(v).replace(/[^0-9.\-]/g,'')) || 0;
+    const from = clean(el.textContent);
+    const target = clean(to);
+    const start = performance.now();
+    const dur = 900;
+    const step = (t) => {
+      const p = Math.min(1,(t-start)/dur), e = 1-Math.pow(1-p,3);
+      const v = from + (target-from)*e;
+      el.textContent = decimals ? v.toFixed(decimals) : Math.round(v).toLocaleString();
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  function recalc() {
+    const code = ($('plan') || {value:'starter'}).value;
+    const cfg = RETAINERS[code] || RETAINERS.starter;
+    animateNumber($('kpi_hours'), cfg.hours, 0);
+    animateNumber($('kpi_lead'),  cfg.lead,  1);
+    animateNumber($('kpi_resp'),  cfg.resp,  0);
+    animateNumber($('kpi_deploy'),cfg.deploy,1);
+  }
+
+  /* Testimonials DOM */
+  function loadTestimonials() {
+    const grid = $('qt-t-grid'); if (!grid) return;
+    grid.innerHTML = TESTIMONIALS.map(t => {
+      const initialLetter = t.name.replace(/[^A-Za-z]/g,'').charAt(0).toUpperCase();
+      const avatarMarkup = t.avatar
+        ? `<div class="qt-t-avatar"><img src="./${t.avatar}" alt="Portrait of a client" loading="lazy" decoding="async"></div>`
+        : `<div class="qt-t-avatar initial" role="img" aria-label="${t.name} avatar: letter ${initialLetter}"><span>${initialLetter}</span></div>`;
+      return `
+        <article class="qt-t-card">
+          <div class="qt-t-head">
+            ${avatarMarkup}
+            <div>
+              <div class="qt-t-name">${t.name}</div>
+              <div class="qt-t-role">${t.role}</div>
+            </div>
+            <div class="qt-t-stars" aria-label="${t.stars} star rating">${'★'.repeat(t.stars)}${'☆'.repeat(5 - t.stars)}</div>
+          </div>
+          <p class="muted">“${t.text}”</p>
+        </article>
+      `;
+    }).join('');
+  }
+
+  /* Legal modal content */
+  function initLegal() {
+    const mask = $('qtMask');
+    const panel = $('qtLegal');
+    const body = $('qtLegalBody');
+    const titleEl = $('qtLegalTitle');
+    const close = $('qtLegalClose');
+    const PRIVACY = `
+      <h4>Privacy Policy</h4>
+      <p>We collect only what is needed to deliver and improve our services.</p>
+      <ul>
+        <li><strong>Data we collect:</strong> contact details you send us, project briefs, usage analytics and server logs.</li>
+        <li><strong>How we use it:</strong> to reply, provide quotes, deliver work, billing, support and security.</li>
+        <li><strong>Sharing:</strong> with essential processors (email, analytics, payment) under contract, or if required by law. We do not sell data.</li>
+        <li><strong>Retention:</strong> project records kept for legal and operational reasons; marketing emails only with consent. You can request deletion.</li>
+        <li><strong>Security:</strong> access is role-limited and logged; encryption in transit; regular updates.</li>
+        <li><strong>Your rights:</strong> access, correct, delete or restrict processing. Contact <a href="mailto:sales@quantumtask.io" data-mailto data-topic="Privacy request" data-context="Legal">sales@quantumtask.io</a>.</li>
+      </ul>
+      <p>Last updated: October 2025.</p>`;
+    const TERMS = `
+      <h4>Terms of Service</h4>
+      <ul>
+        <li><strong>Scope:</strong> Each engagement is defined in a Statement of Work (SOW) or quote.</li>
+        <li><strong>Payments:</strong> Deposits may apply. Invoices due within 7 days unless stated otherwise.</li>
+        <li><strong>Client duties:</strong> Provide timely feedback, assets, repo access and credentials needed to deliver.</li>
+        <li><strong>IP:</strong> On full payment you own final code; we retain pre-existing tools and know-how.</li>
+        <li><strong>Changes:</strong> Out-of-scope work is quoted before we proceed.</li>
+        <li><strong>Warranties:</strong> Work is provided with reasonable care. No implied warranties.</li>
+        <li><strong>Liability:</strong> Capped at the fees paid in the 3 months before the claim. No indirect or consequential damages.</li>
+        <li><strong>Confidentiality:</strong> Both parties protect non-public information.</li>
+        <li><strong>Termination:</strong> Either party may terminate for material breach after notice. Retainers cancel with 30 days' notice.</li>
+        <li><strong>Governing law:</strong> Set in the SOW; otherwise South Africa.</li>
+      </ul>
+      <p>Questions? <a href="mailto:sales@quantumtask.io" data-mailto data-topic="Terms question" data-context="Legal">Contact us</a>.</p>`;
+    const open = (kind) => {
+      closeAllModals();
+      titleEl.textContent = kind === 'privacy' ? 'Privacy Policy' : 'Terms of Service';
+      body.innerHTML = kind === 'privacy' ? PRIVACY : TERMS;
+      document.body.classList.add('modal-open','legal-open');
+      mask.hidden = false; panel.style.opacity = '1'; panel.style.pointerEvents = 'auto';
+    };
+    const shut = closeAllModals;
+    close.addEventListener('click', shut);
+    mask.addEventListener('click', shut);
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape') shut(); });
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[data-legal]');
+      if (!a) return;
+      e.preventDefault();
+      e.stopPropagation();
+      open(a.getAttribute('data-legal'));
+    });
+    const h = (location.hash || '').toLowerCase().replace('#','');
+    if (h === 'privacy' || h === 'terms') open(h);
+  }
+
+  /* Close all */
+  function closeAllModals() {
+    document.body.classList.remove('modal-open','legal-open','book-open','nav-open');
+    const mask=$('qtMask'); if(mask) mask.hidden=true;
+    const legal=$('qtLegal'); if(legal) { legal.style.opacity='0'; legal.style.pointerEvents='none'; }
+  }
+
+  /* Header + mobile nav */
+  function initHeader() {
+    const btn = $('menuBtn');
+    const nav = $('nav');
+    if(btn && nav) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault(); e.stopPropagation();
+        document.body.classList.toggle('nav-open');
+      }, { passive:false });
+      document.addEventListener('click', (e) => {
+        if (!document.body.classList.contains('nav-open')) return;
+        if (e.target.closest('#nav') || e.target.closest('#menuBtn')) return;
+        document.body.classList.remove('nav-open');
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') document.body.classList.remove('nav-open');
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => document.body.classList.remove('nav-open'));
+      });
+    }
+  }
+
+  /* Smooth anchors */
+  function initAnchors() {
+    // Determine header height dynamically; use the sticky header if present
+    const header = document.querySelector('header');
+    const headerH = () => (header ? header.getBoundingClientRect().height : 0) + 12;
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if (!el) return;
+        e.preventDefault();
+        const y = el.getBoundingClientRect().top + window.scrollY - headerH();
+        history.pushState(null,'','#'+id);
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      });
+    });
+    if (location.hash) {
+      const id = location.hash.slice(1);
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => {
+          const y = el.getBoundingClientRect().top + window.scrollY - headerH();
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }, 0);
+      }
+    }
+  }
+
+  /* Fade-in */
+  function initFadeIn() {
+    const items = document.querySelectorAll('.fade-in');
+    if (!items.length) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 });
+    items.forEach(el => io.observe(el));
+  }
+
+  /* FAQ toggles */
+  function initFAQ() {
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('click', () => item.classList.toggle('open'));
+    });
+  }
+
+  /* Mailto enrichment */
+  function initMailto() {
+    function buildBody(a) {
+      const topic = a.getAttribute('data-topic') || 'General inquiry';
+      const service = a.getAttribute('data-service');
+      const context = a.getAttribute('data-context');
+      const plan = a.getAttribute('data-plan');
+      const lines = [
+        service ? `Service: ${service}` : null,
+        plan ? `Plan: ${plan}` : null,
+        `Topic: ${topic}`,
+        '',
+        'Message:',
+        '',
+        `From page: ${location.href}`,
+        context ? `Context: ${context}` : null
+      ].filter(Boolean);
+      return lines.join('\n');
+    }
+    document.querySelectorAll('a[data-mailto]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const subject = a.getAttribute('data-topic') || 'Inquiry';
+        if (a.closest('#pricing')) {
+          const code = ($('plan') || {value:'starter'}).value;
+          const planTxt = code === 'starter' ? 'Starter · 20h/mo' : code === 'growth' ? 'Growth · 50h/mo' : 'Scale · 100h/mo';
+          a.setAttribute('data-plan', planTxt);
+        }
+        const body = buildBody(a);
+        const addr = (a.getAttribute('href') || '').startsWith('mailto:') ? (a.getAttribute('href').split(':')[1].split('?')[0]) : 'sales@quantumtask.io';
+        const url = `mailto:${addr}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = url;
+      });
+    });
+  }
+
+  /* Calendly popup */
+  function initBookingCalendly() {
+    const openBtns = [ $('bookOpen'), $('bookOpenHero') ];
+    openBtns.forEach(btn => {
+      if (btn) {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          Calendly.initPopupWidget({ url: 'https://calendly.com/christo-quantumtask/30min' });
+          return false;
+        });
+      }
+    });
+  }
+
+  /* Services card toggle for touch/keyboard */
+  (function(){
+    function toggle(card){
+      const open = !card.classList.contains('open');
+      // Close any other open service cards
+      document.querySelectorAll('.service-card.open').forEach(c => {
+        if (c !== card) {
+          c.classList.remove('open');
+          c.setAttribute('aria-expanded', 'false');
+        }
+      });
+      // Toggle the clicked card
+      if (open) {
+        card.classList.add('open');
+        card.setAttribute('aria-expanded', 'true');
+      } else {
+        card.classList.remove('open');
+        card.setAttribute('aria-expanded', 'false');
+      }
+    }
+    function setup(card){
+      card.addEventListener('click', (e)=>{
+        if (e.target.closest('a')) return;
+        toggle(card);
+      });
+      card.addEventListener('keydown', (e)=>{
+        if (e.key === 'Enter' || e.key === ' ' || e.code === 'Space'){ e.preventDefault(); toggle(card); }
+      });
+    }
+    document.querySelectorAll('.service-card').forEach((c)=>{
+      c.setAttribute('role','button'); c.setAttribute('tabindex','0'); c.setAttribute('aria-expanded','false'); setup(c);
+    });
+  })();
+
+  /* Ready */
+  document.addEventListener('DOMContentLoaded', () => {
+    const y = $('year'); if (y) y.textContent = new Date().getFullYear();
+    const planSel = $('plan'); if (planSel) planSel.addEventListener('change', recalc);
+    recalc();
+    loadTestimonials();
+    initLegal();
+    initMailto();
+    initHeader();
+    initAnchors();
+    initBookingCalendly();
+    initFadeIn();
+    initFAQ();
+  });
+</script>
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<script>
+(()=>{const ds=[...document.querySelectorAll('.kebab-wrap')];
+document.addEventListener('click',e=>ds.forEach(d=>{if(!d.contains(e.target)) d.removeAttribute('open')})); 
+document.addEventListener('keydown',e=>{if(e.key==='Escape') ds.forEach(d=>d.removeAttribute('open'))});})();
+</script>
+</body>
+</html>
