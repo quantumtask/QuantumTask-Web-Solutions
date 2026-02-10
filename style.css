@@ -328,6 +328,7 @@ ul, ol{
 
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+.hero,.hero-inner,.hero-left,.hero-right,.hero-card{opacity:1;filter:none;}
 .hero-bg{
   position:absolute;inset:0;
   background:
