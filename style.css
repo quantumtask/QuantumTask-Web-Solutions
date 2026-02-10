@@ -435,6 +435,36 @@ ul, ol{
   animation: slideInRight 1s ease-out 0.35s both;
   will-change: transform, opacity;
 }
+.hero-card,
+.hero-card h3,
+.hero-card p,
+.hero-card small,
+.hero-card label{
+  color:rgba(255,255,255,0.92);
+}
+.hero-card input,
+.hero-card textarea,
+.hero-card select{
+  color:#ffffff;
+  background:rgba(255,255,255,0.06);
+  border-color:rgba(255,255,255,0.18);
+}
+.hero-card input::placeholder,
+.hero-card textarea::placeholder{
+  color:rgba(255,255,255,0.60);
+  opacity:1;
+}
+.hero-card input:focus,
+.hero-card textarea:focus,
+.hero-card select:focus{
+  outline:none;
+  border-color:rgba(255,255,255,0.35);
+}
+.hero-card input:disabled,
+.hero-card textarea:disabled,
+.hero-card select:disabled{
+  opacity:0.7;
+}
 .hero-card h3{
   margin:0 0 .35rem;
 }
