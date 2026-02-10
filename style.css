@@ -1,5 +1,5 @@
 :root{
-  color-scheme: light;
+  color-scheme: only light;
   --bg:#020617;
   --text:#e5e7eb;
   --muted:#cbd5f5;
@@ -20,7 +20,8 @@ body{
   color:var(--text);
 }
 html, body{
-  background-color:#ffffff;
+  background:#ffffff;
+  color:#0b1220;
 }
 h1, h2, h3, h4, h5, h6{
   margin:0;
