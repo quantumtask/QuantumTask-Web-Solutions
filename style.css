@@ -980,8 +980,8 @@ textarea{border-radius:14px}
   margin:0;
   width:100%;
 }
-#packages .payment-row{margin-bottom:2rem;}
-#packages .intro-card{margin:0 0 2.5rem;}
+#packages .payment-row{margin-bottom:2.25rem;}
+#packages .intro-card{margin:0 0 3rem;}
 #work-demos .proof-grid{
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   margin-bottom:2.5rem;
@@ -992,21 +992,24 @@ textarea{border-radius:14px}
   gap:2rem;
   margin:0;
 }
-#packages .grid-3{margin-top:2rem;}
+#packages .grid-3{margin-top:2.75rem;}
 #work-demos .demo-grid{margin-top:2rem;}
 
 @media(max-width:900px){
   #packages .section-inner,
   #work-demos .section-inner{
-    gap:2rem;
+    gap:2.4rem;
   }
   #packages .grid-3,
   #work-demos .demo-grid{
     gap:1.25rem;
   }
   #work-demos .proof-grid{
-    margin-bottom:1rem;
+    margin-bottom:1.4rem;
   }
+  #packages .payment-row{margin-bottom:2rem;}
+  #packages .intro-card{margin:0 0 2.6rem;}
+  #packages .grid-3{margin-top:2.4rem;}
 }
 
 /* PRICING */
