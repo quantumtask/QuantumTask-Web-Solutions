@@ -465,6 +465,17 @@ ul, ol{
 .hero-card select:disabled{
   opacity:0.7;
 }
+
+/* HOME HERO BACKGROUND */
+.hero--home{
+  background-color:#0b1220;
+  background-image:
+    linear-gradient(180deg, rgba(11,18,32,0.70), rgba(11,18,32,0.70)),
+    url("./assets/img/hero-bg-ind.png");
+  background-position:center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
 .hero-card h3{
   margin:0 0 .35rem;
 }
