@@ -50,7 +50,7 @@ ul, ol{
 }
 .brand{display:flex;gap:.5rem;align-items:center;color:#fff;text-decoration:none}
 .brand-mark{
-  width:40px;height:40px;border-radius:6px;
+  width:40px;height:40px;border-radius:6px;object-fit:contain;
 }
 .brand-info{display:flex;flex-direction:column;gap:.15rem;align-items:flex-start}
 .brand-text{font-weight:600}
@@ -329,6 +329,12 @@ ul, ol{
     linear-gradient(135deg,rgba(2,6,23,.96) 0%,rgba(15,23,42,.85) 50%,rgba(2,6,23,.92) 100%),
     url("hero-bg.png") center right/cover no-repeat;
   animation: subtle-shift 20s ease-in-out infinite;
+}
+@media(max-width: 640px){
+  .hero-bg{
+    background-size: cover;
+    background-position: center;
+  }
 }
 @keyframes subtle-shift {
   0%, 100% { transform: scale(1); }
@@ -678,9 +684,7 @@ textarea{border-radius:14px}
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:1.5rem;
-  background:
-    linear-gradient(135deg,rgba(2,6,23,.96) 0%,rgba(15,23,42,.85) 50%,rgba(2,6,23,.92) 100%),
-    url("hero-bg.png") center right/cover no-repeat;
+  background: linear-gradient(135deg,rgba(2,6,23,.96) 0%,rgba(15,23,42,.85) 50%,rgba(2,6,23,.92) 100%);
   color:#e5e7eb;
   border:1px solid rgba(96,165,250,.28);
   border-radius:24px;
