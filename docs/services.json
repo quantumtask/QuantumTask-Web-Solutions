@@ -5,10 +5,10 @@
     "heroImage": "images/hero-plumbers.jpg",
     "pageTitle": "Plumbers Websites That Turn Visitors Into Calls & Quotes | QuantumTask",
     "metaDescription": "Conversion-focused websites for plumbing businesses. Clear messaging, fast builds, and simple quote requests without bloat.",
-    "h1": "Plumbing website live in 2 days with a 90+ speed score<br />or you don't pay.",
-    "heroSub": "Static, conversion-first sites for plumbing companies. Fixed price. Built to load fast and capture leads.",
+    "h1": "Plumbers website ready to launch in ~48 hours.",
+    "heroSub": "Built for plumbing teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
     "metaLabel": "For plumbing teams",
-    "metaList": "Emergency leaks • Re-pipes • Geysers • Blocked drains",
+    "metaList": "Emergency leaks \u00e2\u20ac\u00a2 Re-pipes \u00e2\u20ac\u00a2 Geysers \u00e2\u20ac\u00a2 Blocked drains",
     "tradeDisplay": "Plumbers",
     "painPoints": [
       "Emergency callers can't find your number fast",
@@ -19,16 +19,28 @@
     ],
     "offerBullets": [
       "Tap-to-call and WhatsApp CTAs on every section",
-      "90+ speed score static build for mobile",
+      "Built to meet the 90+ Performance score on Google PageSpeed Insights (mobile) guarantee for your homepage.",
       "Service area list + emergency banner option",
       "Trust blocks for PIRB/COC, guarantees, reviews",
       "Quote form routed to your email/WhatsApp"
     ],
     "faq": [
-      { "q": "How fast can you launch?", "a": "Within 48 hours once we have your services, areas, and contact details." },
-      { "q": "Can you add after-hours plumbing CTAs?", "a": "Yes, we add emergency badges and a dedicated phone/WhatsApp button." },
-      { "q": "Do you handle hosting?", "a": "We can use your hosting or set up fast static hosting for you." },
-      { "q": "Can I update prices later?", "a": "Yes, you get simple edit instructions or we handle it via the Care plan." }
+      {
+        "q": "How fast can you launch?",
+        "a": "Within 48 hours once we have your services, areas, and contact details."
+      },
+      {
+        "q": "Can you add after-hours plumbing CTAs?",
+        "a": "Yes, we add emergency badges and a dedicated phone/WhatsApp button."
+      },
+      {
+        "q": "Do you handle hosting?",
+        "a": "We can use your hosting or set up fast static hosting for you."
+      },
+      {
+        "q": "Can I update prices later?",
+        "a": "Yes, you get simple edit instructions or we handle it via the Care plan."
+      }
     ],
     "shortProof": [
       "24h average quote reply once live",
@@ -42,10 +54,10 @@
     "heroImage": "images/hero-electricians.jpg",
     "pageTitle": "Electricians Websites That Turn Visitors Into Calls & Quotes | QuantumTask",
     "metaDescription": "Conversion-focused websites for electrical businesses. Clear messaging, fast builds, and simple quote requests without bloat.",
-    "h1": "Electrical website live in 2 days with a 90+ speed score<br />or you don't pay.",
-    "heroSub": "Static, conversion-first sites for electrical contractors. Fixed price. Built to load fast and capture leads.",
+    "h1": "Electricians website ready to launch in ~48 hours.",
+    "heroSub": "Built for electrical contractors. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
     "metaLabel": "For electrical pros",
-    "metaList": "Fault finding • Rewires • Compliance certificates • Solar installs",
+    "metaList": "Fault finding \u00e2\u20ac\u00a2 Rewires \u00e2\u20ac\u00a2 Compliance certificates \u00e2\u20ac\u00a2 Solar installs",
     "tradeDisplay": "Electricians",
     "painPoints": [
       "Clients can't see your emergency number quickly",
@@ -61,10 +73,22 @@
       "Quote/inspection form routed to your inbox"
     ],
     "faq": [
-      { "q": "Can you highlight COC and compliance?", "a": "Yes, we add dedicated proof and badge sections for compliance." },
-      { "q": "Do you support solar/backup pages?", "a": "We can add mini-sections for solar, inverters, and batteries in the same build." },
-      { "q": "How soon is the draft ready?", "a": "You get a working draft within 48 hours once assets arrive." },
-      { "q": "Can I link to scheduling apps?", "a": "Yes, we can link to Calendly or your preferred booking tool." }
+      {
+        "q": "Can you highlight COC and compliance?",
+        "a": "Yes, we add dedicated proof and badge sections for compliance."
+      },
+      {
+        "q": "Do you support solar/backup pages?",
+        "a": "We can add mini-sections for solar, inverters, and batteries in the same build."
+      },
+      {
+        "q": "How soon is the draft ready?",
+        "a": "You get a working draft within 48 hours once assets arrive."
+      },
+      {
+        "q": "Can I link to scheduling apps?",
+        "a": "Yes, we can link to Calendly or your preferred booking tool."
+      }
     ],
     "shortProof": [
       "Built for urgent callouts and compliance work",
@@ -78,10 +102,10 @@
     "heroImage": "images/hero-cleaners.jpg",
     "pageTitle": "Cleaners Websites That Turn Visitors Into Calls & Quotes | QuantumTask",
     "metaDescription": "Conversion-focused websites for cleaning businesses. Clear messaging, fast builds, and simple quote requests without bloat.",
-    "h1": "Cleaning website live in 2 days with a 90+ speed score<br />or you don't pay.",
-    "heroSub": "Static, conversion-first sites for cleaning teams. Fixed price. Built to load fast and capture leads.",
+    "h1": "Cleaners website ready to launch in ~48 hours.",
+    "heroSub": "Built for cleaning crews. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
     "metaLabel": "For cleaning crews",
-    "metaList": "Home cleaning • Deep clean • Airbnbs • Offices",
+    "metaList": "Home cleaning \u00e2\u20ac\u00a2 Deep clean \u00e2\u20ac\u00a2 Airbnbs \u00e2\u20ac\u00a2 Offices",
     "tradeDisplay": "Cleaners",
     "painPoints": [
       "Visitors can't see packages or minimum call-out",
@@ -97,10 +121,22 @@
       "Mobile-first CTAs for WhatsApp and phone"
     ],
     "faq": [
-      { "q": "Can you show packages?", "a": "Yes, we add package cards with inclusions and starting prices." },
-      { "q": "Do you handle Airbnbs?", "a": "We can add an Airbnb turnover block with linen/restock notes." },
-      { "q": "How fast is go-live?", "a": "48 hours after we get your services, areas, and photos." },
-      { "q": "Can clients book recurring service?", "a": "We add a form option and link to WhatsApp for quick repeats." }
+      {
+        "q": "Can you show packages?",
+        "a": "Yes, we add package cards with inclusions and starting prices."
+      },
+      {
+        "q": "Do you handle Airbnbs?",
+        "a": "We can add an Airbnb turnover block with linen/restock notes."
+      },
+      {
+        "q": "How fast is go-live?",
+        "a": "48 hours after we get your services, areas, and photos."
+      },
+      {
+        "q": "Can clients book recurring service?",
+        "a": "We add a form option and link to WhatsApp for quick repeats."
+      }
     ],
     "shortProof": [
       "Built to capture recurring cleaning bookings",
@@ -114,10 +150,10 @@
     "heroImage": "images/hero-landscapers.jpg",
     "pageTitle": "Landscapers Websites That Turn Visitors Into Calls & Quotes | QuantumTask",
     "metaDescription": "Conversion-focused websites for landscaping companies. Clear messaging, fast builds, and simple quote requests without bloat.",
-    "h1": "Landscaping website live in 2 days with a 90+ speed score<br />or you don't pay.",
-    "heroSub": "Static, conversion-first sites for landscapers. Fixed price. Built to load fast and capture leads.",
+    "h1": "Landscapers website ready to launch in ~48 hours.",
+    "heroSub": "Built for landscaping teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
     "metaLabel": "For landscaping",
-    "metaList": "Gardens • Irrigation • Tree work • Turf",
+    "metaList": "Gardens \u00e2\u20ac\u00a2 Irrigation \u00e2\u20ac\u00a2 Tree work \u00e2\u20ac\u00a2 Turf",
     "tradeDisplay": "Landscapers",
     "painPoints": [
       "Portfolio hidden or too slow to load",
@@ -133,10 +169,22 @@
       "Click-to-call/WhatsApp for quick site walks"
     ],
     "faq": [
-      { "q": "Can you show seasonal specials?", "a": "Yes, we add a promo strip or card for seasonal offers." },
-      { "q": "Do you include irrigation info?", "a": "We can add an irrigation/services block with brands you use." },
-      { "q": "Timeline to launch?", "a": "48 hours after receiving your services, areas, and photos." },
-      { "q": "Can I add new projects later?", "a": "Yes, you get simple instructions or we handle updates via Care." }
+      {
+        "q": "Can you show seasonal specials?",
+        "a": "Yes, we add a promo strip or card for seasonal offers."
+      },
+      {
+        "q": "Do you include irrigation info?",
+        "a": "We can add an irrigation/services block with brands you use."
+      },
+      {
+        "q": "Timeline to launch?",
+        "a": "48 hours after receiving your services, areas, and photos."
+      },
+      {
+        "q": "Can I add new projects later?",
+        "a": "Yes, you get simple instructions or we handle updates via Care."
+      }
     ],
     "shortProof": [
       "Portfolio-forward layout for landscaping",
@@ -150,10 +198,10 @@
     "heroImage": "images/hero-repairs.jpg",
     "pageTitle": "Repairs Websites That Turn Visitors Into Calls & Quotes | QuantumTask",
     "metaDescription": "Conversion-focused websites for repair services. Clear messaging, fast builds, and simple quote requests without bloat.",
-    "h1": "Repair service site live in 2 days with a 90+ speed score<br />or you don't pay.",
-    "heroSub": "Static, conversion-first sites for repair specialists. Fixed price. Built to load fast and capture leads.",
+    "h1": "Repairs website ready to launch in ~48 hours.",
+    "heroSub": "Built for repair specialists. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
     "metaLabel": "For repair pros",
-    "metaList": "Handyman • Appliances • Doors & windows • Floors",
+    "metaList": "Handyman \u00e2\u20ac\u00a2 Appliances \u00e2\u20ac\u00a2 Doors & windows \u00e2\u20ac\u00a2 Floors",
     "tradeDisplay": "Repairs",
     "painPoints": [
       "People don't know what you fix",
@@ -169,10 +217,22 @@
       "Areas served and travel fees listed"
     ],
     "faq": [
-      { "q": "Do you cover appliance repairs?", "a": "We can list each appliance type with a CTA to book." },
-      { "q": "Can you show pricing?", "a": "We add starting-price or call-out notes if you provide them." },
-      { "q": "Timeline to launch?", "a": "48 hours after we receive your info and photos." },
-      { "q": "Can clients book via WhatsApp?", "a": "Yes, we add WhatsApp CTAs across the page." }
+      {
+        "q": "Do you cover appliance repairs?",
+        "a": "We can list each appliance type with a CTA to book."
+      },
+      {
+        "q": "Can you show pricing?",
+        "a": "We add starting-price or call-out notes if you provide them."
+      },
+      {
+        "q": "Timeline to launch?",
+        "a": "48 hours after we receive your info and photos."
+      },
+      {
+        "q": "Can clients book via WhatsApp?",
+        "a": "Yes, we add WhatsApp CTAs across the page."
+      }
     ],
     "shortProof": [
       "Built for urgent repair enquiries",
@@ -186,10 +246,10 @@
     "heroImage": "images/hero-salons.jpg",
     "pageTitle": "Salons Websites That Turn Visitors Into Calls & Quotes | QuantumTask",
     "metaDescription": "Conversion-focused websites for salon owners. Clear messaging, fast builds, and simple quote requests without bloat.",
-    "h1": "Salon website live in 2 days with a 90+ speed score<br />or you don't pay.",
-    "heroSub": "Static, conversion-first sites for salons and studios. Fixed price. Built to load fast and capture leads.",
+    "h1": "Salons website ready to launch in ~48 hours.",
+    "heroSub": "Built for salon owners. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
     "metaLabel": "For salons",
-    "metaList": "Hair • Nails • Aesthetics • Barbering",
+    "metaList": "Hair \u00e2\u20ac\u00a2 Nails \u00e2\u20ac\u00a2 Aesthetics \u00e2\u20ac\u00a2 Barbering",
     "tradeDisplay": "Salons",
     "painPoints": [
       "Clients can't see services or pricing quickly",
@@ -205,10 +265,22 @@
       "Promo bar for specials or packages"
     ],
     "faq": [
-      { "q": "Can you embed my booking app?", "a": "Yes, we link to Fresha/Booksy or your chosen tool." },
-      { "q": "Do you show packages?", "a": "We add package cards for color, cuts, facials, or combos." },
-      { "q": "How soon is the draft ready?", "a": "48 hours after we get your menu, hours, and photos." },
-      { "q": "Can we highlight stylists?", "a": "We can add a small team strip with names and specialties." }
+      {
+        "q": "Can you embed my booking app?",
+        "a": "Yes, we link to Fresha/Booksy or your chosen tool."
+      },
+      {
+        "q": "Do you show packages?",
+        "a": "We add package cards for color, cuts, facials, or combos."
+      },
+      {
+        "q": "How soon is the draft ready?",
+        "a": "48 hours after we get your menu, hours, and photos."
+      },
+      {
+        "q": "Can we highlight stylists?",
+        "a": "We can add a small team strip with names and specialties."
+      }
     ],
     "shortProof": [
       "Salon-first layout with booking CTAs",
@@ -222,10 +294,10 @@
     "heroImage": "images/hero-installers.jpg",
     "pageTitle": "Installers Websites That Turn Visitors Into Calls & Quotes | QuantumTask",
     "metaDescription": "Conversion-focused websites for installation businesses. Clear messaging, fast builds, and simple quote requests without bloat.",
-    "h1": "Installer website live in 2 days with a 90+ speed score<br />or you don't pay.",
-    "heroSub": "Static, conversion-first sites for installation teams. Fixed price. Built to load fast and capture leads.",
+    "h1": "Installers website ready to launch in ~48 hours.",
+    "heroSub": "Built for installation teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
     "metaLabel": "For installers",
-    "metaList": "HVAC • Security • Solar • AV",
+    "metaList": "HVAC \u00e2\u20ac\u00a2 Security \u00e2\u20ac\u00a2 Solar \u00e2\u20ac\u00a2 AV",
     "tradeDisplay": "Installers",
     "painPoints": [
       "Clients can't tell what you install",
@@ -241,10 +313,22 @@
       "Quote form capturing system type and timeline"
     ],
     "faq": [
-      { "q": "Can you show brands I install?", "a": "Yes, we add a brand badge strip to boost trust." },
-      { "q": "Do you cover maintenance too?", "a": "We can add a separate block for maintenance vs new installs." },
-      { "q": "Launch time?", "a": "48 hours after assets and service list arrive." },
-      { "q": "Can you add compliance documents?", "a": "We link to or note compliance certificates where relevant." }
+      {
+        "q": "Can you show brands I install?",
+        "a": "Yes, we add a brand badge strip to boost trust."
+      },
+      {
+        "q": "Do you cover maintenance too?",
+        "a": "We can add a separate block for maintenance vs new installs."
+      },
+      {
+        "q": "Launch time?",
+        "a": "48 hours after assets and service list arrive."
+      },
+      {
+        "q": "Can you add compliance documents?",
+        "a": "We link to or note compliance certificates where relevant."
+      }
     ],
     "shortProof": [
       "Built for multi-trade installers",
