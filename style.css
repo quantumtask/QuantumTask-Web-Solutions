@@ -968,6 +968,21 @@ textarea{border-radius:14px}
   box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
 }
 
+#packages .section-inner,
+#work-demos .section-inner{
+  display:flex;
+  flex-direction:column;
+  gap:2rem;
+}
+#packages .trust-strip,
+#packages .payment-row,
+#packages .intro-card{
+  margin:0;
+}
+#work-demos .proof-grid{
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+}
+
 /* PRICING */
 .payment-row{
   display:flex;
