@@ -341,7 +341,7 @@ ul, ol{
 @media(max-width: 640px){
   .hero-bg{
     background:
-      linear-gradient(135deg,rgba(2,6,23,.35) 0%,rgba(15,23,42,.28) 50%,rgba(2,6,23,.32) 100%),
+      linear-gradient(135deg,rgba(2,6,23,1) 0%,rgba(15,23,42,.95) 50%,rgba(2,6,23,.98) 100%),
       url("hero-bg.png") center right/cover no-repeat;
     background-position: 85% top !important;
     background-size: cover;
