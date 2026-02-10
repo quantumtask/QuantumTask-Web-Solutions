@@ -981,10 +981,10 @@ textarea{border-radius:14px}
   width:100%;
 }
 #packages .payment-row{margin-bottom:1.5rem;}
-#packages .intro-card{margin:0 0 1.25rem;}
+#packages .intro-card{margin:0 0 1.6rem;}
 #work-demos .proof-grid{
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  margin-bottom:1rem;
+  margin-bottom:1.5rem;
 }
 #packages .grid-3,
 #work-demos .demo-grid{
@@ -992,6 +992,8 @@ textarea{border-radius:14px}
   gap:2rem;
   margin:0;
 }
+#packages .grid-3{margin-top:0.5rem;}
+#work-demos .demo-grid{margin-top:0.75rem;}
 
 @media(max-width:900px){
   #packages .section-inner,
