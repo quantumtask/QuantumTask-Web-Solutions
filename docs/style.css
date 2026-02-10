@@ -476,6 +476,9 @@ ul, ol{
   background-size:cover;
   background-repeat:no-repeat;
 }
+.hero--home .hero-bg{
+  background:none;
+}
 .hero-card h3{
   margin:0 0 .35rem;
 }
