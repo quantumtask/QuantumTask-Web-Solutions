@@ -332,7 +332,7 @@ ul, ol{
 .hero-bg{
   position:absolute;inset:0;
   background:
-    linear-gradient(135deg,rgba(2,6,23,.96) 0%,rgba(15,23,42,.85) 50%,rgba(2,6,23,.92) 100%),
+    linear-gradient(135deg,rgba(2,6,23,1) 0%,rgba(15,23,42,.95) 50%,rgba(2,6,23,.98) 100%),
     url("hero-bg.png") center right/cover no-repeat;
   animation: subtle-shift 20s ease-in-out infinite;
   z-index:0;
