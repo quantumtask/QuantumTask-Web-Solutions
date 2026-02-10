@@ -980,11 +980,11 @@ textarea{border-radius:14px}
   margin:0;
   width:100%;
 }
-#packages .payment-row{margin-bottom:1.5rem;}
-#packages .intro-card{margin:0 0 1.6rem;}
+#packages .payment-row{margin-bottom:1.75rem;}
+#packages .intro-card{margin:0 0 2.25rem;}
 #work-demos .proof-grid{
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  margin-bottom:1.5rem;
+  margin-bottom:2rem;
 }
 #packages .grid-3,
 #work-demos .demo-grid{
@@ -992,8 +992,8 @@ textarea{border-radius:14px}
   gap:2rem;
   margin:0;
 }
-#packages .grid-3{margin-top:0.5rem;}
-#work-demos .demo-grid{margin-top:0.75rem;}
+#packages .grid-3{margin-top:1.25rem;}
+#work-demos .demo-grid{margin-top:1.25rem;}
 
 @media(max-width:900px){
   #packages .section-inner,
