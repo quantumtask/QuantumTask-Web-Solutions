@@ -330,6 +330,12 @@ ul, ol{
     url("hero-bg.png") center right/cover no-repeat;
   animation: subtle-shift 20s ease-in-out infinite;
 }
+@media(max-width: 640px){
+  .hero-bg{
+    background-size: cover;
+    background-position: center;
+  }
+}
 @keyframes subtle-shift {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.02); }
