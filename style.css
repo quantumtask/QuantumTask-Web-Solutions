@@ -50,7 +50,7 @@ ul, ol{
 }
 .brand{display:flex;gap:.5rem;align-items:center;color:#fff;text-decoration:none}
 .brand-mark{
-  width:40px;height:40px;border-radius:6px;
+  width:40px;height:40px;border-radius:6px;object-fit:contain;
 }
 .brand-info{display:flex;flex-direction:column;gap:.15rem;align-items:flex-start}
 .brand-text{font-weight:600}
