@@ -978,9 +978,30 @@ textarea{border-radius:14px}
 #packages .payment-row,
 #packages .intro-card{
   margin:0;
+  width:100%;
 }
 #work-demos .proof-grid{
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  margin-bottom:1rem;
+}
+#packages .grid-3,
+#work-demos .demo-grid{
+  width:100%;
+  gap:2rem;
+}
+
+@media(max-width:900px){
+  #packages .section-inner,
+  #work-demos .section-inner{
+    gap:1.5rem;
+  }
+  #packages .grid-3,
+  #work-demos .demo-grid{
+    gap:1.25rem;
+  }
+  #work-demos .proof-grid{
+    margin-bottom:0.5rem;
+  }
 }
 
 /* PRICING */
