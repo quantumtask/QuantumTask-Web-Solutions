@@ -333,7 +333,7 @@ ul, ol{
 @media(max-width: 640px){
   .hero-bg{
     background-size: cover;
-    background-position: 85% top;
+    background-position: 85% top !important;
   }
 }
 
