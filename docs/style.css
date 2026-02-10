@@ -332,8 +332,28 @@ ul, ol{
 }
 @media(max-width: 640px){
   .hero-bg{
+    background:
+      linear-gradient(135deg,rgba(2,6,23,.35) 0%,rgba(15,23,42,.28) 50%,rgba(2,6,23,.32) 100%),
+      url("hero-bg.png") center right/cover no-repeat;
+    background-position: 85% top !important;
     background-size: cover;
-    background-position: center;
+  }
+}
+
+@media(max-width: 640px){
+  .hero{
+    min-height: 0;
+    padding:3.75rem 1.25rem 2.5rem;
+  }
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:1.75rem;
+  }
+  .hero-right{
+    order:2;
+  }
+  .hero-left{
+    order:1;
   }
 }
 @keyframes subtle-shift {
@@ -948,6 +968,50 @@ textarea{border-radius:14px}
   box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
 }
 
+#packages .section-inner,
+#work-demos .section-inner{
+  display:flex;
+  flex-direction:column;
+  gap:3rem;
+}
+#packages .trust-strip,
+#packages .payment-row,
+#packages .intro-card{
+  margin:0;
+  width:100%;
+}
+#packages .payment-row{margin-bottom:2.25rem;}
+#packages .intro-card{margin:0 0 3rem;}
+#work-demos .proof-grid{
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  margin-bottom:2.5rem;
+}
+#packages .grid-3,
+#work-demos .demo-grid{
+  width:100%;
+  gap:2rem;
+  margin:0;
+}
+#packages .grid-3{margin-top:2.75rem;}
+#work-demos .demo-grid{margin-top:2rem;}
+
+@media(max-width:900px){
+  #packages .section-inner,
+  #work-demos .section-inner{
+    gap:2.4rem;
+  }
+  #packages .grid-3,
+  #work-demos .demo-grid{
+    gap:1.25rem;
+  }
+  #work-demos .proof-grid{
+    margin-bottom:1.4rem;
+  }
+  #packages .payment-row{margin-bottom:2rem;}
+  #packages .intro-card{margin:0 0 2.6rem;}
+  #packages .grid-3{margin-top:2.4rem;}
+}
+
 /* PRICING */
 .payment-row{
   display:flex;
@@ -956,6 +1020,20 @@ textarea{border-radius:14px}
   gap:1.5rem;
   flex-wrap:wrap;
   margin:1.5rem 0 2.5rem;
+}
+.trust-strip{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.75rem 1rem;
+  margin:0 0 1.5rem;
+  align-items:center;
+}
+.trust-strip span{
+  font-weight:600;
+  color:#0f172a;
+}
+.intro-card{
+  margin:1rem 0 2rem;
 }
 .payment-row h3{
   margin:0;
