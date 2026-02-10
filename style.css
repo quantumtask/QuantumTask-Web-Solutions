@@ -972,7 +972,7 @@ textarea{border-radius:14px}
 #work-demos .section-inner{
   display:flex;
   flex-direction:column;
-  gap:2rem;
+  gap:3rem;
 }
 #packages .trust-strip,
 #packages .payment-row,
@@ -980,11 +980,11 @@ textarea{border-radius:14px}
   margin:0;
   width:100%;
 }
-#packages .payment-row{margin-bottom:1.75rem;}
-#packages .intro-card{margin:0 0 2.25rem;}
+#packages .payment-row{margin-bottom:2rem;}
+#packages .intro-card{margin:0 0 2.5rem;}
 #work-demos .proof-grid{
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  margin-bottom:2rem;
+  margin-bottom:2.5rem;
 }
 #packages .grid-3,
 #work-demos .demo-grid{
@@ -992,20 +992,20 @@ textarea{border-radius:14px}
   gap:2rem;
   margin:0;
 }
-#packages .grid-3{margin-top:1.25rem;}
-#work-demos .demo-grid{margin-top:1.25rem;}
+#packages .grid-3{margin-top:2rem;}
+#work-demos .demo-grid{margin-top:2rem;}
 
 @media(max-width:900px){
   #packages .section-inner,
   #work-demos .section-inner{
-    gap:1.5rem;
+    gap:2rem;
   }
   #packages .grid-3,
   #work-demos .demo-grid{
     gap:1.25rem;
   }
   #work-demos .proof-grid{
-    margin-bottom:0.5rem;
+    margin-bottom:1rem;
   }
 }
 
