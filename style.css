@@ -333,7 +333,24 @@ ul, ol{
 @media(max-width: 640px){
   .hero-bg{
     background-size: cover;
-    background-position: center;
+    background-position: center top;
+  }
+}
+
+@media(max-width: 640px){
+  .hero{
+    min-height: 0;
+    padding:3.75rem 1.25rem 2.5rem;
+  }
+  .hero-inner{
+    grid-template-columns:1fr;
+    gap:1.75rem;
+  }
+  .hero-right{
+    order:2;
+  }
+  .hero-left{
+    order:1;
   }
 }
 @keyframes subtle-shift {
