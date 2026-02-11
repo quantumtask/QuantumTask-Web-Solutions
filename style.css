@@ -12,6 +12,8 @@
 body{
   margin:0;
   padding:0;
+  overflow-x:hidden;
+  overflow-x:clip;
   font-family:'Space Grotesk', Inter, system-ui, sans-serif;
   background:
     radial-gradient(1200px at 20% 20%, rgba(37,99,235,0.08), transparent 55%),
@@ -22,6 +24,9 @@ body{
 html, body{
   background:#ffffff;
   color:#0b1220;
+}
+html{
+  scrollbar-gutter:stable;
 }
 h1, h2, h3, h4, h5, h6{
   margin:0;
@@ -47,7 +52,7 @@ ul, ol{
   border-bottom:1px solid var(--border);
 }
 .nav-inner{
-  max-width:1200px;margin:auto;
+  max-width:1120px;margin:auto;
   padding:.9rem 1.5rem;
   display:flex;
   align-items:center;
@@ -768,9 +773,7 @@ textarea{border-radius:14px}
     inset 0 1px 0 rgba(255,255,255,0.05);
   position:relative;
   overflow:hidden;
-  width:100vw;
-  margin-left:calc(50% - 50vw);
-  margin-right:calc(50% - 50vw);
+  width:100%;
   border-radius:6px;
 }
 .trust-section{
@@ -778,7 +781,7 @@ textarea{border-radius:14px}
   padding:80px 1.5rem 100px;
 }
 .trust-section .section-inner{
-  max-width:none;
+  max-width:1120px;
   padding:0;
 }
 .trust-section .trust-box{
@@ -1468,9 +1471,7 @@ textarea{border-radius:14px}
   .whatsapp-float{bottom:96px;}
   .trust-box{
     grid-template-columns:1fr;
-    width:100vw;
-    margin-left:calc(50% - 50vw);
-    margin-right:calc(50% - 50vw);
+    width:100%;
     margin-top:2rem;
     padding:2.2rem 1.6rem;
     border-radius:6px;
