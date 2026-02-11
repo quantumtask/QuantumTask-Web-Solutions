@@ -848,19 +848,57 @@ textarea{border-radius:14px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
 .card{
-  background:#fff;border-radius:18px;padding:1.5rem;
-  box-shadow:0 10px 25px rgba(15,23,42,.08);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-radius:20px;
+  padding:1.5rem;
+  box-shadow:
+    0 14px 34px rgba(15,23,42,.08),
+    inset 0 1px 0 rgba(255,255,255,0.7);
   transition: all 0.3s ease;
-  border:1px solid rgba(148,163,184,0.1);
+  border:1px solid rgba(148,163,184,0.16);
   color:#020617;
 }
 .card h1, .card h2, .card h3, .card h4, .card h5, .card h6 {color: #0f172a;}
 .card p, .card li {color: #374151;}
 .card:hover {
   background: #fff;
-  box-shadow:0 20px 40px rgba(37,99,235,0.12);
-  transform:translateY(-2px);
-  border-color:rgba(37,99,235,0.3);
+  box-shadow:0 18px 40px rgba(37,99,235,0.12);
+  transform:translateY(-1px);
+  border-color:rgba(37,99,235,0.28);
+}
+.qt-reveal{
+  animation: qt-reveal 0.75s ease-out forwards;
+}
+.qt-stagger > *{
+  animation: qt-reveal 0.75s ease-out forwards;
+}
+.qt-stagger > *:nth-child(1){animation-delay:0s;}
+.qt-stagger > *:nth-child(2){animation-delay:0.06s;}
+.qt-stagger > *:nth-child(3){animation-delay:0.12s;}
+.qt-stagger > *:nth-child(4){animation-delay:0.18s;}
+.qt-stagger > *:nth-child(5){animation-delay:0.24s;}
+.qt-stagger > *:nth-child(6){animation-delay:0.30s;}
+.qt-stagger > *:nth-child(7){animation-delay:0.36s;}
+.qt-stagger > *:nth-child(8){animation-delay:0.42s;}
+
+@keyframes qt-reveal{
+  from{
+    opacity:0;
+    transform:translateY(14px) rotate(-0.6deg);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .qt-reveal,
+  .qt-stagger > *{
+    animation:none !important;
+    transition:none !important;
+  }
 }
 
 /* HOW IT WORKS */
