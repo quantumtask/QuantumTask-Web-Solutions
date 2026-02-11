@@ -20,11 +20,12 @@
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('is-in');
+        // Use rAF to ensure styles are applied before we flip to the visible state
+        requestAnimationFrame(() => entry.target.classList.add('is-in'));
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.25, rootMargin: '0px 0px -10% 0px' });
 
   cards.forEach((card, index) => {
     card.style.transitionDelay = `${index * 110}ms`;

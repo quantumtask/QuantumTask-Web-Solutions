@@ -1,1 +1,4 @@
-﻿[data-pack-card]{opacity:0;transform:translate3d(0,24px,0) rotateX(5deg);transition:opacity .6s ease,transform .6s ease;will-change:opacity,transform;transform-origin:center top;}[data-pack-card].is-in{opacity:1;transform:translate3d(0,0,0) rotateX(0deg);}@media (prefers-reduced-motion: reduce){[data-pack-card]{opacity:1;transform:none;transition:none;}}
+﻿[data-pack-section]{perspective:1200px;perspective-origin:50% 20%;}
+[data-pack-card]{opacity:0;transform:translate3d(0,24px,0) rotateX(6deg);transition:opacity .65s ease,transform .65s ease;will-change:opacity,transform;transform-origin:center top;backface-visibility:hidden;}
+[data-pack-card].is-in{opacity:1;transform:translate3d(0,0,0) rotateX(0deg);}
+@media (prefers-reduced-motion: reduce){[data-pack-card]{opacity:1;transform:none;transition:none;}}
