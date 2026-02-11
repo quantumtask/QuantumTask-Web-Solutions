@@ -39,7 +39,8 @@ function otherTradesLinks(services, current) {
 }
 
 function buildUniqueBlock(svc, services) {
-  const proof = svc.shortProof.join(' ');
+  // Keep short proof items readable with clear separators
+  const proof = svc.shortProof.join(' · ');
   return `
 <section class="section section-alt service-unique">
   <div class="section-inner">
@@ -96,6 +97,10 @@ function buildPage(template, svc, services) {
 
   const metaPill = `<div class="meta-pill">\n            <span class="meta-label">${svc.metaLabel}</span>\n            <span class="meta-list">${svc.metaList}</span>\n          </div>`;
   html = replaceOne(html, /<div class="meta-pill">[\s\S]*?<\/div>/, metaPill, 'meta pill');
+
+  // Service pages shouldn't inherit the home-only styling hooks
+  html = replaceOne(html, /<body class="page-home">/, '<body>', 'body class');
+  html = replaceOne(html, /<section class="hero hero--home">/, '<section class="hero">', 'hero class');
 
   const uniqueBlock = buildUniqueBlock(svc, services);
   html = replaceOne(html, /<!--SERVICE_UNIQUE_BLOCK-->/, uniqueBlock, 'service unique block');
