@@ -1052,6 +1052,67 @@ textarea{border-radius:14px}
 #packages .grid-3{margin-top:2.75rem;}
 #work-demos .demo-grid{margin-top:2rem;}
 
+.page-home #packages .meta-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1.35rem;
+  width:100%;
+}
+.page-home #packages .meta-grid .meta-card{
+  margin:0;
+  width:100%;
+  padding:1.35rem 1.4rem;
+  border-radius:20px;
+  border:1px solid rgba(148,163,184,.24);
+  background:
+    radial-gradient(circle at 85% 15%, rgba(59,130,246,.10), transparent 45%),
+    linear-gradient(145deg, rgba(255,255,255,.98), rgba(241,245,249,.94));
+  box-shadow:0 12px 28px rgba(15,23,42,.08);
+}
+.page-home #packages .meta-grid .meta-card:hover{
+  transform:none;
+  box-shadow:0 12px 28px rgba(15,23,42,.08);
+  border-color:rgba(148,163,184,.24);
+}
+.page-home #packages .meta-card--trust{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:.55rem;
+}
+.page-home #packages .meta-card--payment{
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  gap:1rem;
+}
+.page-home #packages .meta-card--payment .payment-list{
+  width:100%;
+  flex-direction:column;
+  gap:.65rem;
+}
+.page-home #packages .meta-card--intro{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:.65rem;
+}
+.page-home #work-demos .proof-grid{
+  grid-template-columns:1.35fr 1fr;
+  gap:1.5rem;
+  margin-bottom:0;
+}
+.page-home #work-demos .proof-grid .proof-card{
+  height:100%;
+}
+.page-home #work-demos .proof-contact{
+  padding:1.65rem;
+}
+.page-home #work-demos .proof-contact p{
+  margin-top:.6rem;
+  line-height:1.6;
+}
+
 @media(max-width:900px){
   #packages .section-inner,
   #work-demos .section-inner{
@@ -1067,6 +1128,25 @@ textarea{border-radius:14px}
   #packages .payment-row{margin-bottom:2rem;}
   #packages .intro-card{margin:0 0 2.6rem;}
   #packages .grid-3{margin-top:2.4rem;}
+  .page-home #packages .meta-grid{
+    grid-template-columns:1fr;
+    gap:1rem;
+  }
+  .page-home #packages .meta-grid .meta-card{
+    padding:1.2rem 1.1rem;
+  }
+  .page-home #work-demos .proof-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(min-width:901px){
+  .page-home #packages .grid-3{
+    margin-top:0;
+  }
+  .page-home #work-demos .demo-grid{
+    margin-top:0;
+  }
 }
 
 /* PRICING */
