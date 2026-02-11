@@ -4,31 +4,41 @@
   if (!section || !cards.length) return;
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let revealed = false;
+  const setDelays = () => cards.forEach((card, index) => { card.style.transitionDelay = `${index * 110}ms`; });
 
-  const revealNow = () => {
-    cards.forEach((card, index) => {
-      card.style.transitionDelay = `${index * 110}ms`;
-      card.classList.add('is-in');
-      if (prefersReduced) card.style.transition = 'none';
+  const reveal = () => {
+    if (revealed) return;
+    revealed = true;
+    setDelays();
+    requestAnimationFrame(() => {
+      cards.forEach(card => {
+        card.classList.add('is-in');
+        if (prefersReduced) card.style.transition = 'none';
+      });
     });
+    observer?.disconnect();
   };
 
   if (prefersReduced || !('IntersectionObserver' in window)) {
-    revealNow();
+    reveal();
     return;
   }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        cards.forEach((card, index) => {
-          card.style.transitionDelay = `${index * 110}ms`;
-        });
-        requestAnimationFrame(() => cards.forEach(card => card.classList.add('is-in')));
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) reveal();
     });
-  }, { threshold: 0.2, rootMargin: '0px 0px -15% 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
+
+  const checkInView = () => {
+    const rect = section.getBoundingClientRect();
+    const viewH = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top <= viewH * 0.95 && rect.bottom >= 0) reveal();
+  };
 
   observer.observe(section);
+  setDelays();
+  checkInView();
+  window.addEventListener('load', checkInView, { once: true });
 })();
