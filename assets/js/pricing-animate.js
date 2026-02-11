@@ -32,6 +32,7 @@
   }, { threshold: 0.05, rootMargin: '0px 0px -5% 0px' });
 
   const checkInView = () => {
+    if (revealed) return;
     const rect = section.getBoundingClientRect();
     const viewH = window.innerHeight || document.documentElement.clientHeight;
     if (rect.top <= viewH * 0.95 && rect.bottom >= 0) reveal();
@@ -41,4 +42,6 @@
   setDelays();
   checkInView();
   window.addEventListener('load', checkInView, { once: true });
+  // absolute fallback in case observers never fire
+  setTimeout(checkInView, 1200);
 })();
