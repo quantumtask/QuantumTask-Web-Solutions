@@ -25,6 +25,7 @@
 
   <meta name="theme-color" content="#ffffff" />
   <link rel="stylesheet" href="style.css?v=9e53e7d" />
+  <link rel="stylesheet" href="assets/css/site.css" />
   <!-- Set the theme color for supported browsers to match the dark brand background -->
   <link rel="icon" type="image/png" href="images/logo.png" />
 
@@ -168,7 +169,7 @@
       <div class="hero-left">
         <h1 class="hero-title">Landscapers website ready to launch in ~48 hours.</h1>
 
-        <p class="hero-sub">Built for landscaping teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch â€” or we keep working until it hits 90+ at no extra cost.</p>
+        <p class="hero-sub">Built for landscaping teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch — or we keep working until it hits 90+ at no extra cost.</p>
 
         <div class="hero-actions">
           <a href="mailto:daniel@quantumtask.io" class="btn btn-primary slide-item">Free quote</a>
@@ -181,7 +182,7 @@
         <div class="hero-meta">
           <div class="meta-pill">
             <span class="meta-label">For landscaping</span>
-            <span class="meta-list">Gardens â€¢ Irrigation â€¢ Tree work â€¢ Turf</span>
+            <span class="meta-list">Gardens • Irrigation • Tree work • Turf</span>
           </div>
         </div>
 
@@ -400,7 +401,7 @@
   </section>
 
     <!-- PACKAGES -->
-  <section id="packages" class="section section-alt">
+  <section id="packages" class="section section-alt" data-pack-section>
     <div class="section-inner">
       <div class="section-header">
         <span class="section-label">Packages</span>
@@ -410,7 +411,8 @@
         </p>
       </div>
 
-      <div class="card trust-strip">
+      <div class="meta-grid">
+      <div class="card trust-strip meta-card meta-card--trust">
         <span>Founder-led by Daniel</span>
         <span>South Africa: Johannesburg Â· Pretoria Â· Cape Town Â· Durban</span>
         <span>48-hour launch once assets arrive (for one-page/full builds)</span>
@@ -418,7 +420,7 @@
         <span>90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch â€” or we keep working until it hits 90+ at no extra cost.</span>
       </div>
 
-      <div class="card payment-row">
+      <div class="card payment-row meta-card meta-card--payment">
         <h3>How payment works</h3>
         <ul class="payment-list">
           <li>50% deposit to start</li>
@@ -427,13 +429,14 @@
         </ul>
       </div>
 
-      <div class="card intro-card">
+      <div class="card intro-card meta-card meta-card--intro">
         <h3>Intro slots</h3>
         <p>Intro pricing reserved for the next 5 local service businesses. After that, package prices increase.</p>
       </div>
+      </div>
 
       <div class="grid-3">
-        <div class="card price-card">
+        <div class="card price-card" data-pack-card>
           <h3>One-Page Launch</h3>
           <p class="price">R949</p>
           <p class="price-sub">Perfect if you need a professional website fast - with one clear page that turns visitors into calls and quote requests.</p>
@@ -467,7 +470,7 @@
           <a href="mailto:daniel@quantumtask.io" class="btn btn-outline full">Get the R949 one-page</a>
         </div>
 
-        <div class="card price-card price-featured">
+        <div class="card price-card price-featured" data-pack-card>
           <div class="price-tag">Most popular</div>
           <h3>Full Site Build</h3>
           <p class="price">R2499</p>
@@ -502,7 +505,7 @@
           <a href="mailto:daniel@quantumtask.io" class="btn btn-primary full">Get the R2499 full site</a>
         </div>
 
-        <div class="card price-card">
+        <div class="card price-card" data-pack-card>
           <h3>Ongoing Care</h3>
           <p class="price">R249 / month</p>
           <p class="price-sub">For updates and improvements so your site stays fresh, fast, and converting.</p>
@@ -553,7 +556,7 @@
       </div>
 
       <div class="proof-grid">
-        <div class="card proof-deliverables">
+        <div class="card proof-deliverables proof-card">
           <h3>What you'll receive</h3>
           <ul class="proof-list">
             <li>Conversion-focused structure and copy aligned to your services</li>
@@ -563,6 +566,14 @@
             <li>Trust placeholders ready for your real reviews and photos</li>
             <li>Launch handoff with simple edit guidance</li>
           </ul>
+        </div>
+        <div class="card proof-card proof-contact">
+          <h3>Want examples for your exact niche?</h3>
+          <p>I can share relevant references and map the fastest page structure for your services before you commit.</p>
+          <div class="proof-actions">
+            <a href="https://wa.me/27840906474?text=Hi, I'd like to get a quote for a website." class="btn btn-primary">Chat on WhatsApp</a>
+            <a href="mailto:daniel@quantumtask.io" class="btn btn-ghost">Email Daniel</a>
+          </div>
         </div>
       </div>
 
@@ -714,6 +725,7 @@
   <p class="footer-note">&copy; 2026 QuantumTask &mdash; Websites built to convert</p>
 </footer>
 
+<script defer src="assets/js/pricing-animate.js"></script>
 <script>
   // contact badges slide in
   const contactMeta = document.querySelector('.contact-right .contact-meta');
@@ -822,7 +834,6 @@
 
 </body>
 </html>
-
 
 
 

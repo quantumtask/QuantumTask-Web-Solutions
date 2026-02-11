@@ -25,6 +25,7 @@
 
   <meta name="theme-color" content="#ffffff" />
   <link rel="stylesheet" href="style.css?v=a5002b5" />
+  <link rel="stylesheet" href="assets/css/site.css" />
   <!-- Set the theme color for supported browsers to match the dark brand background -->
   <link rel="icon" type="image/png" href="images/logo.png" />
 
@@ -375,7 +376,7 @@
   </section>
 
     <!-- PACKAGES -->
-  <section id="packages" class="section section-alt">
+  <section id="packages" class="section section-alt" data-pack-section>
     <div class="section-inner">
       <div class="section-header">
         <span class="section-label">Packages</span>
@@ -410,7 +411,7 @@
       </div>
 
       <div class="grid-3">
-        <div class="card price-card">
+        <div class="card price-card" data-pack-card>
           <h3>One-Page Launch</h3>
           <p class="price">R949</p>
           <p class="price-sub">Perfect if you need a professional website fast - with one clear page that turns visitors into calls and quote requests.</p>
@@ -444,7 +445,7 @@
           <a href="mailto:daniel@quantumtask.io" class="btn btn-outline full">Get the R949 one-page</a>
         </div>
 
-        <div class="card price-card price-featured">
+        <div class="card price-card price-featured" data-pack-card>
           <div class="price-tag">Most popular</div>
           <h3>Full Site Build</h3>
           <p class="price">R2499</p>
@@ -479,7 +480,7 @@
           <a href="mailto:daniel@quantumtask.io" class="btn btn-primary full">Get the R2499 full site</a>
         </div>
 
-        <div class="card price-card">
+        <div class="card price-card" data-pack-card>
           <h3>Ongoing Care</h3>
           <p class="price">R249 / month</p>
           <p class="price-sub">For updates and improvements so your site stays fresh, fast, and converting.</p>
@@ -691,6 +692,7 @@
   <p class="footer-note">&copy; 2026 QuantumTask &mdash; Websites built to convert</p>
 </footer>
 
+<script defer src="assets/js/pricing-animate.js"></script>
 <script>
   // contact badges slide in
   const contactMeta = document.querySelector('.contact-right .contact-meta');

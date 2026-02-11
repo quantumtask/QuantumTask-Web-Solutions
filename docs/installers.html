@@ -25,6 +25,7 @@
 
   <meta name="theme-color" content="#ffffff" />
   <link rel="stylesheet" href="style.css?v=a5002b5" />
+  <link rel="stylesheet" href="assets/css/site.css" />
   <!-- Set the theme color for supported browsers to match the dark brand background -->
   <link rel="icon" type="image/png" href="images/logo.png" />
 
@@ -168,7 +169,7 @@
       <div class="hero-left">
         <h1 class="hero-title">Installers website ready to launch in ~48 hours.</h1>
 
-        <p class="hero-sub">Built for installation teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; or we keep working until it hits 90+ at no extra cost.</p>
+        <p class="hero-sub">Built for installation teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch — or we keep working until it hits 90+ at no extra cost.</p>
 
         <div class="hero-actions">
           <a href="mailto:daniel@quantumtask.io" class="btn btn-primary slide-item">Free quote</a>
@@ -400,7 +401,7 @@
   </section>
 
     <!-- PACKAGES -->
-  <section id="packages" class="section section-alt">
+  <section id="packages" class="section section-alt" data-pack-section>
     <div class="section-inner">
       <div class="section-header">
         <span class="section-label">Packages</span>
@@ -410,30 +411,32 @@
         </p>
       </div>
 
-      <div class="card trust-strip">
-        <span>Founder-led by Daniel</span>
-        <span>South Africa: Johannesburg &middot; Pretoria &middot; Cape Town &middot; Durban</span>
-        <span>48-hour launch once assets arrive (for one-page/full builds)</span>
-        <span>WhatsApp/calls with a quote-first approach</span>
-        <span>90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; or we keep working until it hits 90+ at no extra cost.</span>
-      </div>
+      <div class="meta-grid qt-stagger">
+        <div class="card trust-strip meta-card">
+          <span>Founder-led by Daniel</span>
+          <span>South Africa: Johannesburg &middot; Pretoria &middot; Cape Town &middot; Durban</span>
+          <span>48-hour launch once assets arrive (for one-page/full builds)</span>
+          <span>WhatsApp/calls with a quote-first approach</span>
+          <span>90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; or we keep working until it hits 90+ at no extra cost.</span>
+        </div>
 
-      <div class="card payment-row">
-        <h3>How payment works</h3>
-        <ul class="payment-list">
-          <li>50% deposit to start</li>
-          <li>50% due on go-live</li>
-          <li>Guarantee: 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; we keep working until it hits 90+ at no extra cost.</li>
-        </ul>
-      </div>
+        <div class="card payment-row meta-card">
+          <h3>How payment works</h3>
+          <ul class="payment-list">
+            <li>50% deposit to start</li>
+            <li>50% due on go-live</li>
+            <li>Guarantee: 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; we keep working until it hits 90+ at no extra cost.</li>
+          </ul>
+        </div>
 
-      <div class="card intro-card">
-        <h3>Intro slots</h3>
-        <p>Intro pricing reserved for the next 5 local service businesses. After that, package prices increase.</p>
+        <div class="card intro-card meta-card">
+          <h3>Intro slots</h3>
+          <p>Intro pricing reserved for the next 5 local service businesses. After that, package prices increase.</p>
+        </div>
       </div>
 
       <div class="grid-3">
-        <div class="card price-card">
+        <div class="card price-card" data-pack-card>
           <h3>One-Page Launch</h3>
           <p class="price">R949</p>
           <p class="price-sub">Perfect if you need a professional website fast - with one clear page that turns visitors into calls and quote requests.</p>
@@ -467,7 +470,7 @@
           <a href="mailto:daniel@quantumtask.io" class="btn btn-outline full">Get the R949 one-page</a>
         </div>
 
-        <div class="card price-card price-featured">
+        <div class="card price-card price-featured" data-pack-card>
           <div class="price-tag">Most popular</div>
           <h3>Full Site Build</h3>
           <p class="price">R2499</p>
@@ -502,7 +505,7 @@
           <a href="mailto:daniel@quantumtask.io" class="btn btn-primary full">Get the R2499 full site</a>
         </div>
 
-        <div class="card price-card">
+        <div class="card price-card" data-pack-card>
           <h3>Ongoing Care</h3>
           <p class="price">R249 / month</p>
           <p class="price-sub">For updates and improvements so your site stays fresh, fast, and converting.</p>
@@ -714,6 +717,7 @@
   <p class="footer-note">&copy; 2026 QuantumTask &mdash; Websites built to convert</p>
 </footer>
 
+<script defer src="assets/js/pricing-animate.js"></script>
 <script>
   // contact badges slide in
   const contactMeta = document.querySelector('.contact-right .contact-meta');
@@ -820,6 +824,7 @@
   }
 </script>
 
+<!-- BUILD_ID: a5002b5 -->
 </body>
 </html>
 
