@@ -1105,6 +1105,54 @@ textarea{border-radius:14px}
   gap:1.35rem;
   width:100%;
 }
+#packages .meta-head{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  margin:0 0 .75rem;
+}
+#packages .meta-head h3{
+  margin:0;
+  color:#0f172a;
+  font-size:1.05rem;
+}
+#packages .meta-icon{
+  width:40px;
+  height:40px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:linear-gradient(135deg, #e0e9ff, #d5e4ff);
+  border:1px solid rgba(37,99,235,0.25);
+  color:#2563eb;
+  box-shadow:0 10px 24px rgba(37,99,235,0.18), inset 0 1px 0 rgba(255,255,255,0.8);
+  font-weight:700;
+  font-size:0.95rem;
+}
+#packages .meta-bullets{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:.55rem;
+}
+#packages .meta-bullets li{
+  position:relative;
+  padding-left:1.35rem;
+  color:#374151;
+  line-height:1.5;
+}
+#packages .meta-bullets li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  top:0.1rem;
+  color:#2563eb;
+  font-weight:700;
+  font-size:0.95rem;
+}
 #packages .meta-grid .meta-card{
   margin:0;
   width:100%;
