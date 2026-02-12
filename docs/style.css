@@ -350,7 +350,6 @@ ul, ol{
       url("hero-bg.png") center right/cover no-repeat;
     background-position: 85% top !important;
     background-size: cover;
-    background-attachment:scroll;
   }
 }
 
@@ -475,20 +474,17 @@ ul, ol{
 /* HOME HERO BACKGROUND (index only) */
 .hero--home,
 .page-home .hero{
-  background-color:#0d1628;
+  background-color:#0b1220;
   background-image:
-    radial-gradient(80% 120% at 15% 20%, rgba(96,165,250,0.14), rgba(13,22,40,0.35) 45%, rgba(7,12,23,0) 65%),
-    radial-gradient(100% 120% at 85% 10%, rgba(15,23,42,0.55), rgba(15,23,42,0.2) 50%, rgba(7,12,23,0) 70%),
-    linear-gradient(135deg, #0f172a 0%, #0b1220 50%, #0f172a 100%);
+    linear-gradient(180deg, rgba(11,18,32,0.70), rgba(11,18,32,0.70)),
+    url("./assets/img/hero-bg-ind.png?v=3");
   background-position:center;
   background-size:cover;
   background-repeat:no-repeat;
-  background-attachment:fixed;
 }
 .hero--home .hero-bg,
 .page-home .hero .hero-bg{
   background:none;
-  animation:none;
 }
 .hero-card h3{
   margin:0 0 .35rem;
@@ -781,7 +777,12 @@ textarea{border-radius:14px}
   border-radius:6px;
 }
 .trust-section{
-  background:#fff;
+  background:
+    linear-gradient(135deg, rgba(15,23,42,0.9), rgba(11,18,32,0.9)),
+    url("./assets/img/hero-bg-ind.png?v=3");
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
   padding:80px 1.5rem 100px;
 }
 .trust-section .section-inner{
@@ -817,6 +818,12 @@ textarea{border-radius:14px}
   border-color: rgba(255,255,255,0.3);
   transform: translateY(-3px);
   box-shadow:0 16px 34px rgba(15,23,42,0.22);
+}
+
+@media(max-width:900px){
+  .trust-section{
+    background-attachment:scroll;
+  }
 }
 .trust-value{
   font-weight:700;
