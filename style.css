@@ -925,8 +925,6 @@ textarea{border-radius:14px}
   line-height:1.5;
 }
 
-/* TEMP PROOF - remove after verification */
-/* proof removed */
 /* TRADE CHIPS – FINAL OVERRIDE */
 .trade-picker{
   max-width: 980px;
@@ -983,6 +981,121 @@ textarea{border-radius:14px}
   .trade-picker .trade-chip{
     scroll-snap-align:start;
     white-space:nowrap;
+  }
+}
+
+/* Plumber proof section refresh */
+#plumber-proof{
+  padding:56px 0;
+  background:
+    radial-gradient(1200px 400px at 20% 0%, rgba(37,99,235,0.10), rgba(255,255,255,0)),
+    linear-gradient(to bottom, rgba(2,6,23,0.02), rgba(2,6,23,0.00));
+}
+#plumber-proof .section-inner.container{
+  max-width:1120px;
+}
+#plumber-proof .grid{
+  gap:24px;
+}
+#plumber-proof .svc-card{
+  position:relative;
+  background:rgba(255,255,255,0.9);
+  border:1px solid rgba(15,23,42,0.10);
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 18px 42px rgba(2,6,23,0.08);
+}
+#plumber-proof .svc-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  border-radius:22px 22px 0 0;
+  background:linear-gradient(90deg,#2563eb,#3b82f6);
+}
+#plumber-proof .svc-card-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:12px;
+}
+#plumber-proof .svc-ico{
+  width:38px;
+  height:38px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,#e6efff,#d8e7ff);
+  border:1px solid rgba(37,99,235,0.25);
+  color:#1d4ed8;
+  box-shadow:0 8px 18px rgba(37,99,235,0.16), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+#plumber-proof h3{
+  margin:0;
+  font-size:1.08rem;
+  font-weight:700;
+  color:#0f172a;
+}
+#plumber-proof .svc-sub{
+  margin:2px 0 0;
+  color:#4b5563;
+  font-size:0.92rem;
+}
+#plumber-proof .price-list{
+  gap:.55rem;
+}
+#plumber-proof .price-list li{
+  line-height:1.48;
+}
+#plumber-proof .faq-accordion{
+  display:flex;
+  flex-direction:column;
+  gap:.75rem;
+  margin-top:.35rem;
+}
+#plumber-proof .faq-accordion .faq-item{
+  border:1px solid rgba(15,23,42,0.10);
+  border-radius:14px;
+  padding:.85rem 1rem;
+  background:rgba(255,255,255,0.9);
+  box-shadow:0 12px 26px rgba(15,23,42,0.07);
+}
+#plumber-proof .faq-accordion summary{
+  cursor:pointer;
+  font-weight:700;
+  color:#0f172a;
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  list-style:none;
+}
+#plumber-proof .faq-accordion summary::-webkit-details-marker{
+  display:none;
+}
+#plumber-proof .faq-accordion summary::after{
+  content:'›';
+  margin-left:auto;
+  font-size:.9rem;
+  color:#6b7280;
+  transition:transform .2s ease;
+}
+#plumber-proof .faq-accordion details[open] summary::after{
+  transform:rotate(90deg);
+}
+#plumber-proof .faq-accordion details[open] summary{
+  color:#1d4ed8;
+}
+#plumber-proof .faq-answer{
+  margin-top:.45rem;
+  color:#4b5563;
+  line-height:1.5;
+}
+@media (max-width: 900px){
+  #plumber-proof .grid-3{
+    grid-template-columns:1fr;
   }
 }
 .pill-soft{
