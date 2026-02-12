@@ -708,6 +708,71 @@ textarea{border-radius:14px}
   row-gap:1rem;
 }
 
+/* Trade picker chips */
+.trade-picker{
+  max-width:1080px;
+  margin:0 auto 0;
+  background:linear-gradient(135deg, rgba(59,130,246,0.05), rgba(255,255,255,0.75));
+  border:1px solid rgba(148,163,184,.3);
+  border-radius:18px;
+  padding:12px 14px;
+  box-shadow:0 12px 28px rgba(15,23,42,0.08);
+}
+.trade-scroller{
+  display:flex;
+  gap:.65rem;
+  flex-wrap:nowrap;
+  overflow-x:auto;
+  padding:2px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+}
+.trade-scroller::-webkit-scrollbar{
+  height:6px;
+}
+.trade-scroller::-webkit-scrollbar-thumb{
+  background:rgba(148,163,184,0.45);
+  border-radius:999px;
+}
+.trade-scroller::-webkit-scrollbar-track{
+  background:transparent;
+}
+.trade-picker .pill-soft{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:42px;
+  padding:0 1rem;
+  border-radius:999px;
+  font-size:.92rem;
+  font-weight:600;
+  letter-spacing:-0.01em;
+  background:#fff;
+  color:#0f172a;
+  border:1px solid rgba(148,163,184,.5);
+  box-shadow:0 10px 24px rgba(15,23,42,0.08);
+  text-decoration:none;
+  transition:transform .2s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease, color .25s ease;
+  scroll-snap-align:start;
+  white-space:nowrap;
+}
+.trade-picker .pill-soft:hover{
+  transform:translateY(-1px);
+  box-shadow:0 14px 32px rgba(15,23,42,0.12);
+  border-color:rgba(37,99,235,.6);
+}
+.trade-picker .pill-soft.is-active{
+  background:linear-gradient(135deg, #2563eb, #3b82f6);
+  color:#fff;
+  border-color:rgba(37,99,235,.9);
+  box-shadow:0 14px 32px rgba(37,99,235,0.25);
+}
+.trade-picker .pill-soft:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 3px rgba(37,99,235,0.35), 0 10px 22px rgba(15,23,42,0.16);
+  border-color:rgba(37,99,235,.9);
+}
+
 /* FAQ */
 .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1rem}
 .faq-item{background:#fff;border-radius:14px;padding:1.25rem;box-shadow:0 8px 24px rgba(15,23,42,.06);color:#020617}
