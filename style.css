@@ -825,6 +825,9 @@ textarea{border-radius:14px}
 }
 .trade-picker .trade-chip{
   appearance:none;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   border:1px solid rgba(15,23,42,0.12);
   background:#fff;
   height:42px;
@@ -835,6 +838,7 @@ textarea{border-radius:14px}
   cursor:pointer;
   box-shadow: 0 10px 22px rgba(2,6,23,0.06);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
+  text-decoration:none;
 }
 .trade-picker .trade-chip:hover{
   transform: translateY(-1px);
