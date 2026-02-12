@@ -710,55 +710,47 @@ textarea{border-radius:14px}
 
 /* Trade picker chips */
 .trade-picker{
-  max-width:980px;
-  margin:24px auto 0;
-  padding:14px 16px;
-  border-radius:20px;
-  background:rgba(255,255,255,0.7);
-  border:1px solid rgba(15,23,42,0.08);
-  box-shadow:0 10px 20px rgba(15,23,42,0.06);
+  max-width: 980px;
+  margin: 22px auto 0;
+  padding: 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(15,23,42,0.10);
+  box-shadow: 0 14px 40px rgba(2,6,23,0.08);
 }
 .trade-chips{
   display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
   align-items:center;
-  gap:12px;
-  margin:0 auto;
-  width:100%;
+  justify-content:center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 .trade-chip{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  height:40px;
-  padding:0 16px;
-  border-radius:999px;
-  font-size:.9rem;
-  font-weight:600;
-  background:#fff;
-  color:#0f172a;
-  border:1px solid rgba(15,23,42,0.12);
-  box-shadow:0 6px 14px rgba(15,23,42,0.06);
-  text-decoration:none;
-  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
+  appearance:none;
+  border: 1px solid transparent;
+  background: transparent;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  color: #0f172a;
+  cursor:pointer;
+  transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease, color .18s ease;
   white-space:nowrap;
 }
 .trade-chip:hover{
-  transform:translateY(-1px);
-  box-shadow:0 10px 18px rgba(15,23,42,0.10);
-  border-color:rgba(37,99,235,.35);
+  transform: translateY(-1px);
+  background: rgba(15,23,42,0.04);
+  border-color: rgba(15,23,42,0.10);
 }
 .trade-chip.is-active{
-  background:rgba(37,99,235,0.12);
-  color:#0f172a;
-  border-color:rgba(37,99,235,0.45);
-  box-shadow:0 10px 22px rgba(37,99,235,0.16);
+  background: rgba(37,99,235,0.12);
+  border-color: rgba(37,99,235,0.35);
+  box-shadow: 0 10px 22px rgba(37,99,235,0.10), inset 0 1px 0 rgba(255,255,255,0.7);
 }
 .trade-chip:focus-visible{
-  outline:none;
-  box-shadow:0 0 0 3px rgba(37,99,235,0.35), 0 10px 20px rgba(15,23,42,0.12);
-  border-color:rgba(37,99,235,.8);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.18);
 }
 
 /* FAQ */
@@ -781,30 +773,25 @@ textarea{border-radius:14px}
 
 @media(max-width:640px){
   .trade-picker{
-    padding:10px 12px;
+    border-radius: 18px;
+    padding: 10px 10px;
   }
   .trade-chips{
-    flex-wrap:nowrap;
-    overflow-x:auto;
-    justify-content:flex-start;
-    gap:10px;
-    padding:2px 6px;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    gap: 10px;
+    padding: 2px 6px;
   }
   .trade-chip{
-    scroll-snap-align:start;
+    scroll-snap-align: start;
+    white-space: nowrap;
   }
-  .trade-chips::-webkit-scrollbar{
-    height:6px;
-  }
-  .trade-chips::-webkit-scrollbar-thumb{
-    background:rgba(148,163,184,0.35);
-    border-radius:999px;
-  }
-  .trade-chips::-webkit-scrollbar-track{
-    background:transparent;
-  }
+  .trade-chips::-webkit-scrollbar{ height: 8px; }
+  .trade-chips::-webkit-scrollbar-thumb{ background: rgba(15,23,42,0.10); border-radius: 999px; }
+  .trade-chips::-webkit-scrollbar-track{ background: transparent; }
 }
 .pill-soft{
   background:
