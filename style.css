@@ -817,6 +817,16 @@ textarea{border-radius:14px}
     linear-gradient(180deg, #f8fbff, #ffffff);
   padding:120px 1.5rem;
 }
+.service-unique--plumbers .section-inner{
+  max-width:1140px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+}
+.service-unique--plumbers .service-unique-grid{
+  gap:1.6rem;
+}
 .service-unique--plumbers .section-header{
   align-items:flex-start;
   text-align:left;
@@ -914,6 +924,9 @@ textarea{border-radius:14px}
   color:#4b5563;
   line-height:1.5;
 }
+
+/* TEMP PROOF - remove after verification */
+/* proof removed */
 /* TRADE CHIPS – FINAL OVERRIDE */
 .trade-picker{
   max-width: 980px;
