@@ -1141,7 +1141,7 @@ textarea{border-radius:14px}
   transform:translateY(22px) rotateX(8deg) rotateY(-16deg) scale(.97);
 }
 #packages .meta-grid .meta-card.meta-in{
-  animation: meta-phone-flip 1.8s cubic-bezier(.19,.64,.28,1) both;
+  animation: meta-phone-flip 5.4s cubic-bezier(.19,.64,.28,1) both;
   animation-delay: var(--meta-delay, 0s);
 }
 #packages .meta-card--trust{
@@ -1204,6 +1204,10 @@ textarea{border-radius:14px}
   }
   #packages .meta-grid .meta-card{
     padding:1.2rem 1.1rem;
+  }
+  #packages .meta-grid .meta-card.meta-in{
+    animation-duration:6s;
+    animation-timing-function:cubic-bezier(.22,.7,.2,1);
   }
   .page-home #work-demos .proof-grid{
     grid-template-columns:1fr;
