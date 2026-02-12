@@ -1006,14 +1006,7 @@ textarea{border-radius:14px}
   box-shadow:0 18px 42px rgba(2,6,23,0.08);
 }
 #plumber-proof .svc-card::before{
-  content:'';
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  height:4px;
-  border-radius:22px 22px 0 0;
-  background:linear-gradient(90deg,#2563eb,#3b82f6);
+  content:none;
 }
 #plumber-proof .svc-card-head{
   display:flex;
