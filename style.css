@@ -710,66 +710,53 @@ textarea{border-radius:14px}
 
 /* Trade picker chips */
 .trade-picker{
-  max-width:1080px;
-  margin:0 auto 0;
-  background:linear-gradient(135deg, rgba(59,130,246,0.05), rgba(255,255,255,0.75));
-  border:1px solid rgba(148,163,184,.3);
-  border-radius:18px;
-  padding:12px 14px;
-  box-shadow:0 12px 28px rgba(15,23,42,0.08);
+  max-width:1040px;
+  margin:0 auto;
+  padding:14px 16px;
+  border-radius:20px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.82), rgba(255,255,255,0.9));
+  border:1px solid rgba(148,163,184,.28);
+  box-shadow:0 10px 22px rgba(15,23,42,0.06);
 }
-.trade-scroller{
+.trade-chips{
   display:flex;
-  gap:.65rem;
-  flex-wrap:nowrap;
-  overflow-x:auto;
-  padding:2px;
-  scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  margin:0 auto;
 }
-.trade-scroller::-webkit-scrollbar{
-  height:6px;
-}
-.trade-scroller::-webkit-scrollbar-thumb{
-  background:rgba(148,163,184,0.45);
-  border-radius:999px;
-}
-.trade-scroller::-webkit-scrollbar-track{
-  background:transparent;
-}
-.trade-picker .pill-soft{
+.trade-chips .pill-soft{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  height:42px;
+  height:40px;
   padding:0 1rem;
   border-radius:999px;
-  font-size:.92rem;
+  font-size:.9rem;
   font-weight:600;
-  letter-spacing:-0.01em;
   background:#fff;
   color:#0f172a;
   border:1px solid rgba(148,163,184,.5);
-  box-shadow:0 10px 24px rgba(15,23,42,0.08);
+  box-shadow:0 6px 16px rgba(15,23,42,0.07);
   text-decoration:none;
-  transition:transform .2s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease, color .25s ease;
-  scroll-snap-align:start;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease, color .2s ease;
   white-space:nowrap;
 }
-.trade-picker .pill-soft:hover{
+.trade-chips .pill-soft:hover{
   transform:translateY(-1px);
-  box-shadow:0 14px 32px rgba(15,23,42,0.12);
-  border-color:rgba(37,99,235,.6);
+  box-shadow:0 10px 20px rgba(15,23,42,0.10);
+  border-color:rgba(37,99,235,.55);
 }
-.trade-picker .pill-soft.is-active{
+.trade-chips .pill-soft.is-active{
   background:linear-gradient(135deg, #2563eb, #3b82f6);
   color:#fff;
   border-color:rgba(37,99,235,.9);
-  box-shadow:0 14px 32px rgba(37,99,235,0.25);
+  box-shadow:0 12px 26px rgba(37,99,235,0.2);
 }
-.trade-picker .pill-soft:focus-visible{
+.trade-chips .pill-soft:focus-visible{
   outline:none;
-  box-shadow:0 0 0 3px rgba(37,99,235,0.35), 0 10px 22px rgba(15,23,42,0.16);
+  box-shadow:0 0 0 3px rgba(37,99,235,0.32), 0 10px 22px rgba(15,23,42,0.12);
   border-color:rgba(37,99,235,.9);
 }
 
@@ -788,6 +775,34 @@ textarea{border-radius:14px}
     width: 16px;
     height: 16px;
     margin-right: 0.35rem;
+  }
+}
+
+@media(max-width:640px){
+  .trade-picker{
+    padding:10px 12px;
+  }
+  .trade-chips{
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    justify-content:flex-start;
+    gap:10px;
+    padding:2px 4px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+  .trade-chips .pill-soft{
+    scroll-snap-align:start;
+  }
+  .trade-chips::-webkit-scrollbar{
+    height:6px;
+  }
+  .trade-chips::-webkit-scrollbar-thumb{
+    background:rgba(148,163,184,0.35);
+    border-radius:999px;
+  }
+  .trade-chips::-webkit-scrollbar-track{
+    background:transparent;
   }
 }
 .pill-soft{
