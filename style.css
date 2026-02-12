@@ -759,46 +759,31 @@ textarea{border-radius:14px}
   color:#2563eb;
 }
 .trust-box{
-  margin-top:3rem;
+  margin:4rem auto 4rem;
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:1.5rem;
-  background: linear-gradient(135deg,rgba(2,6,23,.96) 0%,rgba(15,23,42,.85) 50%,rgba(2,6,23,.92) 100%);
+  background:transparent;
   color:#e5e7eb;
-  border:1px solid rgba(96,165,250,.28);
-  border-radius:24px;
-  padding:2.8rem 2.4rem;
-  box-shadow:
-    0 20px 60px rgba(15,23,42,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.05);
+  border:none;
+  padding:0;
+  box-shadow:none;
   position:relative;
-  overflow:hidden;
   width:100%;
-  border-radius:6px;
 }
 .trust-section{
-  background:
-    linear-gradient(135deg, rgba(15,23,42,0.9), rgba(11,18,32,0.9)),
-    url("./assets/img/hero-bg-ind.png?v=3");
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
-  padding:80px 1.5rem 100px;
+  background:#fff;
+  padding:120px 1.5rem 120px;
 }
 .trust-section .section-inner{
   max-width:1120px;
   padding:0;
 }
 .trust-section .trust-box{
-  margin-top:1.5rem;
+  margin-top:2rem;
 }
 .trust-box::before{
-  content:'';
-  position:absolute;
-  inset:12px;
-  border-radius:10px;
-  background:radial-gradient(120% 90% at 50% 0%, rgba(255,255,255,0.08), transparent 65%);
-  pointer-events:none;
+  display:none;
 }
 .trust-item{
   display:flex;
@@ -822,7 +807,7 @@ textarea{border-radius:14px}
 
 @media(max-width:900px){
   .trust-section{
-    background-attachment:scroll;
+    padding:90px 1.2rem 100px;
   }
 }
 .trust-value{
