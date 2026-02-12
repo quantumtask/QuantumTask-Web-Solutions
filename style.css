@@ -1050,20 +1050,23 @@ textarea{border-radius:14px}
 #plumber-proof .price-list li{
   line-height:1.48;
 }
-#plumber-proof .faq-accordion{
+#plumber-proof .faq-accordion,
+#plumber-proof .faq-list{
   display:flex;
   flex-direction:column;
   gap:.75rem;
   margin-top:.35rem;
 }
-#plumber-proof .faq-accordion .faq-item{
+#plumber-proof .faq-accordion .faq-item,
+#plumber-proof .faq-list .faq-item{
   border:1px solid rgba(15,23,42,0.10);
   border-radius:14px;
   padding:.85rem 1rem;
   background:rgba(255,255,255,0.9);
   box-shadow:0 12px 26px rgba(15,23,42,0.07);
 }
-#plumber-proof .faq-accordion summary{
+#plumber-proof .faq-accordion summary,
+#plumber-proof .faq-list summary{
   cursor:pointer;
   font-weight:700;
   color:#0f172a;
@@ -1072,20 +1075,24 @@ textarea{border-radius:14px}
   gap:.5rem;
   list-style:none;
 }
-#plumber-proof .faq-accordion summary::-webkit-details-marker{
+#plumber-proof .faq-accordion summary::-webkit-details-marker,
+#plumber-proof .faq-list summary::-webkit-details-marker{
   display:none;
 }
-#plumber-proof .faq-accordion summary::after{
+#plumber-proof .faq-accordion summary::after,
+#plumber-proof .faq-list summary::after{
   content:'›';
   margin-left:auto;
   font-size:.9rem;
   color:#6b7280;
   transition:transform .2s ease;
 }
-#plumber-proof .faq-accordion details[open] summary::after{
+#plumber-proof .faq-accordion details[open] summary::after,
+#plumber-proof .faq-list details[open] summary::after{
   transform:rotate(90deg);
 }
-#plumber-proof .faq-accordion details[open] summary{
+#plumber-proof .faq-accordion details[open] summary,
+#plumber-proof .faq-list details[open] summary{
   color:#1d4ed8;
 }
 #plumber-proof .faq-answer{
