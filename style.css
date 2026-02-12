@@ -727,8 +727,11 @@ textarea{border-radius:14px}
 }
 .trade-chip{
   appearance:none;
-  border: 1px solid transparent;
-  background: transparent;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border: 1px solid rgba(15,23,42,0.12);
+  background: #fff;
   height: 42px;
   padding: 0 16px;
   border-radius: 999px;
@@ -736,6 +739,8 @@ textarea{border-radius:14px}
   color: #0f172a;
   cursor:pointer;
   transition: transform .18s ease, background-color .18s ease, border-color .18s ease, box-shadow .18s ease, color .18s ease;
+  box-shadow:0 6px 14px rgba(15,23,42,0.06);
+  text-decoration:none;
   white-space:nowrap;
 }
 .trade-chip:hover{
