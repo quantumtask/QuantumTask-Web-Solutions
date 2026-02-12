@@ -813,7 +813,6 @@ textarea{border-radius:14px}
 @media(max-width:900px){
   .trust-section{
     padding:90px 1.2rem 110px;
-    background-attachment:scroll;
   }
 }
 .trust-value{
