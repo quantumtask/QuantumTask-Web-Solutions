@@ -1671,7 +1671,7 @@ textarea{border-radius:14px}
 .contact-form {
   max-width: 520px;
   margin: 0;
-  padding: 2rem;
+  padding: 2.2rem;
   background: #fff;
   border: 1px solid rgba(148,163,184,.25);
   border-radius: 16px;
@@ -1695,7 +1695,7 @@ textarea{border-radius:14px}
 }
 .contact-form input, .contact-form textarea {
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1rem;
   border-radius: 10px;
   border: 1.5px solid rgba(148,163,184,.2);
   background: #fff;
@@ -1723,6 +1723,58 @@ textarea{border-radius:14px}
   padding: 1rem 1.6rem;
   font-weight: 600;
   font-size: 0.95rem;
+}
+.contact-note{
+  margin-top:0.35rem;
+  color:#6b7280;
+  font-size:0.9rem;
+}
+.whatsapp-fastlane{
+  margin-top:0.75rem;
+}
+.contact-trust{
+  list-style:none;
+  margin:1rem 0 0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:.5rem;
+  color:#374151;
+}
+.contact-trust li{
+  position:relative;
+  padding-left:1.2rem;
+}
+.contact-trust li::before{
+  content:'✓';
+  position:absolute;
+  left:0;
+  color:#2563eb;
+  font-weight:700;
+}
+.quote-details{
+  margin-top:1rem;
+  border-top:1px solid rgba(148,163,184,.25);
+  padding-top:0.75rem;
+}
+.quote-details summary{
+  cursor:pointer;
+  font-weight:600;
+  color:#0f172a;
+  padding:0.35rem 0;
+  list-style:none;
+}
+.quote-details summary::-webkit-details-marker{
+  display:none;
+}
+.quote-details summary::after{
+  content:'▾';
+  margin-left:8px;
+  font-size:0.8rem;
+  color:#6b7280;
+}
+.quote-details[open] summary::after{
+  content:'▴';
 }
 #contact .section-inner {
   display: grid;
