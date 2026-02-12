@@ -897,11 +897,11 @@ textarea{border-radius:14px}
     animation:none !important;
     transition:none !important;
   }
-  .page-home #packages .meta-grid .meta-card.meta-prep{
+  #packages .meta-grid .meta-card.meta-prep{
     opacity:1;
     transform:none;
   }
-  .page-home #packages .meta-grid .meta-card.meta-in{
+  #packages .meta-grid .meta-card.meta-in{
     animation:none !important;
   }
 }
@@ -1099,13 +1099,13 @@ textarea{border-radius:14px}
 #packages .grid-3{margin-top:2.75rem;}
 #work-demos .demo-grid{margin-top:2rem;}
 
-.page-home #packages .meta-grid{
+#packages .meta-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:1.35rem;
   width:100%;
 }
-.page-home #packages .meta-grid .meta-card{
+#packages .meta-grid .meta-card{
   margin:0;
   width:100%;
   padding:1.35rem 1.4rem;
@@ -1118,37 +1118,37 @@ textarea{border-radius:14px}
   transform-origin: 10% 50%;
   will-change: transform, opacity;
 }
-.page-home #packages .meta-grid .meta-card:hover{
+#packages .meta-grid .meta-card:hover{
   transform:none;
   box-shadow:0 12px 28px rgba(15,23,42,.08);
   border-color:rgba(148,163,184,.24);
 }
-.page-home #packages .meta-grid .meta-card.meta-prep{
+#packages .meta-grid .meta-card.meta-prep{
   opacity:0;
   transform:translateY(18px) rotateX(9deg) rotateY(-6deg) scale(.98);
 }
-.page-home #packages .meta-grid .meta-card.meta-in{
+#packages .meta-grid .meta-card.meta-in{
   animation: meta-page-flip 0.9s cubic-bezier(.25,.8,.25,1) both;
   animation-delay: var(--meta-delay, 0s);
 }
-.page-home #packages .meta-card--trust{
+#packages .meta-card--trust{
   display:flex;
   flex-direction:column;
   align-items:flex-start;
   gap:.55rem;
 }
-.page-home #packages .meta-card--payment{
+#packages .meta-card--payment{
   flex-direction:column;
   align-items:flex-start;
   justify-content:flex-start;
   gap:1rem;
 }
-.page-home #packages .meta-card--payment .payment-list{
+#packages .meta-card--payment .payment-list{
   width:100%;
   flex-direction:column;
   gap:.65rem;
 }
-.page-home #packages .meta-card--intro{
+#packages .meta-card--intro{
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -1185,11 +1185,11 @@ textarea{border-radius:14px}
   #packages .payment-row{margin-bottom:2rem;}
   #packages .intro-card{margin:0 0 2.6rem;}
   #packages .grid-3{margin-top:2.4rem;}
-  .page-home #packages .meta-grid{
+  #packages .meta-grid{
     grid-template-columns:1fr;
     gap:1rem;
   }
-  .page-home #packages .meta-grid .meta-card{
+  #packages .meta-grid .meta-card{
     padding:1.2rem 1.1rem;
   }
   .page-home #work-demos .proof-grid{
@@ -1198,7 +1198,7 @@ textarea{border-radius:14px}
 }
 
 @media(min-width:901px){
-  .page-home #packages .grid-3{
+  #packages .grid-3{
     margin-top:0;
   }
   .page-home #work-demos .demo-grid{
