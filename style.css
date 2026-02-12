@@ -798,6 +798,61 @@ textarea{border-radius:14px}
   .trade-chips::-webkit-scrollbar-thumb{ background: rgba(15,23,42,0.10); border-radius: 999px; }
   .trade-chips::-webkit-scrollbar-track{ background: transparent; }
 }
+
+/* TRADE CHIPS – FINAL OVERRIDE */
+.trade-picker{
+  max-width: 980px;
+  margin: 22px auto 0;
+  padding: 12px 14px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(15,23,42,0.10);
+  box-shadow: 0 18px 50px rgba(2,6,23,0.10);
+}
+.trade-picker .trade-chips{
+  display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;
+}
+.trade-picker .trade-chip{
+  appearance:none;
+  border:1px solid rgba(15,23,42,0.12);
+  background:#fff;
+  height:42px;
+  padding:0 18px;
+  border-radius:999px;
+  font-weight:700;
+  color:#0f172a;
+  cursor:pointer;
+  box-shadow: 0 10px 22px rgba(2,6,23,0.06);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background-color .18s ease;
+}
+.trade-picker .trade-chip:hover{
+  transform: translateY(-1px);
+  border-color: rgba(15,23,42,0.18);
+  box-shadow: 0 14px 30px rgba(2,6,23,0.08);
+}
+.trade-picker .trade-chip.is-active{
+  background: rgba(37,99,235,0.12);
+  border-color: rgba(37,99,235,0.40);
+  box-shadow: 0 12px 26px rgba(37,99,235,0.10), inset 0 1px 0 rgba(255,255,255,0.7);
+}
+.trade-picker .trade-chip:focus-visible{
+  outline:none;
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.18);
+}
+@media (max-width: 640px){
+  .trade-picker .trade-chips{
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px 4px;
+  }
+  .trade-picker .trade-chip{
+    scroll-snap-align:start;
+    white-space:nowrap;
+  }
+}
 .pill-soft{
   background:
     radial-gradient(circle at 15% 30%, rgba(59,130,246,.16), transparent 50%),
