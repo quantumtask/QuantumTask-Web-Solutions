@@ -724,6 +724,25 @@
     observer.observe(pricingGrid);
   }
 
+  // packages meta cards: flip/fade in when scrolled into view
+  const metaCards = document.querySelectorAll('#packages .meta-card');
+  if (metaCards.length) {
+    const metaObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('meta-in');
+          metaObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35 });
+
+    metaCards.forEach((card, idx) => {
+      card.classList.add('meta-prep');
+      card.style.setProperty('--meta-delay', `${idx * 0.12}s`);
+      metaObserver.observe(card);
+    });
+  }
+
   // why fade in
   const whyPills = document.querySelector('.pill-row');
   if (whyPills) {

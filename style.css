@@ -896,7 +896,11 @@ textarea{border-radius:14px}
     animation:none !important;
     transition:none !important;
   }
-  .page-home #packages .meta-grid .meta-card{
+  .page-home #packages .meta-grid .meta-card.meta-prep{
+    opacity:1;
+    transform:none;
+  }
+  .page-home #packages .meta-grid .meta-card.meta-in{
     animation:none !important;
   }
 }
@@ -1110,7 +1114,6 @@ textarea{border-radius:14px}
     radial-gradient(circle at 85% 15%, rgba(59,130,246,.10), transparent 45%),
     linear-gradient(145deg, rgba(255,255,255,.98), rgba(241,245,249,.94));
   box-shadow:0 12px 28px rgba(15,23,42,.08);
-  animation: meta-page-flip 0.9s cubic-bezier(.25,.8,.25,1) both;
   transform-origin: 10% 50%;
   will-change: transform, opacity;
 }
@@ -1119,11 +1122,13 @@ textarea{border-radius:14px}
   box-shadow:0 12px 28px rgba(15,23,42,.08);
   border-color:rgba(148,163,184,.24);
 }
-.page-home #packages .meta-grid .meta-card:nth-child(2){
-  animation-delay:.12s;
+.page-home #packages .meta-grid .meta-card.meta-prep{
+  opacity:0;
+  transform:translateY(18px) rotateX(9deg) rotateY(-6deg) scale(.98);
 }
-.page-home #packages .meta-grid .meta-card:nth-child(3){
-  animation-delay:.24s;
+.page-home #packages .meta-grid .meta-card.meta-in{
+  animation: meta-page-flip 0.9s cubic-bezier(.25,.8,.25,1) both;
+  animation-delay: var(--meta-delay, 0s);
 }
 .page-home #packages .meta-card--trust{
   display:flex;
