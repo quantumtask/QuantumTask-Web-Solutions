@@ -1108,27 +1108,36 @@ textarea{border-radius:14px}
 #packages .meta-head{
   display:flex;
   align-items:center;
-  gap:.65rem;
-  margin:0 0 .75rem;
+  gap:.8rem;
+  margin:0 0 .65rem;
+}
+#packages .meta-titles{
+  display:flex;
+  flex-direction:column;
+  gap:.1rem;
 }
 #packages .meta-head h3{
   margin:0;
   color:#0f172a;
-  font-size:1.05rem;
+  font-size:1.02rem;
 }
-#packages .meta-icon{
-  width:40px;
-  height:40px;
+#packages .meta-head .meta-sub{
+  margin:0;
+  color:#4b5563;
+  font-size:.9rem;
+  line-height:1.4;
+}
+#packages .meta-badge{
+  width:38px;
+  height:38px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
   border-radius:12px;
-  background:linear-gradient(135deg, #e0e9ff, #d5e4ff);
-  border:1px solid rgba(37,99,235,0.25);
-  color:#2563eb;
-  box-shadow:0 10px 24px rgba(37,99,235,0.18), inset 0 1px 0 rgba(255,255,255,0.8);
-  font-weight:700;
-  font-size:0.95rem;
+  background:linear-gradient(135deg, #e6efff, #d8e7ff);
+  border:1px solid rgba(37,99,235,0.22);
+  color:#1d4ed8;
+  box-shadow:0 10px 20px rgba(37,99,235,0.15), inset 0 1px 0 rgba(255,255,255,0.8);
 }
 #packages .meta-bullets{
   list-style:none;
@@ -1136,11 +1145,11 @@ textarea{border-radius:14px}
   padding:0;
   display:flex;
   flex-direction:column;
-  gap:.55rem;
+  gap:.45rem;
 }
 #packages .meta-bullets li{
   position:relative;
-  padding-left:1.35rem;
+  padding-left:1.2rem;
   color:#374151;
   line-height:1.5;
 }
@@ -1148,23 +1157,21 @@ textarea{border-radius:14px}
   content:'✓';
   position:absolute;
   left:0;
-  top:0.1rem;
+  top:0.15rem;
   color:#2563eb;
   font-weight:700;
-  font-size:0.95rem;
+  font-size:0.82rem;
 }
 #packages .meta-grid .meta-card{
   margin:0;
   width:100%;
-  padding:1.35rem 1.4rem;
-  border-radius:20px;
-  border:1px solid rgba(148,163,184,.24);
+  padding:1.05rem 1.2rem 1.15rem;
+  border-radius:18px;
+  border:1px solid rgba(148,163,184,.18);
   background:
-    radial-gradient(circle at 85% 15%, rgba(59,130,246,.10), transparent 45%),
-    linear-gradient(145deg, rgba(255,255,255,.98), rgba(241,245,249,.94));
-  box-shadow:
-    0 22px 48px rgba(15,23,42,.10),
-    0 2px 0 rgba(255,255,255,.85) inset;
+    linear-gradient(180deg, rgba(59,130,246,0.06), rgba(255,255,255,0) 18%),
+    #ffffff;
+  box-shadow:0 16px 32px rgba(15,23,42,.08);
   transform-origin: 10% 50%;
   will-change: transform, opacity, box-shadow;
   position:relative;
@@ -1173,16 +1180,16 @@ textarea{border-radius:14px}
 #packages .meta-grid .meta-card::before{
   content:'';
   position:absolute;
-  inset:12px;
-  border-radius:14px;
-  background:radial-gradient(120% 90% at 30% 20%, rgba(96,165,250,0.16), transparent 55%);
-  pointer-events:none;
-  opacity:.9;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  background:linear-gradient(90deg, #2563eb, #3b82f6);
 }
 #packages .meta-grid .meta-card:hover{
-  transform:none;
-  box-shadow:0 12px 28px rgba(15,23,42,.08);
-  border-color:rgba(148,163,184,.24);
+  transform:translateY(-2px);
+  box-shadow:0 22px 44px rgba(15,23,42,.12);
+  border-color:rgba(37,99,235,.24);
 }
 #packages .meta-grid .meta-card.meta-prep{
   opacity:0;
@@ -1191,6 +1198,13 @@ textarea{border-radius:14px}
 #packages .meta-grid .meta-card.meta-in{
   animation: meta-phone-flip 5.4s cubic-bezier(.19,.64,.28,1) both;
   animation-delay: var(--meta-delay, 0s);
+}
+#packages .meta-grid .meta-card .meta-bullets{
+  max-width: 720px;
+}
+#packages .meta-grid .meta-card svg{
+  width:18px;
+  height:18px;
 }
 #packages .meta-card--trust{
   display:flex;
