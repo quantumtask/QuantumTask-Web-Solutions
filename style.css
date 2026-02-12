@@ -810,6 +810,101 @@ textarea{border-radius:14px}
   align-items:flex-start;
 }
 
+/* Plumbers service section */
+.service-unique--plumbers{
+  background: radial-gradient(120% 120% at 10% 10%, rgba(59,130,246,0.06), transparent 50%), linear-gradient(180deg, #f7f9fc, #ffffff);
+}
+.service-unique--plumbers .section-header{
+  align-items:flex-start;
+  text-align:left;
+}
+.section-support{
+  margin-top:0.5rem;
+  color:#4b5563;
+  font-size:0.95rem;
+}
+.service-unique--plumbers .service-card{
+  position:relative;
+  padding:1.4rem 1.3rem 1.35rem;
+  border:1px solid rgba(148,163,184,0.22);
+  border-radius:18px;
+  box-shadow:0 14px 32px rgba(15,23,42,0.08);
+  background:#fff;
+}
+.service-unique--plumbers .service-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  border-radius:18px 18px 0 0;
+  background:linear-gradient(90deg,#2563eb,#3b82f6);
+}
+.service-card-head{
+  display:flex;
+  align-items:center;
+  gap:.65rem;
+  margin-bottom:.85rem;
+}
+.service-badge{
+  width:36px;
+  height:36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  background:linear-gradient(135deg,#e6efff,#d8e7ff);
+  border:1px solid rgba(37,99,235,0.25);
+  color:#1d4ed8;
+  box-shadow:0 8px 18px rgba(37,99,235,0.16), inset 0 1px 0 rgba(255,255,255,0.8);
+}
+.service-card-head h3{
+  margin:0;
+  font-size:1.05rem;
+  color:#0f172a;
+}
+.service-unique--plumbers .price-list{
+  gap:.5rem;
+}
+.service-unique--plumbers .price-list li{
+  line-height:1.5;
+}
+.faq-accordion{
+  display:flex;
+  flex-direction:column;
+  gap:.6rem;
+}
+.faq-accordion .faq-item{
+  border:1px solid rgba(148,163,184,0.2);
+  border-radius:12px;
+  padding:.65rem .85rem;
+  background:#f9fafb;
+}
+.faq-accordion summary{
+  cursor:pointer;
+  font-weight:700;
+  color:#0f172a;
+  display:flex;
+  align-items:center;
+  gap:.35rem;
+}
+.faq-accordion summary::-webkit-details-marker{display:none;}
+.faq-accordion summary::after{
+  content:'▾';
+  margin-left:auto;
+  font-size:.8rem;
+  color:#6b7280;
+  transition:transform .2s ease;
+}
+.faq-accordion details[open] summary::after{
+  transform:rotate(180deg);
+}
+.faq-answer{
+  margin-top:.4rem;
+  color:#4b5563;
+  line-height:1.5;
+}
 /* TRADE CHIPS – FINAL OVERRIDE */
 .trade-picker{
   max-width: 980px;
