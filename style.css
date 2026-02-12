@@ -812,7 +812,10 @@ textarea{border-radius:14px}
 
 /* Plumbers service section */
 .service-unique--plumbers{
-  background: radial-gradient(120% 120% at 10% 10%, rgba(59,130,246,0.06), transparent 50%), linear-gradient(180deg, #f7f9fc, #ffffff);
+  background:
+    radial-gradient(120% 120% at 10% 10%, rgba(59,130,246,0.06), transparent 50%),
+    linear-gradient(180deg, #f8fbff, #ffffff);
+  padding:120px 1.5rem;
 }
 .service-unique--plumbers .section-header{
   align-items:flex-start;
@@ -825,11 +828,11 @@ textarea{border-radius:14px}
 }
 .service-unique--plumbers .service-card{
   position:relative;
-  padding:1.4rem 1.3rem 1.35rem;
-  border:1px solid rgba(148,163,184,0.22);
-  border-radius:18px;
+  padding:1.35rem 1.25rem 1.2rem;
+  border:1px solid rgba(15,23,42,0.08);
+  border-radius:20px;
   box-shadow:0 14px 32px rgba(15,23,42,0.08);
-  background:#fff;
+  background:rgba(255,255,255,0.75);
 }
 .service-unique--plumbers .service-card::before{
   content:'';
@@ -838,7 +841,7 @@ textarea{border-radius:14px}
   left:0;
   right:0;
   height:4px;
-  border-radius:18px 18px 0 0;
+  border-radius:20px 20px 0 0;
   background:linear-gradient(90deg,#2563eb,#3b82f6);
 }
 .service-card-head{
@@ -861,25 +864,27 @@ textarea{border-radius:14px}
 }
 .service-card-head h3{
   margin:0;
-  font-size:1.05rem;
+  font-size:1.08rem;
   color:#0f172a;
+  font-weight:700;
 }
 .service-unique--plumbers .price-list{
-  gap:.5rem;
+  gap:.45rem;
 }
 .service-unique--plumbers .price-list li{
-  line-height:1.5;
+  line-height:1.45;
 }
 .faq-accordion{
   display:flex;
   flex-direction:column;
-  gap:.6rem;
+  gap:.65rem;
 }
 .faq-accordion .faq-item{
-  border:1px solid rgba(148,163,184,0.2);
-  border-radius:12px;
-  padding:.65rem .85rem;
-  background:#f9fafb;
+  border:1px solid rgba(15,23,42,0.08);
+  border-radius:14px;
+  padding:.75rem .95rem;
+  background:rgba(255,255,255,0.78);
+  box-shadow:0 8px 20px rgba(15,23,42,0.06);
 }
 .faq-accordion summary{
   cursor:pointer;
@@ -888,6 +893,7 @@ textarea{border-radius:14px}
   display:flex;
   align-items:center;
   gap:.35rem;
+  transition:color .2s ease;
 }
 .faq-accordion summary::-webkit-details-marker{display:none;}
 .faq-accordion summary::after{
@@ -899,6 +905,9 @@ textarea{border-radius:14px}
 }
 .faq-accordion details[open] summary::after{
   transform:rotate(180deg);
+}
+.faq-accordion details[open] summary{
+  color:#1d4ed8;
 }
 .faq-answer{
   margin-top:.4rem;
