@@ -1784,6 +1784,33 @@ textarea{border-radius:14px}
 .quote-details .form-group{
   margin-top:0.75rem;
 }
+
+/* Contact WhatsApp CTA override */
+#contact .whatsapp-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:fit-content;
+  max-width:100%;
+  padding:10px 14px;
+  border-radius:999px;
+  background:#ffffff;
+  border:1px solid rgba(15,23,42,0.14);
+  color:#0f172a;
+  font-weight:700;
+  font-size:14px;
+  text-decoration:none;
+  box-shadow:0 10px 22px rgba(2,6,23,0.06);
+}
+#contact .whatsapp-cta:hover{
+  border-color:rgba(15,23,42,0.22);
+  transform:translateY(-1px);
+}
+#contact .whatsapp-cta:focus-visible{
+  outline:none;
+  box-shadow:0 0 0 4px rgba(37,99,235,0.18);
+}
 #contact .section-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
