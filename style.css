@@ -1761,20 +1761,28 @@ textarea{border-radius:14px}
   cursor:pointer;
   font-weight:600;
   color:#0f172a;
-  padding:0.35rem 0;
+  padding:0.45rem 0;
   list-style:none;
+  display:flex;
+  align-items:center;
+  gap:.35rem;
 }
 .quote-details summary::-webkit-details-marker{
   display:none;
 }
 .quote-details summary::after{
   content:'▾';
-  margin-left:8px;
+  margin-left:auto;
   font-size:0.8rem;
   color:#6b7280;
+  transition:transform .2s ease;
 }
 .quote-details[open] summary::after{
   content:'▴';
+  transform:rotate(180deg);
+}
+.quote-details .form-group{
+  margin-top:0.75rem;
 }
 #contact .section-inner {
   display: grid;
@@ -1787,7 +1795,7 @@ textarea{border-radius:14px}
   margin-bottom: 1rem;
 }
 .contact-left .section-intro {
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.9rem;
 }
 .contact-meta {
   margin-top: 2rem;
