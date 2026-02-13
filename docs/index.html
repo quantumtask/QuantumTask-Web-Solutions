@@ -25,7 +25,7 @@
   <!-- deploy-check: 2026-02-11 -->
 
   <meta name="theme-color" content="#ffffff" />
-  <link rel="stylesheet" href="style.css?v=a5002b5" />
+  <link rel="stylesheet" href="style.css?v=3" />
   <link rel="stylesheet" href="assets/css/site.css?v=20260212" />
   <!-- Set the theme color for supported browsers to match the dark brand background -->
   <link rel="icon" type="image/png" href="images/logo.png" />
@@ -232,15 +232,18 @@
       <div class="section-header">
         <span class="section-label">Browse by trade</span>
         <h2>Pick your service and get a tailored site</h2>
+        <p class="section-intro">Choose a trade to see packages and examples tailored to your business.</p>
       </div>
-      <div class="pill-row">
-        <a class="pill-soft" href="plumbers.html">Plumbers</a>
-        <a class="pill-soft" href="electricians.html">Electricians</a>
-        <a class="pill-soft" href="cleaners.html">Cleaners</a>
-        <a class="pill-soft" href="landscapers.html">Landscapers</a>
-        <a class="pill-soft" href="repairs.html">Repairs</a>
-        <a class="pill-soft" href="salons.html">Salons</a>
-        <a class="pill-soft" href="installers.html">Installers</a>
+      <div class="trade-picker">
+        <div class="trade-chips" role="tablist" aria-label="Trades">
+          <a class="trade-chip is-active" aria-selected="true" href="plumbers.html">Plumbers</a>
+          <a class="trade-chip" aria-selected="false" href="electricians.html">Electricians</a>
+          <a class="trade-chip" aria-selected="false" href="cleaners.html">Cleaners</a>
+          <a class="trade-chip" aria-selected="false" href="landscapers.html">Landscapers</a>
+          <a class="trade-chip" aria-selected="false" href="repairs.html">Repairs</a>
+          <a class="trade-chip" aria-selected="false" href="salons.html">Salons</a>
+          <a class="trade-chip" aria-selected="false" href="installers.html">Installers</a>
+        </div>
       </div>
     </div>
   </section>
@@ -350,16 +353,42 @@
 
       <div class="meta-grid qt-stagger">
         <div class="card trust-strip meta-card meta-card--trust" data-pack-card>
-          <span>Founder-led by Daniel</span>
-          <span>South Africa: Johannesburg &middot; Pretoria &middot; Cape Town &middot; Durban</span>
-          <span>48-hour launch once assets arrive (for one-page/full builds)</span>
-          <span>WhatsApp/calls with a quote-first approach</span>
-          <span>90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; or we keep working until it hits 90+ at no extra cost.</span>
+          <div class="meta-head">
+            <div class="meta-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 13.5a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z"/>
+                <path d="M5.5 20.5a6.5 6.5 0 0 1 13 0"/>
+                <path d="m16 3.5-1 2-2 .5 2 .5 1 2 1-2 2-.5-2-.5-1-2Z"/>
+              </svg>
+            </div>
+            <div class="meta-titles">
+              <h3>Founder-led by Daniel</h3>
+              <p class="meta-sub">Fast turnaround, local-first, performance guaranteed.</p>
+            </div>
+          </div>
+          <ul class="meta-bullets">
+            <li>South Africa: Johannesburg &middot; Pretoria &middot; Cape Town &middot; Durban</li>
+            <li>48-hour launch once assets arrive (one-page/full builds)</li>
+            <li>WhatsApp/calls with a quote-first approach</li>
+            <li>90+ Performance score on Google PageSpeed Insights (mobile) &mdash; or we keep working until it hits 90+ at no extra cost.</li>
+          </ul>
         </div>
 
         <div class="card payment-row meta-card meta-card--payment" data-pack-card>
-          <h3>How payment works</h3>
-          <ul class="payment-list">
+          <div class="meta-head">
+            <div class="meta-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="M3 9.5h18"/>
+                <path d="M7.5 14h3.5"/>
+              </svg>
+            </div>
+            <div class="meta-titles">
+              <h3>How payment works</h3>
+              <p class="meta-sub">Simple milestones. No hidden fees.</p>
+            </div>
+          </div>
+          <ul class="meta-bullets payment-list">
             <li>50% deposit to start</li>
             <li>50% due on go-live</li>
             <li>Guarantee: 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; we keep working until it hits 90+ at no extra cost.</li>
@@ -367,8 +396,22 @@
         </div>
 
         <div class="card intro-card meta-card meta-card--intro" data-pack-card>
-          <h3>Intro slots</h3>
-          <p>Intro pricing reserved for the next 5 local service businesses. After that, package prices increase.</p>
+          <div class="meta-head">
+            <div class="meta-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 7v5l3 2"/>
+              </svg>
+            </div>
+            <div class="meta-titles">
+              <h3>Intro slots</h3>
+              <p class="meta-sub">Limited discounted slots for early clients.</p>
+            </div>
+          </div>
+          <ul class="meta-bullets">
+            <li>Intro pricing reserved for the next 5 local service businesses.</li>
+            <li>After that, package prices increase.</li>
+          </ul>
         </div>
       </div>
 
@@ -605,24 +648,13 @@
           <h2>Let's build a site that brings in enquiries</h2>
         </div>
         <p class="section-intro">
-          Tell me what service you offer, where you operate, and what you want the site to do. I'll reply personally within 24 hours with the best package, timeline, and next steps.
+          I’ll reply within 24 hours with the best package, timeline, and next steps.
         </p>
-        <p>
-          If you already have a website, include the link - I'll tell you what's costing you leads (and how we fix it).
-        </p>
-        <div class="contact-meta">
-          <span>Fixed pricing (R949 / R2499)</span>
-          <span>Conversion-focused copy included</span>
-          <span>Fast, mobile-first build</span>
-        </div>
-        <div class="contact-logo">
-          <img src="/images/logo.png" alt="QuantumTask logo" loading="lazy">
-        </div>
       </div>
 
       <div class="contact-right">
         <h3>Get a quote</h3>
-        <p>I'll get back to you within 24 hours with a clear recommendation.</p>
+        <p>I'll reply within 24 hours with the best package, timeline, and next steps.</p>
         <form class="card contact-form" action="" method="post">
           <!-- Connect to Formspree/Netlify Forms endpoint -->
           <div class="form-group">
@@ -630,39 +662,46 @@
             <input id="full-name" name="full-name" type="text" autocomplete="name" required>
           </div>
           <div class="form-group">
-            <label for="business-name">Business name</label>
-            <input id="business-name" name="business-name" type="text" autocomplete="organization" required>
-          </div>
-          <div class="form-group">
             <label for="phone">Phone/WhatsApp</label>
             <input id="phone" name="phone" type="tel" autocomplete="tel" required>
           </div>
           <div class="form-group">
-            <label for="service-type">Service type</label>
-            <input id="service-type" name="service-type" type="text" required>
-          </div>
-          <div class="form-group">
-            <label for="service-area">Area served</label>
-            <input id="service-area" name="service-area" type="text" required>
-          </div>
-          <div class="form-group">
-            <label for="website">Existing website (optional)</label>
-            <input id="website" name="website" type="url" placeholder="https://">
-          </div>
-          <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required></textarea>
+            <textarea id="message" name="message" rows="4" required placeholder="What do you do, where are you based, and what do you want the site to achieve (calls, bookings, quotes)?"></textarea>
           </div>
-          <button class="btn btn-primary full" type="submit">Get my quote</button>
+          <details class="quote-details">
+            <summary>Optional details</summary>
+            <div class="form-group">
+              <label for="business-name">Business name (optional)</label>
+              <input id="business-name" name="business-name" type="text" autocomplete="organization">
+            </div>
+            <div class="form-group">
+              <label for="service-type">Service type (optional)</label>
+              <input id="service-type" name="service-type" type="text">
+            </div>
+            <div class="form-group">
+              <label for="service-area">Area served (optional)</label>
+              <input id="service-area" name="service-area" type="text">
+            </div>
+            <div class="form-group">
+              <label for="website">Existing website (optional)</label>
+              <input id="website" name="website" type="url" placeholder="https://">
+            </div>
+          </details>
+
+          <button class="btn btn-primary full" type="submit">Get my quote in 24 hours</button>
+          <p class="contact-note">No spam. I reply personally.</p>
+          <a class="btn btn-ghost full whatsapp-fastlane whatsapp-cta" href="https://wa.me/27840906474?text=Hi,%20I'd%20like%20a%20quote%20for%20a%20website." rel="noopener noreferrer">Prefer WhatsApp? Message me</a>
+          <ul class="contact-trust">
+            <li>24-hour personal reply</li>
+            <li>Fixed pricing (R949 / R2499)</li>
+            <li>50% deposit, 50% on go-live</li>
+            <li>90+ Performance score on Google PageSpeed Insights (mobile) at launch</li>
+          </ul>
           <p class="form-success" role="status" aria-live="polite" hidden>
             Thanks - I've received your details and will reply within 24 hours.
           </p>
         </form>
-        <div class="contact-meta">
-          <span>50% deposit, 50% on go-live</span>
-          <span>24-hour reply guarantee</span>
-          <span>90+ Performance score on Google PageSpeed Insights (mobile) at launch for the homepage &mdash; we keep working until it hits 90+</span>
-        </div>
       </div>
     </div>
   </section>
