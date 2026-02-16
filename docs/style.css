@@ -2501,3 +2501,34 @@ z-index: 9999;
     opacity: 1;
   }
 }
+
+
+.site-toplinks{
+position: relative;
+z-index: 10000;
+background: rgba(255,255,255,0.06);
+border-bottom: 1px solid rgba(255,255,255,0.10);
+padding: 8px 14px;
+}
+.site-toplinks-inner{
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+gap: 10px;
+align-items: center;
+flex-wrap: wrap;
+font-size: 12px;
+line-height: 1.2;
+}
+.site-toplinks a{
+color: inherit;
+opacity: 0.9;
+text-decoration: none;
+}
+.site-toplinks a:hover{
+opacity: 1;
+text-decoration: underline;
+}
+.site-toplinks .sep{
+opacity: 0.55;
+}
