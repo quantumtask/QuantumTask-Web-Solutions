@@ -2285,7 +2285,7 @@ textarea{border-radius:14px}
 .page-legal .legal-wrap{
   max-width:980px;
   margin:0 auto;
-  padding:120px 1.5rem 80px;
+  padding:140px 1.5rem 80px;
 }
 .page-legal .legal-card{
   background:#fff;
@@ -2362,10 +2362,10 @@ textarea{border-radius:14px}
 .page-legal li{
   padding-left:0.1rem;
 }
-.page-legal a{
+.page-legal .legal-card a{
   color:#1d4ed8;
 }
-.page-legal a:hover{
+.page-legal .legal-card a:hover{
   color:#0b4dd9;
   text-decoration:underline;
 }
@@ -2378,12 +2378,15 @@ textarea{border-radius:14px}
 .page-legal .legal-card .legal-section:last-child{
   margin-bottom:0;
 }
+.page-legal .legal-card [id]{
+  scroll-margin-top:120px;
+}
 .page-legal .footer{
   margin-top:40px;
 }
 @media(max-width:720px){
   .page-legal .legal-wrap{
-    padding:100px 1rem 64px;
+    padding:120px 1rem 64px;
   }
   .page-legal .legal-card{
     padding:22px 18px;
@@ -2393,6 +2396,9 @@ textarea{border-radius:14px}
   }
   .page-legal h2{
     font-size:1.22rem;
+  }
+  .page-legal .legal-card [id]{
+    scroll-margin-top:110px;
   }
 }
 
