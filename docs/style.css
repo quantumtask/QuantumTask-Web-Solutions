@@ -2274,6 +2274,36 @@ textarea{border-radius:14px}
 }
 
 /* LEGAL PAGES (scoped) */
+
+.page-legal .legal-toplinks{
+position: relative;
+z-index: 10000;
+background: #ffefc2; /* DEBUG: obvious background */
+border-bottom: 2px solid #ffb100; /* DEBUG */
+padding: 10px 14px;
+}
+.page-legal .legal-toplinks-inner{
+max-width: 1100px;
+margin: 0 auto;
+display: flex;
+gap: 10px;
+align-items: center;
+justify-content: flex-start;
+flex-wrap: wrap;
+}
+.page-legal .legal-toplinks a{
+font-weight: 700;
+text-decoration: none;
+}
+.page-legal .legal-toplinks a:hover{
+text-decoration: underline;
+}
+.page-legal .legal-sticky-panel{
+position: sticky;
+top: 0;
+z-index: 9999;
+}
+
 .page-legal{
   background:#f3f4f6;
   color:#0f172a;
