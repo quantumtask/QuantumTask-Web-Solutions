@@ -2273,6 +2273,135 @@ textarea{border-radius:14px}
   }
 }
 
+/* LEGAL PAGES (scoped) */
+.page-legal{
+  background:#f3f4f6;
+  color:#0f172a;
+}
+.page-legal .nav{
+  position:sticky;
+  top:0;
+}
+.page-legal .legal-wrap{
+  max-width:980px;
+  margin:0 auto;
+  padding:140px 1.5rem 80px;
+}
+.page-legal .legal-card{
+  background:#fff;
+  border:1px solid rgba(148,163,184,0.35);
+  border-radius:18px;
+  box-shadow:0 16px 40px rgba(15,23,42,0.1);
+  padding:32px 28px;
+}
+.page-legal .legal-meta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(37,99,235,0.08);
+  color:#1d4ed8;
+  font-weight:600;
+  font-size:.9rem;
+  margin-bottom:16px;
+}
+.page-legal .legal-toc{
+  border:1px solid rgba(148,163,184,0.25);
+  border-radius:14px;
+  padding:14px 16px;
+  background:rgba(248,250,252,0.9);
+  margin:12px 0 28px;
+}
+.page-legal .legal-toc strong{
+  display:block;
+  margin-bottom:8px;
+  color:#0f172a;
+}
+.page-legal .legal-toc ol,
+.page-legal .legal-toc ul{
+  list-style:decimal;
+  padding-left:18px;
+  margin:0;
+  display:grid;
+  gap:6px;
+}
+.page-legal .legal-toc a{
+  color:#1d4ed8;
+  text-decoration:none;
+}
+.page-legal .legal-toc a:hover{
+  text-decoration:underline;
+}
+.page-legal h1{
+  font-size:2rem;
+  margin:0 0 12px;
+}
+.page-legal h2{
+  font-size:1.35rem;
+  margin:26px 0 10px;
+}
+.page-legal h3{
+  font-size:1.1rem;
+  margin:18px 0 8px;
+}
+.page-legal p{
+  line-height:1.65;
+  color:#1f2937;
+  margin:0 0 14px;
+}
+.page-legal ul,
+.page-legal ol{
+  margin:0 0 16px 1.2rem;
+  padding-left:0.8rem;
+  color:#1f2937;
+  line-height:1.6;
+  display:grid;
+  gap:8px;
+}
+.page-legal li{
+  padding-left:0.1rem;
+}
+.page-legal .legal-card a{
+  color:#1d4ed8;
+}
+.page-legal .legal-card a:hover{
+  color:#0b4dd9;
+  text-decoration:underline;
+}
+.page-legal .legal-section{
+  margin-top:10px;
+}
+.page-legal .legal-section + .legal-section{
+  margin-top:20px;
+}
+.page-legal .legal-card .legal-section:last-child{
+  margin-bottom:0;
+}
+.page-legal .legal-card [id]{
+  scroll-margin-top:120px;
+}
+.page-legal .footer{
+  margin-top:40px;
+}
+@media(max-width:720px){
+  .page-legal .legal-wrap{
+    padding:120px 1rem 64px;
+  }
+  .page-legal .legal-card{
+    padding:22px 18px;
+  }
+  .page-legal h1{
+    font-size:1.65rem;
+  }
+  .page-legal h2{
+    font-size:1.22rem;
+  }
+  .page-legal .legal-card [id]{
+    scroll-margin-top:110px;
+  }
+}
+
 @keyframes slideInRight {
   from {
     transform: translateX(60px);
