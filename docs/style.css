@@ -246,12 +246,12 @@ ul, ol{
   height:2px;
   border-radius:2px;
   background: linear-gradient(90deg, #60a5fa, #2563eb);
-  transform:translate(-50%,-50%) rotate(45deg);
+  transform:translate(-50%,-50%) rotate(0deg);
   opacity:0;
-  transition:transform 0.25s ease, opacity 0.25s ease;
+  transition:transform 0.4s ease, opacity 0.4s ease;
 }
 .mobile-menu-button::after{
-  transform:translate(-50%,-50%) rotate(-45deg);
+  transform:translate(-50%,-50%) rotate(0deg);
 }
 /* Transform the three dots into a cross when open */
 .mobile-menu-button.open span {
@@ -261,6 +261,12 @@ ul, ol{
 .mobile-menu-button.open::before,
 .mobile-menu-button.open::after{
   opacity:1;
+}
+.mobile-menu-button.open::before{
+  transform:translate(-50%,-50%) rotate(45deg);
+}
+.mobile-menu-button.open::after{
+  transform:translate(-50%,-50%) rotate(-45deg);
 }
 /* Off‑canvas mobile menu panel */
 .mobile-menu {
