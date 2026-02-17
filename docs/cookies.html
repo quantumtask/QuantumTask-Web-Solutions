@@ -58,15 +58,25 @@
 
 <body class="page-legal">
 
+<header class="site-header nav">
+  <div class="nav-inner">
+    <a class="brand" href="/">
+      <img src="/images/logo.png" alt="QuantumTask logo" class="brand-mark" width="40" height="40" loading="lazy">
+      <div class="brand-info">
+        <span class="brand-text">QuantumTask</span>
+        <span class="brand-tagline">Websites that get you enquiries</span>
+      </div>
     </a>
 
+    <!-- Provide an aria label so screen readers know this is the primary navigation -->
     <nav class="nav-links" aria-label="Primary navigation">
-      <a href="/#why-cleaning-sites" onclick="closeMobileMenu()">Why service sites fail</a>
-      <a href="/#how-it-works" onclick="closeMobileMenu()">How it works</a>
-      <a href="/#packages" onclick="closeMobileMenu()">Pricing</a>
-      <a href="/#work-demos" onclick="closeMobileMenu()">Work / Demos</a>
-      <a href="/#faq" onclick="closeMobileMenu()">FAQ</a>
-      <a href="/#contact" onclick="closeMobileMenu()">Contact</a>
+      <!-- Clear, descriptive anchors for each section -->
+      <a href="#why-cleaning-sites">Why service sites fail</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#packages">Pricing</a>
+      <a href="#work-demos">Work / Demos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <div class="nav-actions">
@@ -99,6 +109,7 @@
       <a href="mailto:daniel@quantumtask.io" class="btn btn-outline nav-cta">Free Quote</a>
     </div>
 
+    <!-- Mobile menu toggle button (kebab). Hidden on desktop via CSS -->
     <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Open menu">
       <span></span>
       <span></span>
@@ -107,40 +118,42 @@
   </div>
 </header>
 
-<div id="mobile-menu" class="mobile-menu">
-  <a href="/#why-cleaning-sites" onclick="closeMobileMenu()">Why service sites fail</a>
-  <a href="/#how-it-works" onclick="closeMobileMenu()">How it works</a>
-  <a href="/#packages" onclick="closeMobileMenu()">Pricing</a>
-  <a href="/#work-demos" onclick="closeMobileMenu()">Work / Demos</a>
-  <a href="/#faq" onclick="closeMobileMenu()">FAQ</a>
-  <a href="/#contact" onclick="closeMobileMenu()">Contact</a>
-  <div class="mobile-socials social-links">
-    <a href="https://wa.me/27840906474" class="social-btn" aria-label="WhatsApp" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M20.52 3.48A11.89 11.89 0 0 0 12.07 0C5.49 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.58 0 11.92-5.34 11.92-11.92 0-3.18-1.24-6.17-3.48-8.42Zm-8.45 18.3h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.38a9.86 9.86 0 0 1-1.54-5.26C2.15 6.42 6.57 2 12.07 2c2.63 0 5.1 1.02 6.96 2.88a9.78 9.78 0 0 1 2.88 6.96c0 5.5-4.42 9.94-9.84 9.94Zm5.43-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.17-.24-.58-.49-.5-.66-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
-      </svg>
-      <span class="sr-only">WhatsApp</span>
-    </a>
-    <a href="https://linkedin.com/in/christopher-oberholzer-37abb7383" class="social-btn" aria-label="LinkedIn" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5s.88 2 1.98 2h.02c1.1 0 1.98-.9 1.98-2s-.88-2-2-2ZM3.5 9h3v12h-3V9Zm7 0h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V21h-3v-5.2c0-1.24-.02-2.84-1.72-2.84-1.72 0-1.98 1.34-1.98 2.74V21h-3V9Z"/>
-      </svg>
-      <span class="sr-only">LinkedIn</span>
-    </a>
-    <a href="https://instagram.com/_quantumtask_" class="social-btn" aria-label="Instagram" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 2.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm4.75-3a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/>
-      </svg>
-      <span class="sr-only">Instagram</span>
-    </a>
-    <a href="https://x.com/cj_quantumtask" class="social-btn" aria-label="X" rel="noopener noreferrer">
-      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M18.36 2H21l-6.5 7.44L22 22h-6.18l-4.84-6.28L5.5 22H3l7.02-8.04L2 2h6.32l4.37 5.72L18.36 2Zm-1.08 18h1.75L7.67 4h-1.9l11.51 16Z"/>
-      </svg>
-      <span class="sr-only">X</span>
-    </a>
-  </div>
-</div>
+ <!-- Off-canvas mobile navigation. Hidden by default and slides in from the right. -->
+ <div id="mobile-menu" class="mobile-menu">
+   <a href="#why-cleaning-sites" onclick="closeMobileMenu()">Why service sites fail</a>
+   <a href="#how-it-works" onclick="closeMobileMenu()">How it works</a>
+   <a href="#packages" onclick="closeMobileMenu()">Pricing</a>
+   <a href="#work-demos" onclick="closeMobileMenu()">Work / Demos</a>
+   <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+
+   <div class="mobile-socials social-links">
+     <a href="https://wa.me/27840906474" class="social-btn" aria-label="WhatsApp" rel="noopener noreferrer">
+       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+         <path d="M20.52 3.48A11.89 11.89 0 0 0 12.07 0C5.49 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.58 0 11.92-5.34 11.92-11.92 0-3.18-1.24-6.17-3.48-8.42Zm-8.45 18.3h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.38a9.86 9.86 0 0 1-1.54-5.26C2.15 6.42 6.57 2 12.07 2c2.63 0 5.1 1.02 6.96 2.88a9.78 9.78 0 0 1 2.88 6.96c0 5.5-4.42 9.94-9.84 9.94Zm5.43-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.17-.24-.58-.49-.5-.66-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
+       </svg>
+       <span class="sr-only">WhatsApp</span>
+     </a>
+     <a href="https://linkedin.com/in/christopher-oberholzer-37abb7383" class="social-btn" aria-label="LinkedIn" rel="noopener noreferrer">
+       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+         <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5s.88 2 1.98 2h.02c1.1 0 1.98-.9 1.98-2s-.88-2-2-2ZM3.5 9h3v12h-3V9Zm7 0h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V21h-3v-5.2c0-1.24-.02-2.84-1.72-2.84-1.72 0-1.98 1.34-1.98 2.74V21h-3V9Z"/>
+       </svg>
+       <span class="sr-only">LinkedIn</span>
+     </a>
+     <a href="https://instagram.com/_quantumtask_" class="social-btn" aria-label="Instagram" rel="noopener noreferrer">
+       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+         <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 2.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm4.75-3a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/>
+       </svg>
+       <span class="sr-only">Instagram</span>
+     </a>
+     <a href="https://x.com/cj_quantumtask" class="social-btn" aria-label="X" rel="noopener noreferrer">
+       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+         <path d="M18.36 2H21l-6.5 7.44L22 22h-6.18l-4.84-6.28L5.5 22H3l7.02-8.04L2 2h6.32l4.37 5.72L18.36 2Zm-1.08 18h1.75L7.67 4h-1.9l11.51 16Z"/>
+       </svg>
+       <span class="sr-only">X</span>
+     </a>
+   </div>
+ </div>
 
 <main class="legal-wrap">
   <section class="legal-card">
