@@ -219,6 +219,8 @@ ul, ol{
   display: none;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
+  position: relative;
   width: 24px;
   height: 18px;
   cursor: pointer;
@@ -234,15 +236,31 @@ ul, ol{
   background: linear-gradient(90deg, #60a5fa, #2563eb);
   transition: all 0.4s ease;
 }
+.mobile-menu-button::before,
+.mobile-menu-button::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:22px;
+  height:2px;
+  border-radius:2px;
+  background: linear-gradient(90deg, #60a5fa, #2563eb);
+  transform:translate(-50%,-50%) rotate(45deg);
+  opacity:0;
+  transition:transform 0.25s ease, opacity 0.25s ease;
+}
+.mobile-menu-button::after{
+  transform:translate(-50%,-50%) rotate(-45deg);
+}
 /* Transform the three dots into a cross when open */
-.mobile-menu-button.open span:nth-child(1) {
-  transform: rotate(45deg) translate(3px, 5px);
-}
-.mobile-menu-button.open span:nth-child(2) {
+.mobile-menu-button.open span {
   opacity: 0;
+  transform: none !important;
 }
-.mobile-menu-button.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(3px, -5px);
+.mobile-menu-button.open::before,
+.mobile-menu-button.open::after{
+  opacity:1;
 }
 /* Off‑canvas mobile menu panel */
 .mobile-menu {
