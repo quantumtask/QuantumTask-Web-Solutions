@@ -7,7 +7,6 @@
   --primary:#2563eb;
   --accent:#22c55e;
 }
-
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   margin:0;
@@ -42,8 +41,6 @@ ul, ol{
   margin:0;
   padding:0;
 }
-
-
 /* NAV */
 .nav{
   position:sticky;top:0;z-index:50;
@@ -163,7 +160,6 @@ ul, ol{
   height:26px;
   fill:currentColor;
 }
-
 /* MOBILE CTA BAR */
 .mobile-cta-bar{
   position:fixed;
@@ -210,7 +206,6 @@ ul, ol{
   box-shadow: 0 4px 24px rgba(59, 130, 246, 0.4);
   transform: translateY(-2px);
 }
-
 /*
   Mobile menu components
   ----------------------
@@ -218,7 +213,6 @@ ul, ol{
   toggles an off‑canvas panel sliding in from the right. On small
   screens, the standard nav links are hidden and this button appears.
 */
-
 /* Kebab menu button */
 .mobile-menu-button {
   display: none;
@@ -239,7 +233,6 @@ ul, ol{
   background: linear-gradient(90deg, #60a5fa, #2563eb);
   transition: all 0.4s ease;
 }
-
 /* Transform the three dots into a cross when open */
 .mobile-menu-button.open span:nth-child(1) {
   transform: rotate(45deg) translate(3px, 5px);
@@ -250,7 +243,6 @@ ul, ol{
 .mobile-menu-button.open span:nth-child(3) {
   transform: rotate(-45deg) translate(3px, -5px);
 }
-
 /* Off‑canvas mobile menu panel */
 .mobile-menu {
   position: fixed;
@@ -271,7 +263,6 @@ ul, ol{
   border-left: 1px solid rgba(148,163,184,.25);
   box-shadow: -24px 0 60px rgba(2,6,23,.6);
 }
-
 .mobile-menu a {
   color: #cbd5f5;
   text-decoration: none;
@@ -281,17 +272,14 @@ ul, ol{
   border-radius: 10px;
   transition: color 0.3s ease, background 0.3s ease, transform 0.3s ease;
 }
-
 .mobile-menu a:hover {
   color: var(--primary);
   background: rgba(37,99,235,.12);
   transform: translateX(2px);
 }
-
 .mobile-menu.open {
   transform: translateX(0);
 }
-
 /* Display mobile menu button and hide nav-links on small screens */
 @media(max-width: 1200px) {
   .nav-links{
@@ -308,7 +296,6 @@ ul, ol{
     padding:.4rem .9rem;
   }
 }
-
 @media(max-width: 900px) {
   .nav-inner{
     flex-wrap:nowrap;
@@ -330,7 +317,6 @@ ul, ol{
     height:36px;
   }
 }
-
 /* HERO */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
 .hero,.hero-inner,.hero-left,.hero-right,.hero-card{opacity:1;filter:none;}
@@ -352,7 +338,6 @@ ul, ol{
     background-size: cover;
   }
 }
-
 @media(max-width: 640px){
   .hero{
     min-height: 0;
@@ -428,7 +413,6 @@ ul, ol{
   margin:0 .25rem;
 }
 .hero-note{color:rgba(255,255,255,0.86);font-size:.9rem;margin-top:1rem}
-
 /* HERO CARD */
 .hero-card{
   background:rgba(2,6,23,.75);
@@ -470,7 +454,6 @@ ul, ol{
 .hero-card select:disabled{
   opacity:0.7;
 }
-
 /* HOME HERO BACKGROUND (index only) */
 .hero--home,
 .page-home .hero{
@@ -514,7 +497,6 @@ ul, ol{
 }
 textarea{border-radius:14px}
 .hero-card-note{font-size:.8rem;color:#9ca3af}
-
 /* Mobile hero slide-in for CTA and service verticals - animate individual items with stagger */
 @media (max-width: 900px) {
   .mobile-slide-wrap,
@@ -523,20 +505,17 @@ textarea{border-radius:14px}
     /* ensure starting state for contained slide-items */
     perspective: 1000px;
   }
-
   .slide-item {
     display: inline-block;
     transform: translateX(100%);
     opacity: 0;
     animation: slideInFromRight .6s cubic-bezier(.22,.9,.35,1) both;
   }
-
   .hero-actions .slide-item:nth-child(1) { animation-delay: .15s; }
   .hero-actions .slide-item:nth-child(2) { animation-delay: .3s; }
   .meta-pill .slide-item:nth-child(1)   { animation-delay: .45s; }
   .meta-pill .slide-item:nth-child(2)   { animation-delay: .6s; }
 }
-
 @media (prefers-reduced-motion: reduce) {
   .slide-item {
     animation: none !important;
@@ -544,7 +523,6 @@ textarea{border-radius:14px}
     transform: none !important;
   }
 }
-
 /* BUTTONS */
 .btn{
   padding:.75rem 1.4rem;border-radius:999px;
@@ -583,7 +561,6 @@ textarea{border-radius:14px}
 }
 .btn-outline{border:1px solid #cbd5f5;color:#111;background:#fff}
 .full{width:100%}
-
 /* Override the outline style for the navigation CTA to apply the primary gradient.
    This selector uses higher specificity (two classes) so it overrides the
    standard .btn-outline styles defined above. */
@@ -597,7 +574,6 @@ textarea{border-radius:14px}
   color: #fff !important;
   box-shadow: 0 0 20px rgba(37,99,235,.5);
 }
-
 /* SECTIONS */
 .section{padding:100px 1.5rem;background:#fff;color:#020617;margin-bottom:0}
 .section h1, .section h2, .section h3, .section h4, .section h5, .section h6 {color: #0f172a;}
@@ -615,7 +591,6 @@ textarea{border-radius:14px}
   background-clip: text;
   color: transparent;
 }
-
 #how-it-works{
   position:relative;
   background:transparent;
@@ -645,7 +620,6 @@ textarea{border-radius:14px}
   position:relative;
   z-index:2;
 }
-
 /*
   Section header enhancements
   --------------------------
@@ -662,7 +636,6 @@ textarea{border-radius:14px}
   flex-direction: column;
   align-items: flex-start;
 }
-
 /* Headings: remove background box and instead use a subtle accent underline */
 .section-header h2 {
   margin: 0;
@@ -684,7 +657,6 @@ textarea{border-radius:14px}
   margin-top: 0.8rem;
   box-shadow: 0 4px 12px rgba(37,99,235,0.3);
 }
-
 /* Section label (eyebrow) style */
 .section-label {
   display: inline-block;
@@ -699,7 +671,6 @@ textarea{border-radius:14px}
   color: #fff;
   box-shadow: 0 4px 12px rgba(37,99,235,0.25);
 }
-
 /* WHY */
 .pill-row{display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center}
 .pill-row{
@@ -707,7 +678,6 @@ textarea{border-radius:14px}
   max-width:960px;
   row-gap:1rem;
 }
-
 /* Trade picker chips */
 .trade-picker{
   max-width: 980px;
@@ -757,7 +727,6 @@ textarea{border-radius:14px}
   outline: none;
   box-shadow: 0 0 0 4px rgba(37,99,235,0.18);
 }
-
 /* FAQ */
 .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:1rem}
 .faq-item{background:#fff;border-radius:14px;padding:1.25rem;box-shadow:0 8px 24px rgba(15,23,42,.06);color:#020617}
@@ -775,7 +744,6 @@ textarea{border-radius:14px}
     margin-right: 0.35rem;
   }
 }
-
 @media(max-width:640px){
   .trade-picker{
     border-radius: 18px;
@@ -798,7 +766,6 @@ textarea{border-radius:14px}
   .trade-chips::-webkit-scrollbar-thumb{ background: rgba(15,23,42,0.10); border-radius: 999px; }
   .trade-chips::-webkit-scrollbar-track{ background: transparent; }
 }
-
 /* Intro card alignment override */
 #packages .meta-grid > :nth-child(3){
   display:flex;
@@ -809,7 +776,6 @@ textarea{border-radius:14px}
 #packages .meta-grid > :nth-child(3) .meta-head{
   align-items:flex-start;
 }
-
 /* Plumbers service section */
 .service-unique--plumbers{
   background:
@@ -924,7 +890,6 @@ textarea{border-radius:14px}
   color:#4b5563;
   line-height:1.5;
 }
-
 /* TRADE CHIPS – FINAL OVERRIDE */
 .trade-picker{
   max-width: 980px;
@@ -983,7 +948,6 @@ textarea{border-radius:14px}
     white-space:nowrap;
   }
 }
-
 /* Service proof sections (all trades) */
 .service-proof-section{
   padding:56px 0;
@@ -1191,7 +1155,6 @@ textarea{border-radius:14px}
   transform: translateY(-4px);
   box-shadow:0 22px 48px rgba(15,23,42,0.18);
 }
-
 @media(max-width:900px){
   .trust-section{
     padding:90px 1.2rem 110px;
@@ -1226,7 +1189,6 @@ textarea{border-radius:14px}
   fill:none;
   stroke-width:2;
 }
-
 /* GRID */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:3rem}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
@@ -1261,7 +1223,6 @@ textarea{border-radius:14px}
 .qt-stagger > *:nth-child(6){animation-delay:0.30s;}
 .qt-stagger > *:nth-child(7){animation-delay:0.36s;}
 .qt-stagger > *:nth-child(8){animation-delay:0.42s;}
-
 @keyframes qt-reveal{
   from{
     opacity:0;
@@ -1272,7 +1233,6 @@ textarea{border-radius:14px}
     transform:none;
   }
 }
-
 @media (prefers-reduced-motion: reduce){
   .qt-reveal,
   .qt-stagger > *{
@@ -1287,7 +1247,6 @@ textarea{border-radius:14px}
     animation:none !important;
   }
 }
-
 /* HOW IT WORKS */
 .how-steps{
   gap:2.5rem;
@@ -1376,7 +1335,6 @@ textarea{border-radius:14px}
 .how-step:hover .step-number {
   transform:scale(1.15) rotate(5deg);
 }
-
 /* PROOF AND WORK */
 .proof-grid{
   display:grid;
@@ -1449,7 +1407,6 @@ textarea{border-radius:14px}
   background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
   box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
 }
-
 #packages .section-inner,
 #work-demos .section-inner{
   display:flex;
@@ -1480,7 +1437,6 @@ textarea{border-radius:14px}
 }
 #packages .grid-3{margin-top:2.75rem;}
 #work-demos .demo-grid{margin-top:2rem;}
-
 #packages .meta-grid{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
@@ -1626,7 +1582,6 @@ textarea{border-radius:14px}
   margin-top:.6rem;
   line-height:1.6;
 }
-
 @media(max-width:900px){
   #packages .section-inner,
   #work-demos .section-inner{
@@ -1657,7 +1612,6 @@ textarea{border-radius:14px}
     grid-template-columns:1fr;
   }
 }
-
 @media(min-width:901px){
   #packages .grid-3{
     margin-top:0;
@@ -1666,7 +1620,6 @@ textarea{border-radius:14px}
     margin-top:0;
   }
 }
-
 /* PRICING */
 .payment-row{
   display:flex;
@@ -1846,7 +1799,6 @@ textarea{border-radius:14px}
   margin-bottom:1rem;
   font-weight:600;
 }
-
 /* FOOTER */
 .footer{
   padding:32px 1.5rem;
@@ -1909,7 +1861,6 @@ textarea{border-radius:14px}
   font-size:.85rem;
   max-width:1120px;
 }
-
 /* CONTACT FORM */
 .contact-form {
   max-width: 520px;
@@ -2027,7 +1978,6 @@ textarea{border-radius:14px}
 .quote-details .form-group{
   margin-top:0.75rem;
 }
-
 /* Contact WhatsApp CTA override */
 #contact .whatsapp-cta{
   display:inline-flex;
@@ -2129,7 +2079,6 @@ textarea{border-radius:14px}
 .contact-left .contact-meta:last-of-type {
   display: none;
 }
-
 /* RESPONSIVE */
 @media(max-width:900px){
   body{padding-bottom:84px;}
@@ -2171,7 +2120,6 @@ textarea{border-radius:14px}
   .intro h1 { font-size: 2rem; }
   .intro p { font-size: 1rem; }
   .section { padding: 80px 1rem; }
-
   /* Refine hero actions on small screens: stack buttons vertically and
      make them full-width for easier tapping */
   .hero-actions {
@@ -2183,13 +2131,11 @@ textarea{border-radius:14px}
     width: 100%;
     text-align: center;
   }
-
   /* Adjust hero meta spacing */
   .hero-meta span {
     display: inline-block;
     margin-bottom: 0.5rem;
   }
-
   /* Compact pricing cards and reduce gaps on mobile */
   .price-card {
     padding: 1.5rem;
@@ -2209,7 +2155,6 @@ textarea{border-radius:14px}
   .grid-3 {
     gap: 1.5rem;
   }
-
   /* Enlarge social buttons in mobile menu for better touch targets */
   .mobile-socials .social-btn {
     width: 48px;
@@ -2219,12 +2164,10 @@ textarea{border-radius:14px}
     width: 24px;
     height: 24px;
   }
-  
   /* Center logo on mobile */
   .contact-logo {
     justify-content: center;
   }
-
   /* Mobile pill styles */
   .pill-soft {
     padding: 0.45rem 0.75rem;
@@ -2244,7 +2187,6 @@ textarea{border-radius:14px}
     row-gap: 0.75rem;
   }
 }
-
 @keyframes meta-phone-flip{
   0%{
     opacity:0;
@@ -2261,7 +2203,6 @@ textarea{border-radius:14px}
     box-shadow:0 14px 32px rgba(15,23,42,0.12);
   }
 }
-
 @keyframes slideInFromRight {
   from {
     transform: translateX(100%);
@@ -2272,66 +2213,21 @@ textarea{border-radius:14px}
     opacity: 1;
   }
 }
-
 /* LEGAL PAGES (scoped) */
-
-.page-legal .legal-toplinks{
-position: relative;
-z-index: 10000;
-background: #ffefc2; /* DEBUG: obvious background */
-border-bottom: 2px solid #ffb100; /* DEBUG */
-padding: 10px 14px;
-}
-.page-legal .legal-toplinks-inner{
-max-width: 1100px;
-margin: 0 auto;
-display: flex;
-gap: 10px;
-align-items: center;
-justify-content: flex-start;
-flex-wrap: wrap;
-}
-.page-legal .legal-toplinks a{
-font-weight: 700;
-text-decoration: none;
-}
-.page-legal .legal-toplinks a:hover{
-text-decoration: underline;
-}
-.page-legal .legal-sticky-panel{
-position: sticky;
-top: 0;
-z-index: 9999;
-}
-
+.page-legal 
+.page-legal 
+.page-legal 
+.page-legal 
+.page-legal 
 .page-legal{
   background:#f3f4f6;
   color:#0f172a;
 }
-.page-legal .legal-toplinks{
-  font-size:12px;
-  padding:10px 14px;
-}
-.page-legal .legal-toplinks-inner{
-  max-width:980px;
-  margin:0 auto;
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
-}
-.page-legal .legal-toplinks a{
-  text-decoration:none;
-}
-.page-legal .legal-toplinks a:hover{
-  text-decoration:underline;
-}
-.page-legal .legal-sticky-panel{
-  position:sticky;
-  top:0;
-  z-index:9999;
-  outline:none;
-}
+.page-legal 
+.page-legal 
+.page-legal 
+.page-legal 
+.page-legal 
 .page-legal .nav{
   position:sticky;
   top:0;
@@ -2339,7 +2235,8 @@ z-index: 9999;
 .page-legal .legal-wrap{
   max-width:980px;
   margin:0 auto;
-  padding:16px 1.5rem 80px;
+  padding:140px 1.5rem 80px;
+}
 }
 .page-legal .legal-card{
   background:#fff;
@@ -2452,12 +2349,25 @@ z-index: 9999;
   .page-legal h2{
     font-size:1.22rem;
   }
+  .page-legal .legal-card [id]{
+    scroll-margin-top:110px;
+  }
+}
+  }
+  .page-legal .legal-card{
+    padding:22px 18px;
+  }
+  .page-legal h1{
+    font-size:1.65rem;
+  }
+  .page-legal h2{
+    font-size:1.22rem;
+  }
   .page-legal .legal-card h2[id],
   .page-legal .legal-card h3[id]{
     scroll-margin-top:110px;
   }
 }
-
 @keyframes slideInRight {
   from {
     transform: translateX(60px);
@@ -2468,7 +2378,6 @@ z-index: 9999;
     opacity: 1;
   }
 }
-
 @keyframes fadeInDown {
   from {
     transform: translateY(-20px);
@@ -2479,7 +2388,6 @@ z-index: 9999;
     opacity: 1;
   }
 }
-
 @keyframes fadeInUp {
   from {
     transform: translateY(20px);
@@ -2490,7 +2398,6 @@ z-index: 9999;
     opacity: 1;
   }
 }
-
 @keyframes fadeInFromBottom {
   from {
     transform: translateY(50px);
@@ -2501,41 +2408,3 @@ z-index: 9999;
     opacity: 1;
   }
 }
-
-
-.site-toplinks{
-position: relative;
-z-index: 60;
-background: transparent;
-color: #e5e7eb;
-padding: 10px 16px;
-}
-
-.site-toplinks-inner{
-max-width: 1200px;
-margin: 0 auto;
-display: flex;
-gap: 10px;
-align-items: center;
-flex-wrap: wrap;
-font-size: 13px;
-line-height: 1.3;
-justify-content: flex-end;
-}
-
-.site-toplinks a{
-color: inherit;
-opacity: 0.9;
-text-decoration: none;
-font-weight: 700;
-}
-
-.site-toplinks a:hover{
-opacity: 1;
-text-decoration: underline;
-}
-
-.site-toplinks .sep{
-opacity: 0.65;
-}
-
