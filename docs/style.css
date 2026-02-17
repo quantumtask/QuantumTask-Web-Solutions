@@ -2415,3 +2415,47 @@ textarea{border-radius:14px}
   top: 0;
   z-index: 9999;
 }
+
+
+.footer-links-grid{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.footer-group h4{
+  margin:0 0 8px;
+  font-size:0.95rem;
+  color:#e5e7eb;
+}
+.footer-group ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.footer-group a{
+  color:#cbd5f5;
+  text-decoration:none;
+}
+.footer-group a:hover{
+  color:#93c5fd;
+  text-decoration:underline;
+}
+@media(max-width:520px){
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+  .footer-links-grid{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:16px 12px;
+  }
+  .footer{
+    padding-bottom:90px;
+  }
+}
