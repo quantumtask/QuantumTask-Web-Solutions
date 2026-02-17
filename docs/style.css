@@ -1,3 +1,4 @@
+html{scroll-padding-top:120px;}
 :root{
   color-scheme: only light;
   --bg:#020617;
@@ -2407,4 +2408,10 @@ textarea{border-radius:14px}
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
