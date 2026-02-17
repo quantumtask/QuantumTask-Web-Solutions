@@ -745,6 +745,57 @@ textarea{border-radius:14px}
   outline:2px solid rgba(80,140,255,0.65);
   outline-offset:2px;
 }
+.trade-nav{
+  max-width:1100px;
+  margin:0 auto;
+  padding:18px;
+  background:rgba(255,255,255,0.70);
+  border:1px solid rgba(0,0,0,0.06);
+  border-radius:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  justify-content:center;
+  box-shadow:0 18px 40px rgba(0,0,0,0.08);
+}
+.trade-nav .trade-chip,
+.trade-nav .trade-chip:visited{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:999px;
+  background:rgba(255,255,255,0.95);
+  border:1px solid rgba(0,0,0,0.10);
+  color:#0b1020;
+  text-decoration:none;
+  font-weight:700;
+  line-height:1;
+  transition:transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+.trade-nav .trade-chip:hover{
+  transform:translateY(-1px);
+  box-shadow:0 10px 22px rgba(0,0,0,0.10);
+  border-color:rgba(0,0,0,0.16);
+}
+.trade-nav .trade-chip.is-active{
+  background:rgba(110,170,255,0.18);
+  border-color:rgba(110,170,255,0.55);
+}
+.trade-nav .trade-chip:focus-visible{
+  outline:2px solid rgba(110,170,255,0.75);
+  outline-offset:2px;
+}
+@media (max-width: 520px){
+  .trade-nav{
+    padding:14px;
+    gap:10px;
+    border-radius:16px;
+  }
+  .trade-nav .trade-chip{
+    padding:11px 14px;
+  }
+}
 .trade-chip{
   appearance:none;
   display:inline-flex;
