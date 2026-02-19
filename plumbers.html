@@ -60,8 +60,7 @@
 </head>
 
 <body>
-
-<header class="nav">
+<header class="site-header nav">
   <div class="nav-inner">
     <a class="brand" href="/">
       <img src="/images/logo.png" alt="QuantumTask logo" class="brand-mark" width="40" height="40" loading="lazy">
@@ -220,14 +219,14 @@
         <span class="section-label">Browse by trade</span>
         <h2>Pick your service and get a tailored site</h2>
       </div>
-      <div class="pill-row">
-        <a class="pill-soft" href="plumbers.html">Plumbers</a>
-        <a class="pill-soft" href="electricians.html">Electricians</a>
-        <a class="pill-soft" href="cleaners.html">Cleaners</a>
-        <a class="pill-soft" href="landscapers.html">Landscapers</a>
-        <a class="pill-soft" href="repairs.html">Repairs</a>
-        <a class="pill-soft" href="salons.html">Salons</a>
-        <a class="pill-soft" href="installers.html">Installers</a>
+            <div class="trade-nav">
+        <a href="plumbers.html" class="trade-chip is-active">Plumbers</a>
+        <a href="electricians.html" class="trade-chip">Electricians</a>
+        <a href="cleaners.html" class="trade-chip">Cleaners</a>
+        <a href="landscapers.html" class="trade-chip">Landscapers</a>
+        <a href="repairs.html" class="trade-chip">Repairs</a>
+        <a href="salons.html" class="trade-chip">Salons</a>
+        <a href="installers.html" class="trade-chip">Installers</a>
       </div>
     </div>
   </section>
@@ -443,7 +442,7 @@
               </svg>
             </div>
             <div class="meta-titles">
-              <h3>Founder-led by Daniel</h3>
+              <h3>Founder-led by Daniel and Co-founder Christo</h3>
               <p class="meta-sub">Fast turnaround, local-first, performance guaranteed.</p>
             </div>
           </div>
@@ -808,26 +807,43 @@
   <span class="sr-only">WhatsApp</span>
 </a>
 
-<footer class="footer">
+<footer class="site-footer" data-footer-version="v2">
   <div class="footer-inner">
     <div class="footer-brand">
       <img src="/images/logo.png" alt="QuantumTask logo" class="footer-logo" loading="lazy">
       <div>
-        <span class="footer-title">QuantumTask</span>
-        <span class="footer-meta">South Africa</span>
+        <span class="footer-title brand-name">QuantumTask</span>
+        <span class="footer-meta brand-sub">South Africa</span>
       </div>
     </div>
-    <div class="footer-links">
-      <a href="#packages">Pricing</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#contact">Contact</a>
-      <a href="terms.html">Terms</a>
-      <a href="service-terms.html">Service Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="cookies.html">Cookies</a>
-    </div>
+    <nav class="footer-columns" aria-label="Footer">
+      <div class="footer-col">
+        <h4>Main</h4>
+        <a href="index.html#packages">Pricing</a>
+        <a href="index.html#how-it-works">How it works</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="index.html">Home</a>
+        <a href="plumbers.html">Plumbers</a>
+        <a href="electricians.html">Electricians</a>
+        <a href="cleaners.html">Cleaners</a>
+        <a href="landscapers.html">Landscapers</a>
+        <a href="repairs.html">Repairs</a>
+        <a href="salons.html">Salons</a>
+        <a href="installers.html">Installers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="terms.html">Terms</a>
+        <a href="service-terms.html">Service Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </nav>
   </div>
-  <p class="footer-note">&copy; 2026 QuantumTask &mdash; Websites built to convert</p>
+  <div class="footer-bottom">&copy; 2026 QuantumTask &mdash; Websites built to convert</div>
 </footer>
 
 <script defer src="assets/js/pricing-animate.js?v=20260212"></script>
@@ -939,6 +955,8 @@
 
 </body>
 </html>
+
+
 
 
 
