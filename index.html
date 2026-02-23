@@ -2,896 +2,1263 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>QuantumTask - Websites That Turn Visitors Into Calls & Quotes</title>
-  <!-- Ensure the viewport fits the device and respects safe‑area insets on modern devices -->
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="color-scheme" content="only light" />
-  <meta name="supported-color-schemes" content="light" />
-  <meta name="description" content="Conversion-focused websites for local service businesses. Clear messaging, fast builds, and simple quote requests without bloat." />
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://quantumtask.io/" />
-
-  <meta property="og:title" content="QuantumTask - Websites That Turn Visitors Into Calls & Quotes" />
-  <meta property="og:description" content="Conversion-focused websites for local service businesses. Clear messaging, fast builds, and simple quote requests without bloat." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Days Plumbing | Emergency and Maintenance Plumbing</title>
+  <meta
+    name="description"
+    content="All Days Plumbing provides fast, reliable plumbing for emergency call-outs, leak repairs, blocked drains, and hot water system work."
+  />
+  <link rel="canonical" href="https://alldaysplumbing.quantumtask.io/" />
+  <meta property="og:title" content="All Days Plumbing" />
+  <meta property="og:description" content="Emergency and maintenance plumbers available 24/7." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://quantumtask.io/" />
-  <meta property="og:site_name" content="QuantumTask" />
-  <meta property="og:image" content="https://quantumtask.io/images/logo.png" />
+  <meta property="og:url" content="https://alldaysplumbing.quantumtask.io/" />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="QuantumTask - Websites That Turn Visitors Into Calls & Quotes" />
-  <meta name="twitter:description" content="Conversion-focused websites for local service businesses. Clear messaging, fast builds, and simple quote requests without bloat." />
-  <meta name="twitter:image" content="https://quantumtask.io/images/logo.png" />
-  <!-- deploy-check: 2026-02-11 -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
 
-  <meta name="theme-color" content="#ffffff" />
-  <link rel="stylesheet" href="style.css?v=3" />
-  <link rel="stylesheet" href="assets/css/site.css?v=20260212" />
-  <!-- Set the theme color for supported browsers to match the dark brand background -->
-  <link rel="icon" type="image/png" href="images/logo.png" />
-
-  <!-- Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Organization",
-          "name": "QuantumTask",
-          "url": "https://quantumtask.io/",
-          "logo": "https://quantumtask.io/images/logo.png",
-          "sameAs": [
-            "https://wa.me/27840906474",
-            "https://linkedin.com/in/christopher-oberholzer-37abb7383",
-            "https://instagram.com/quantumtask",
-            "https://x.com/cj_quantumtask"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "name": "QuantumTask",
-          "url": "https://quantumtask.io/"
-        }
-      ]
+    :root {
+      --ink-950: #101820;
+      --ink-900: #172731;
+      --ink-700: #2f4653;
+      --sky-100: #e7f0f5;
+      --sky-50: #f2f7fa;
+      --line: #c9d9e3;
+      --brand-600: #0f7596;
+      --brand-700: #0b607b;
+      --accent-500: #de8a43;
+      --accent-600: #c6742f;
+      --logo-red: #e12b3f;
+      --logo-red-dark: #b5142d;
+      --logo-red-light: #f25566;
+      --white: #ffffff;
+      --shadow-soft: 0 18px 34px rgba(16, 24, 32, 0.12);
+      --shadow-card: 0 12px 24px rgba(16, 24, 32, 0.1);
+      --radius-xl: 0px;
+      --radius-lg: 8px;
+      --radius-sm: 6px;
+      --max-width: 1160px;
     }
-  </script>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--ink-950);
+      background:
+        radial-gradient(1000px 500px at 95% -8%, #d9ebf6 0%, transparent 60%),
+        radial-gradient(850px 400px at -8% 8%, #fbe7d2 0%, transparent 58%),
+        var(--sky-50);
+      line-height: 1.62;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 2.4rem));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(110deg, rgba(14, 49, 67, 0.95), rgba(19, 109, 138, 0.94));
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 22px rgba(10, 24, 36, 0.35);
+    }
+
+    .header-row {
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-right: auto;
+    }
+
+    .brand img {
+      width: 58px;
+      height: 58px;
+      border-radius: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.55);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+      background: var(--white);
+    }
+
+    .brand-text {
+      color: var(--white);
+      display: grid;
+      gap: 0.06rem;
+    }
+
+    .brand-text strong {
+      font: 700 1.72rem/1.04 "Space Grotesk", "Segoe UI", sans-serif;
+      letter-spacing: 0.01em;
+    }
+
+    .brand-text span {
+      font-size: 0.84rem;
+      opacity: 0.92;
+      letter-spacing: 0.02em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 0.38rem;
+      align-items: center;
+    }
+
+    .nav a {
+      color: rgba(255, 255, 255, 0.94);
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 0.43rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.28);
+      transform: translateY(-1px);
+    }
+
+    .call-btn {
+      background: linear-gradient(135deg, var(--logo-red), var(--logo-red-dark));
+      color: var(--white);
+      font-weight: 800;
+      font-size: 0.95rem;
+      border-radius: 999px;
+      padding: 0.64rem 1.02rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      box-shadow: 0 10px 18px rgba(80, 12, 24, 0.34);
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .call-btn:hover,
+    .call-btn:focus-visible {
+      background: linear-gradient(135deg, var(--logo-red-light), var(--logo-red));
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--white);
+      font-weight: 700;
+      border-radius: 10px;
+      padding: 0.44rem 0.72rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      padding: 2.6rem 0 2rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(102deg, rgba(7, 23, 33, 0.86) 0%, rgba(9, 35, 47, 0.76) 42%, rgba(10, 58, 78, 0.68) 100%),
+        url("hero-plumber-internet.jpg") center center / cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(242, 247, 250, 0.08) 0%,
+          rgba(242, 247, 250, 0.42) 72%,
+          var(--sky-50) 100%
+        );
+    }
+
+    .hero-wrap {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+      overflow: visible;
+    }
+
+    .hero-wrap::after {
+      content: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 1.5rem;
+      padding: clamp(1.2rem, 3.5vw, 2rem);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+      align-items: center;
+    }
+
+    .hero-copy {
+      background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(247, 252, 255, 0.93));
+      border: 1px solid rgba(15, 117, 150, 0.2);
+      border-left: 4px solid var(--accent-500);
+      border-radius: 8px;
+      padding: 1.15rem;
+      box-shadow: 0 14px 26px rgba(16, 24, 32, 0.18);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 0.4rem;
+      align-items: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--brand-700);
+      margin-bottom: 0.78rem;
+      padding: 0.27rem 0.65rem;
+      border-radius: 999px;
+      background: rgba(15, 117, 150, 0.12);
+      border: 1px solid rgba(15, 117, 150, 0.2);
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: clamp(2rem, 4.6vw, 3.3rem);
+      letter-spacing: 0.01em;
+      line-height: 1.03;
+      margin-bottom: 0.82rem;
+      color: var(--ink-900);
+      max-width: 13ch;
+    }
+
+    .hero p {
+      color: var(--ink-700);
+      max-width: 53ch;
+    }
+
+    .hero-actions {
+      margin-top: 1.15rem;
+      display: flex;
+      gap: 0.66rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      font-weight: 700;
+      padding: 0.72rem 1.1rem;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+      font-size: 0.94rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--logo-red), var(--logo-red-dark));
+      color: var(--white);
+      box-shadow: 0 10px 18px rgba(80, 12, 24, 0.34);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, var(--logo-red-light), var(--logo-red));
+    }
+
+    .btn-secondary {
+      background: var(--white);
+      color: var(--ink-900);
+      border-color: rgba(15, 117, 150, 0.3);
+      box-shadow: 0 8px 14px rgba(10, 25, 38, 0.08);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      transform: translateY(-1px);
+      background: #f0f8fc;
+    }
+
+    .hero-points {
+      margin-top: 1rem;
+      list-style: none;
+      display: grid;
+      gap: 0.46rem;
+      font-size: 0.9rem;
+      color: var(--ink-700);
+    }
+
+    .hero-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.52rem;
+    }
+
+    .hero-points i {
+      width: 0.65rem;
+      height: 0.65rem;
+      margin-top: 0.35rem;
+      border-radius: 999px;
+      background: var(--accent-500);
+      box-shadow: 0 0 0 4px rgba(222, 138, 67, 0.2);
+      flex: 0 0 auto;
+    }
+
+    .hero-panel {
+      background: linear-gradient(155deg, #0d4056 0%, #116d8d 100%);
+      color: var(--white);
+      border-radius: 8px;
+      padding: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 18px 34px rgba(10, 27, 40, 0.34);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(130deg, rgba(255, 255, 255, 0.08), transparent 40%),
+        radial-gradient(circle at 85% 10%, rgba(222, 138, 67, 0.22), transparent 42%);
+      pointer-events: none;
+    }
+
+    .hero-panel h2 {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: 1.32rem;
+      margin-bottom: 0.18rem;
+    }
+
+    .hero-panel p {
+      color: rgba(242, 248, 252, 0.92);
+      font-size: 0.92rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 0.55rem;
+      margin-bottom: 0.95rem;
+    }
+
+    .metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.6rem 0.72rem;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 0.88rem;
+    }
+
+    .metric strong {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: 1.04rem;
+    }
+
+    .panel-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+
+    .panel-tags span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.25rem 0.62rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    section {
+      padding: 1.65rem 0;
+    }
+
+    .section-shell {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      position: static;
+      overflow: visible;
+    }
+
+    .section-shell::before {
+      content: none;
+    }
+
+    .section-head {
+      margin-bottom: 1rem;
+    }
+
+    .section-kicker {
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--brand-700);
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+
+    .section-head h2 {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: clamp(1.6rem, 2.2vw, 2.25rem);
+      line-height: 1.14;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-head p {
+      color: var(--ink-700);
+      max-width: 62ch;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .service-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(160deg, #ffffff, #f5fbff);
+      box-shadow: var(--shadow-card);
+      padding: 1.03rem;
+      transition: 0.2s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(15, 117, 150, 0.3);
+    }
+
+    .service-badge {
+      width: 38px;
+      height: 38px;
+      border-radius: 6px;
+      margin-bottom: 0.6rem;
+      display: grid;
+      place-items: center;
+      font: 700 0.9rem/1 "Space Grotesk", "Segoe UI", sans-serif;
+      color: var(--brand-700);
+      background: linear-gradient(145deg, #d9eef8, #bfe2f3);
+      border: 1px solid rgba(15, 117, 150, 0.2);
+    }
+
+    .service-card h3 {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: 1.04rem;
+      margin-bottom: 0.26rem;
+    }
+
+    .service-card p {
+      color: var(--ink-700);
+      font-size: 0.91rem;
+    }
+
+    .two-col {
+      display: grid;
+      gap: 0.95rem;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+
+    .info-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(160deg, #ffffff, #f6fbff);
+      box-shadow: var(--shadow-card);
+      padding: 1.03rem;
+    }
+
+    .scroll-card {
+      --slide-offset: 0px;
+      will-change: transform, opacity;
+    }
+
+    .scroll-card.slide-left {
+      --slide-offset: -78px;
+    }
+
+    .scroll-card.slide-right {
+      --slide-offset: 78px;
+    }
+
+    @supports (animation-timeline: view()) {
+      .scroll-card {
+        opacity: 0;
+        transform: translateX(var(--slide-offset));
+        animation-name: card-slide-in;
+        animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+        animation-fill-mode: both;
+        animation-duration: 1s;
+        animation-timeline: view();
+        animation-range: entry 5% cover 52%;
+      }
+    }
+
+    @keyframes card-slide-in {
+      from {
+        opacity: 0;
+        transform: translateX(var(--slide-offset));
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .list {
+      margin-top: 0.68rem;
+      list-style: none;
+      display: grid;
+      gap: 0.5rem;
+      color: var(--ink-700);
+      font-size: 0.91rem;
+    }
+
+    .list li {
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+
+    .list i {
+      width: 0.58rem;
+      height: 0.58rem;
+      margin-top: 0.37rem;
+      border-radius: 999px;
+      background: var(--brand-600);
+      flex: 0 0 auto;
+    }
+
+    .quote {
+      margin-top: 0.88rem;
+      padding: 0.72rem 0.9rem;
+      border-radius: 6px;
+      border: 1px dashed rgba(15, 117, 150, 0.34);
+      background: rgba(15, 117, 150, 0.06);
+      color: var(--ink-700);
+      font-size: 0.9rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      gap: 0.95rem;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    }
+
+    .contact-form {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      box-shadow: var(--shadow-card);
+      padding: 1.05rem;
+      display: grid;
+      gap: 0.78rem;
+    }
+
+    .row {
+      display: grid;
+      gap: 0.75rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    label {
+      display: grid;
+      gap: 0.34rem;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ink-900);
+    }
+
+    input,
+    textarea,
+    select {
+      font: inherit;
+      color: inherit;
+      border-radius: var(--radius-sm);
+      border: 1px solid #c1d6e4;
+      padding: 0.58rem 0.68rem;
+      background: #fbfdff;
+      transition: 0.15s ease;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none;
+      border-color: var(--brand-600);
+      background: #ffffff;
+      box-shadow: 0 0 0 4px rgba(15, 117, 150, 0.13);
+    }
+
+    textarea {
+      min-height: 112px;
+      resize: vertical;
+    }
+
+    .contact-card {
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: var(--radius-lg);
+      background: linear-gradient(160deg, #0c4359 0%, #127596 58%, #0d6482 100%);
+      color: var(--white);
+      box-shadow: 0 18px 34px rgba(12, 30, 45, 0.34);
+      padding: 1.05rem;
+      display: grid;
+      gap: 0.62rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(130deg, rgba(255, 255, 255, 0.08), transparent 40%),
+        repeating-linear-gradient(
+          90deg,
+          rgba(255, 255, 255, 0.06) 0,
+          rgba(255, 255, 255, 0.06) 1px,
+          transparent 1px,
+          transparent 42px
+        );
+      pointer-events: none;
+    }
+
+    .contact-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-card-head {
+      display: grid;
+      gap: 0.25rem;
+      margin-bottom: 0.24rem;
+    }
+
+    .contact-kicker {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.92;
+      font-weight: 700;
+    }
+
+    .contact-card h3 {
+      font-family: "Space Grotesk", "Segoe UI", sans-serif;
+      font-size: 1.26rem;
+      line-height: 1.08;
+    }
+
+    .contact-card-head p {
+      color: rgba(240, 248, 252, 0.92);
+      font-size: 0.86rem;
+      max-width: 34ch;
+    }
+
+    .availability-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      width: fit-content;
+      margin-top: 0.2rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.52rem;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .availability-dot::before {
+      content: "";
+      width: 0.42rem;
+      height: 0.42rem;
+      border-radius: 999px;
+      background: #25d366;
+      box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.2);
+    }
+
+    .contact-item {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: linear-gradient(150deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
+      border-radius: 6px;
+      padding: 0.58rem 0.62rem;
+      font-size: 0.9rem;
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 0.6rem;
+      align-items: start;
+    }
+
+    .contact-icon {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+    }
+
+    .contact-meta {
+      display: grid;
+      gap: 0.06rem;
+    }
+
+    .contact-meta strong {
+      display: block;
+      font-size: 0.72rem;
+      opacity: 0.9;
+      margin-bottom: 0.08rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .contact-meta a {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 255, 255, 0.35);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      word-break: break-word;
+    }
+
+    .hours {
+      font-size: 0.82rem;
+      color: rgba(239, 247, 252, 0.96);
+      display: grid;
+      gap: 0.26rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .hours-row span:last-child {
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .contact-cta {
+      width: 100%;
+      margin-top: 0.2rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .contact-note {
+      font-size: 0.76rem;
+      color: rgba(236, 246, 252, 0.88);
+      margin-top: 0.2rem;
+    }
+
+    footer {
+      margin-top: 1.4rem;
+      padding: 1rem 0 1.7rem;
+      background: linear-gradient(118deg, #0f2028, #172c36);
+      color: #d6e3eb;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 0.84rem;
+    }
+
+    .footer-row a {
+      color: #f0b882;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-underline-offset: 2px;
+    }
+
+    @media (max-width: 1080px) {
+      .nav {
+        display: none;
+      }
+
+      .header-row {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+          "brand menu"
+          "call call";
+        align-items: center;
+        column-gap: 0.62rem;
+        row-gap: 0.58rem;
+        padding-block: 0.55rem 0.7rem;
+      }
+
+      .brand {
+        grid-area: brand;
+        margin-right: 0;
+        min-width: 0;
+        gap: 0.62rem;
+      }
+
+      .brand-text strong {
+        font-size: 1.24rem;
+      }
+
+      .brand-text span {
+        font-size: 0.74rem;
+      }
+
+      .menu-toggle {
+        grid-area: menu;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 42px;
+        padding: 0.5rem 0.86rem;
+        border-radius: 999px;
+        font-size: 0.83rem;
+        letter-spacing: 0.03em;
+        background: rgba(255, 255, 255, 0.18);
+        border-color: rgba(255, 255, 255, 0.33);
+      }
+
+      .call-btn {
+        grid-area: call;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 0.92rem;
+        padding: 0.63rem 0.88rem;
+      }
+
+      .header-row.open .nav {
+        grid-area: nav;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.4rem;
+        padding-top: 0.62rem;
+        margin-top: 0.08rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .header-row.open {
+        grid-template-areas:
+          "brand menu"
+          "call call"
+          "nav nav";
+      }
+
+      .header-row.open .nav a {
+        text-align: center;
+        border-radius: 8px;
+        padding: 0.52rem 0.6rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+      }
+
+      .header-row.open .call-btn {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 940px) {
+      .hero-grid,
+      .contact-grid,
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero h1 {
+        max-width: 20ch;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 1.25rem));
+      }
+
+      .header-row {
+        row-gap: 0.5rem;
+        padding-block: 0.46rem 0.62rem;
+      }
+
+      .brand {
+        gap: 0.56rem;
+      }
+
+      .hero {
+        padding-top: 1.6rem;
+      }
+
+      .hero-wrap,
+      .section-shell {
+        border-radius: 0;
+      }
+
+      .services-grid,
+      .row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .brand img {
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
+      }
+
+      .brand-text strong {
+        font-size: 1.1rem;
+        line-height: 1.05;
+      }
+
+      .brand-text span {
+        display: none;
+      }
+
+      .menu-toggle {
+        min-height: 40px;
+        padding-inline: 0.8rem;
+      }
+
+      .call-btn {
+        font-size: 0.86rem;
+      }
+
+      .header-row.open .nav {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
+<body>
+  <header class="site-header">
+    <div class="container header-row" id="header-row">
+      <a href="#top" class="brand">
+        <img src="alldays.png" alt="All Days Plumbing logo" />
+        <div class="brand-text">
+          <strong>All Days Plumbing</strong>
+          <span>Fast | Clean | Reliable</span>
+        </div>
+      </a>
 
-<body class="page-home">
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
 
-<header class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="/">
-      <img src="/images/logo.png" alt="QuantumTask logo" class="brand-mark" width="40" height="40" loading="lazy">
-      <div class="brand-info">
-        <span class="brand-text">QuantumTask</span>
-        <span class="brand-tagline">Websites that get you enquiries</span>
-      </div>
-    </a>
+      <nav class="nav" id="main-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#areas">Coverage</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-    <!-- Provide an aria label so screen readers know this is the primary navigation -->
-    <nav class="nav-links" aria-label="Primary navigation">
-      <!-- Clear, descriptive anchors for each section -->
-      <a href="#why-cleaning-sites">Why service sites fail</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#packages">Pricing</a>
-      <a href="#work-demos">Work / Demos</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="nav-actions">
-      <div class="social-links">
-        <a href="https://wa.me/27840906474" class="social-btn" aria-label="WhatsApp" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M20.52 3.48A11.89 11.89 0 0 0 12.07 0C5.49 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.58 0 11.92-5.34 11.92-11.92 0-3.18-1.24-6.17-3.48-8.42Zm-8.45 18.3h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.38a9.86 9.86 0 0 1-1.54-5.26C2.15 6.42 6.57 2 12.07 2c2.63 0 5.1 1.02 6.96 2.88a9.78 9.78 0 0 1 2.88 6.96c0 5.5-4.42 9.94-9.84 9.94Zm5.43-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.17-.24-.58-.49-.5-.66-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
-          </svg>
-          <span class="sr-only">WhatsApp</span>
-        </a>
-        <a href="https://linkedin.com/in/christopher-oberholzer-37abb7383" class="social-btn" aria-label="LinkedIn" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5s.88 2 1.98 2h.02c1.1 0 1.98-.9 1.98-2s-.88-2-2-2ZM3.5 9h3v12h-3V9Zm7 0h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V21h-3v-5.2c0-1.24-.02-2.84-1.72-2.84-1.72 0-1.98 1.34-1.98 2.74V21h-3V9Z"/>
-          </svg>
-          <span class="sr-only">LinkedIn</span>
-        </a>
-        <a href="https://instagram.com/quantumtask" class="social-btn" aria-label="Instagram" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 2.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm4.75-3a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/>
-          </svg>
-          <span class="sr-only">Instagram</span>
-        </a>
-        <a href="https://x.com/cj_quantumtask" class="social-btn" aria-label="X" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M18.36 2H21l-6.5 7.44L22 22h-6.18l-4.84-6.28L5.5 22H3l7.02-8.04L2 2h6.32l4.37 5.72L18.36 2Zm-1.08 18h1.75L7.67 4h-1.9l11.51 16Z"/>
-          </svg>
-          <span class="sr-only">X</span>
-        </a>
-      </div>
-      <a href="mailto:daniel@quantumtask.io" class="btn btn-outline nav-cta">Free Quote</a>
+      <a class="call-btn" href="tel:0827550854">Call 082 755 0854</a>
     </div>
+  </header>
 
-    <!-- Mobile menu toggle button (kebab). Hidden on desktop via CSS -->
-    <button id="mobile-menu-toggle" class="mobile-menu-button" aria-label="Open menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</header>
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">24/7 emergency service</p>
+            <h1>Plumbing help when you need it most.</h1>
+            <p>
+              From burst pipes to blocked drains, All Days Plumbing delivers fast,
+              clean, and dependable plumbing service for homes and small businesses.
+            </p>
 
- <!-- Off-canvas mobile navigation. Hidden by default and slides in from the right. -->
- <div id="mobile-menu" class="mobile-menu">
-   <a href="#why-cleaning-sites" onclick="closeMobileMenu()">Why service sites fail</a>
-   <a href="#how-it-works" onclick="closeMobileMenu()">How it works</a>
-   <a href="#packages" onclick="closeMobileMenu()">Pricing</a>
-   <a href="#work-demos" onclick="closeMobileMenu()">Work / Demos</a>
-   <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
-   <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact">Request a call-out</a>
+              <a class="btn btn-secondary" href="#services">View services</a>
+            </div>
 
-   <div class="mobile-socials social-links">
-     <a href="https://wa.me/27840906474" class="social-btn" aria-label="WhatsApp" rel="noopener noreferrer">
-       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-         <path d="M20.52 3.48A11.89 11.89 0 0 0 12.07 0C5.49 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.58 0 11.92-5.34 11.92-11.92 0-3.18-1.24-6.17-3.48-8.42Zm-8.45 18.3h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.38a9.86 9.86 0 0 1-1.54-5.26C2.15 6.42 6.57 2 12.07 2c2.63 0 5.1 1.02 6.96 2.88a9.78 9.78 0 0 1 2.88 6.96c0 5.5-4.42 9.94-9.84 9.94Zm5.43-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.17-.24-.58-.49-.5-.66-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
-       </svg>
-       <span class="sr-only">WhatsApp</span>
-     </a>
-     <a href="https://linkedin.com/in/christopher-oberholzer-37abb7383" class="social-btn" aria-label="LinkedIn" rel="noopener noreferrer">
-       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-         <path d="M4.98 3.5C3.88 3.5 3 4.4 3 5.5s.88 2 1.98 2h.02c1.1 0 1.98-.9 1.98-2s-.88-2-2-2ZM3.5 9h3v12h-3V9Zm7 0h2.88v1.64h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.6V21h-3v-5.2c0-1.24-.02-2.84-1.72-2.84-1.72 0-1.98 1.34-1.98 2.74V21h-3V9Z"/>
-       </svg>
-       <span class="sr-only">LinkedIn</span>
-     </a>
-     <a href="https://instagram.com/_quantumtask_" class="social-btn" aria-label="Instagram" rel="noopener noreferrer">
-       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-         <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm5 2.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5Zm4.75-3a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/>
-       </svg>
-       <span class="sr-only">Instagram</span>
-     </a>
-     <a href="https://x.com/cj_quantumtask" class="social-btn" aria-label="X" rel="noopener noreferrer">
-       <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-         <path d="M18.36 2H21l-6.5 7.44L22 22h-6.18l-4.84-6.28L5.5 22H3l7.02-8.04L2 2h6.32l4.37 5.72L18.36 2Zm-1.08 18h1.75L7.67 4h-1.9l11.51 16Z"/>
-       </svg>
-       <span class="sr-only">X</span>
-     </a>
-   </div>
- </div>
-
-<main>
-
-
-  <!-- HERO -->
-  <section class="hero hero--home">
-    <div class="hero-bg"></div>
-
-    <div class="hero-inner">
-      <div class="hero-left">
-        <h1 class="hero-title">
-          Your website live in ~48 hours and built to convert.
-        </h1>
-
-        <p class="hero-sub">
-          90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; or we keep working until it hits 90+ at no extra cost.
-        </p>
-
-        <div class="hero-actions">
-          <a href="mailto:daniel@quantumtask.io" class="btn btn-primary slide-item">Free quote</a>
-          <a href="#packages" class="btn btn-ghost slide-item">View packages</a>
-        </div>
-        <p class="hero-payment">
-          Payment: 50% upfront, 50% on go-live. Direct WhatsApp/call support and quote-first approach.
-        </p>
-
-        <div class="hero-meta">
-          <div class="meta-pill">
-            <span class="meta-label slide-item">Built for local service businesses that need calls and quote requests</span>
-            <span class="meta-list slide-item">
-              <a href="plumbers.html" style="color:inherit;text-decoration:none;">Plumbers</a> <span class="meta-dot">•</span>
-              <a href="electricians.html" style="color:inherit;text-decoration:none;">Electricians</a> <span class="meta-dot">•</span>
-              <a href="cleaners.html" style="color:inherit;text-decoration:none;">Cleaners</a> <span class="meta-dot">•</span>
-              <a href="landscapers.html" style="color:inherit;text-decoration:none;">Landscapers</a> <span class="meta-dot">•</span>
-              <a href="repairs.html" style="color:inherit;text-decoration:none;">Repairs</a> <span class="meta-dot">•</span>
-              <a href="salons.html" style="color:inherit;text-decoration:none;">Salons</a> <span class="meta-dot">•</span>
-              <a href="installers.html" style="color:inherit;text-decoration:none;">Installers</a>
-            </span>
+            <ul class="hero-points" aria-label="Service highlights">
+              <li><i aria-hidden="true"></i><span>Emergency dispatch for urgent plumbing issues.</span></li>
+              <li><i aria-hidden="true"></i><span>Clear quotes before work starts.</span></li>
+              <li><i aria-hidden="true"></i><span>Respectful team that leaves the area clean.</span></li>
+            </ul>
           </div>
+
+          <aside class="hero-panel" aria-label="Response metrics">
+            <h2>Rapid response team</h2>
+            <p>Local plumbers ready for emergency and scheduled jobs.</p>
+
+            <div class="metric-list">
+              <div class="metric"><span>Average response</span><strong>45 mins</strong></div>
+              <div class="metric"><span>Availability</span><strong>24 / 7</strong></div>
+              <div class="metric"><span>Customer rating</span><strong>5-star</strong></div>
+            </div>
+
+            <div class="panel-tags">
+              <span>Leak repairs</span>
+              <span>Blocked drains</span>
+              <span>Hot water systems</span>
+              <span>Kitchen and bathroom</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container section-shell">
+        <div class="section-head">
+          <span class="section-kicker">What we do</span>
+          <h2>Plumbing services built around speed and quality</h2>
+          <p>
+            Whether it is an emergency or a planned upgrade, we focus on solving the
+            problem properly with clear communication and practical advice.
+          </p>
         </div>
 
-        <p class="hero-note">
-          Most service websites look fine and still do not convert. We write the message, structure the page, and make the next step obvious so visitors actually contact you.
-        </p>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-badge">01</div>
+            <h3>Emergency plumbing</h3>
+            <p>Burst pipes, overflows, and urgent leaks handled quickly to prevent further damage.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-badge">02</div>
+            <h3>Leak detection and repair</h3>
+            <p>Hidden or visible leaks located and repaired with minimal disruption.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-badge">03</div>
+            <h3>Blocked drains and toilets</h3>
+            <p>Fast drain clearing for kitchens, bathrooms, and outdoor lines.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-badge">04</div>
+            <h3>Hot water systems</h3>
+            <p>Repairs, replacements, and maintenance for reliable hot water supply.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-badge">05</div>
+            <h3>Bathroom and kitchen plumbing</h3>
+            <p>Installations and upgrades for taps, sinks, toilets, and appliances.</p>
+          </article>
+          <article class="service-card">
+            <div class="service-badge">06</div>
+            <h3>Preventive maintenance</h3>
+            <p>Routine inspections to catch issues early and reduce emergency call-outs.</p>
+          </article>
+        </div>
       </div>
+    </section>
 
-      <div class="hero-right">
-        <div class="hero-card">
-          <h3 class="booking-title">Get your quote in 24 hours</h3>
-          <p class="booking-sub">
-            Tell me what you do and what you need. If it's a good fit, I'll reply with the best package and timeline. No pressure.
-          </p>
+    <section id="about">
+      <div class="container section-shell">
+        <div class="section-head">
+          <span class="section-kicker">Why choose us</span>
+          <h2>A local plumbing team you can trust</h2>
+        </div>
 
-          <form>
-            <input type="text" placeholder="Your name" required>
-            <input type="email" placeholder="Email address" required>
-            <input type="text" placeholder="Business and service (e.g., &quot;ABC Plumbing&quot;)">
-            <a href="mailto:daniel@quantumtask.io" class="btn btn-primary full">Request my quote</a>
+        <div class="two-col">
+          <article class="info-card scroll-card slide-left">
+            <h3>How we work</h3>
+            <ul class="list" aria-label="Process steps">
+              <li><i aria-hidden="true"></i><span>Call or message us with the issue and location.</span></li>
+              <li><i aria-hidden="true"></i><span>We confirm arrival window and expected approach.</span></li>
+              <li><i aria-hidden="true"></i><span>You get clear pricing before final repair work.</span></li>
+              <li><i aria-hidden="true"></i><span>We test, clean up, and confirm everything is working.</span></li>
+            </ul>
+          </article>
+
+          <article class="info-card scroll-card slide-right" id="areas">
+            <h3>Service coverage</h3>
+            <ul class="list" aria-label="Service areas">
+              <li><i aria-hidden="true"></i><span>Your city and surrounding suburbs.</span></li>
+              <li><i aria-hidden="true"></i><span>Residential homes and small commercial properties.</span></li>
+              <li><i aria-hidden="true"></i><span>Weekend and after-hours emergency support.</span></li>
+            </ul>
+            <p class="quote">Need help now? Call <a href="tel:0827550854"><strong>082 755 0854</strong></a> for immediate assistance.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container section-shell">
+        <div class="section-head">
+          <span class="section-kicker">Contact</span>
+          <h2>Request a quote or a call-out</h2>
+          <p>Send your details and we will get back to you as soon as possible.</p>
+        </div>
+
+        <div class="contact-grid">
+          <form class="contact-form">
+            <div class="row">
+              <label>
+                Name
+                <input type="text" name="name" placeholder="Your full name" required />
+              </label>
+              <label>
+                Phone
+                <input type="tel" name="phone" placeholder="Best number to reach you" required />
+              </label>
+            </div>
+
+            <label>
+              Email
+              <input type="email" name="email" placeholder="you@example.com" />
+            </label>
+
+            <label>
+              Service needed
+              <select name="service">
+                <option value="">Select a service</option>
+                <option>Emergency plumbing</option>
+                <option>Leak detection and repair</option>
+                <option>Blocked drains or toilets</option>
+                <option>Hot water system</option>
+                <option>Kitchen or bathroom plumbing</option>
+              </select>
+            </label>
+
+            <label>
+              Message
+              <textarea name="message" placeholder="Briefly describe the issue" required></textarea>
+            </label>
+
+            <button class="btn btn-primary" type="submit">Send request</button>
           </form>
 
-          <p class="hero-card-note">
-            Prefer to talk? I'll email you a calendar link.
-          </p>
+          <aside class="contact-card">
+            <div class="contact-card-head">
+              <span class="contact-kicker">Need immediate help?</span>
+              <h3>All Days Plumbing</h3>
+              <p>Fast response for emergency and maintenance plumbing support.</p>
+              <span class="availability-dot">Available now</span>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">&#9742;</span>
+              <div class="contact-meta">
+                <strong>Phone</strong>
+                <a href="tel:0827550854">082 755 0854</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">&#9993;</span>
+              <div class="contact-meta">
+                <strong>Email</strong>
+                <a href="mailto:info@alldaysplumbing.com">info@alldaysplumbing.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">&#9200;</span>
+              <div class="contact-meta">
+                <strong>Hours</strong>
+                <div class="hours">
+                  <div class="hours-row"><span>Mon - Fri</span><span>07:00 - 18:00</span></div>
+                  <div class="hours-row"><span>Saturday</span><span>08:00 - 15:00</span></div>
+                  <div class="hours-row"><span>Emergency</span><span>24 / 7</span></div>
+                </div>
+              </div>
+            </div>
+
+            <a class="btn btn-primary contact-cta" href="tel:0827550854">Call now</a>
+            <p class="contact-note">For non-urgent requests, submit the form and we will call you back.</p>
+          </aside>
         </div>
       </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <p>&copy; <span id="year">2026</span> All Days Plumbing. All rights reserved.</p>
+      <p>Site by <a href="https://quantumtask.io">quantumtask</a>.</p>
     </div>
-  </section>
+  </footer>
 
-  <!-- BROWSE BY TRADE -->
-  <section class="section section-alt">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-label">Browse by trade</span>
-        <h2>Pick your service and get a tailored site</h2>
-        <p class="section-intro">Choose a trade to see packages and examples tailored to your business.</p>
-      </div>
-      <div class="trade-picker">
-        <div class="trade-chips" role="tablist" aria-label="Trades">
-          <a class="trade-chip is-active" aria-selected="true" href="plumbers.html">Plumbers</a>
-          <a class="trade-chip" aria-selected="false" href="electricians.html">Electricians</a>
-          <a class="trade-chip" aria-selected="false" href="cleaners.html">Cleaners</a>
-          <a class="trade-chip" aria-selected="false" href="landscapers.html">Landscapers</a>
-          <a class="trade-chip" aria-selected="false" href="repairs.html">Repairs</a>
-          <a class="trade-chip" aria-selected="false" href="salons.html">Salons</a>
-          <a class="trade-chip" aria-selected="false" href="installers.html">Installers</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--SERVICE_UNIQUE_BLOCK-->
-
-  <!-- WHY CLEANING SITES FAIL -->
-  <section id="why-cleaning-sites" class="section section-alt">
-    <div class="section-inner narrow">
-      <div class="section-header">
-        <!-- Section label for visual hierarchy -->
-        <span class="section-label">The problem</span>
-        <h2>Why most service websites don't get enquiries</h2>
-        <p class="section-intro">
-          Most service websites are either generic templates or brochure pages with no clear offer. They hide the important details, show no proof, and make it hard to contact you - so visitors bounce and call the next business. We build sites that answer the real questions fast and push people to take action.
-        </p>
-      </div>
-
-      <div class="pill-row">
-        <span class="pill-soft">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="pill-icon">
-            <circle cx="12" cy="12" r="10"></circle>
-            <polyline points="12 6 12 12 16 14"></polyline>
-          </svg>
-          Generic template = no direction
-        </span>
-        <span class="pill-soft">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="pill-icon">
-            <path d="M9 11l3 3L22 4"></path>
-            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
-          </svg>
-          No proof = low trust
-        </span>
-        <span class="pill-soft">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="pill-icon">
-            <circle cx="11" cy="11" r="8"></circle>
-            <path d="M21 21l-4.35-4.35"></path>
-            <line x1="11" y1="8" x2="11" y2="14"></line>
-            <line x1="8" y1="11" x2="14" y2="11"></line>
-          </svg>
-          Hidden contact details = lost jobs
-        </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section id="how-it-works" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-label">How it works</span>
-        <h2>How it works</h2>
-        <p class="section-intro">
-          No complicated meetings. Clear scope. Fast turnaround.
-        </p>
-      </div>
-
-      <div class="grid-3 how-steps">
-        <div class="card how-step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-            </svg>
-          </div>
-          <span class="step-number">1</span>
-          <h3>Send details</h3>
-          <p>Share your services, service area, and contact info using the form or WhatsApp.</p>
-        </div>
-        <div class="card how-step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-              <polyline points="14 2 14 8 20 8"></polyline>
-              <path d="M12 13v6"></path>
-              <path d="M9 16h6"></path>
-            </svg>
-          </div>
-          <span class="step-number">2</span>
-          <h3>I build and share draft</h3>
-          <p>You get a working draft quickly so you can review and request revisions.</p>
-        </div>
-        <div class="card how-step">
-          <div class="step-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-          </div>
-          <span class="step-number">3</span>
-          <h3>Launch/support</h3>
-          <p>We launch, then I handle updates or move you to ongoing care if needed.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACKAGES -->
-  <section id="packages" class="section section-alt" data-pack-section>
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-label">Packages</span>
-        <h2>Simple pricing. Built to convert.</h2>
-        <p class="section-intro">
-          Pick the package that matches where your service business is right now. Same approach either way: fast, clear, and designed to generate enquiries.
-        </p>
-        <p class="section-support">Service Terms apply to all paid work. <a href="service-terms.html">Read the Service Terms.</a></p>
-      </div>
-
-      <div class="meta-grid qt-stagger">
-        <div class="card trust-strip meta-card meta-card--trust" data-pack-card>
-          <div class="meta-head">
-            <div class="meta-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 13.5a4 4 0 1 0-4-4 4 4 0 0 0 4 4Z"/>
-                <path d="M5.5 20.5a6.5 6.5 0 0 1 13 0"/>
-                <path d="m16 3.5-1 2-2 .5 2 .5 1 2 1-2 2-.5-2-.5-1-2Z"/>
-              </svg>
-            </div>
-            <div class="meta-titles">
-              <h3>Founder-led by Daniel</h3>
-              <p class="meta-sub">Fast turnaround, local-first, performance guaranteed.</p>
-            </div>
-          </div>
-          <ul class="meta-bullets">
-            <li>South Africa: Johannesburg &middot; Pretoria &middot; Cape Town &middot; Durban</li>
-            <li>48-hour launch once assets arrive (one-page/full builds)</li>
-            <li>WhatsApp/calls with a quote-first approach</li>
-            <li>90+ Performance score on Google PageSpeed Insights (mobile) &mdash; or we keep working until it hits 90+ at no extra cost.</li>
-          </ul>
-        </div>
-
-        <div class="card payment-row meta-card meta-card--payment" data-pack-card>
-          <div class="meta-head">
-            <div class="meta-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="5" width="18" height="14" rx="2"/>
-                <path d="M3 9.5h18"/>
-                <path d="M7.5 14h3.5"/>
-              </svg>
-            </div>
-            <div class="meta-titles">
-              <h3>How payment works</h3>
-              <p class="meta-sub">Simple milestones. No hidden fees.</p>
-            </div>
-          </div>
-          <ul class="meta-bullets payment-list">
-            <li>50% deposit to start</li>
-            <li>50% due on go-live</li>
-            <li>Guarantee: 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; we keep working until it hits 90+ at no extra cost.</li>
-          </ul>
-        </div>
-
-        <div class="card intro-card meta-card meta-card--intro" data-pack-card>
-          <div class="meta-head">
-            <div class="meta-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 7v5l3 2"/>
-              </svg>
-            </div>
-            <div class="meta-titles">
-              <h3>Intro slots</h3>
-              <p class="meta-sub">Limited discounted slots for early clients.</p>
-            </div>
-          </div>
-          <ul class="meta-bullets">
-            <li>Intro pricing reserved for the next 5 local service businesses.</li>
-            <li>After that, package prices increase.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="card price-card" data-pack-card>
-          <h3>One-Page Launch</h3>
-          <p class="price">R949</p>
-          <p class="price-sub">Perfect if you need a professional website fast - with one clear page that turns visitors into calls and quote requests.</p>
-
-          <div class="price-compare">
-            <div class="price-col">
-              <h4>What's included</h4>
-              <ul class="price-list included-list">
-                <li>1 high-converting page tailored to your service + area</li>
-                <li>Conversion copywriting (headline, offer, services, proof, CTA)</li>
-                <li>Mobile-first and fast (clean HTML/CSS - no bloat)</li>
-                <li>Launch-ready handoff + 2-week support</li>
-              </ul>
-            </div>
-            <div class="price-col">
-              <h4>Not included</h4>
-              <ul class="price-list excluded-list">
-                <li>Hosting/domain fees</li>
-                <li>Paid ads or SEO campaigns</li>
-                <li>Ongoing monthly edits (use Care plan)</li>
-              </ul>
-            </div>
-          </div>
-          <ul class="price-terms">
-            <li>48-hour launch applies after I receive: logo, services list, area served, contact details, and any photos.</li>
-            <li>2 revision rounds included. Extra edits billed or moved to Care plan.</li>
-            <li>Use your existing hosting/domain OR I can set it up (cost depends on provider).</li>
-            <li>Light copywriting included based on your info. If you want full rewrite/brand messaging, request a quote.</li>
-          </ul>
-
-          <a href="mailto:daniel@quantumtask.io" class="btn btn-outline full">Get the R949 one-page</a>
-        </div>
-
-        <div class="card price-card price-featured" data-pack-card>
-          <div class="price-tag">Most popular</div>
-          <h3>Full Site Build</h3>
-          <p class="price">R2499</p>
-          <p class="price-sub">Best if you're serious about growth and want a full web presence that builds trust and wins higher-value jobs.</p>
-
-          <div class="price-compare">
-            <div class="price-col">
-              <h4>What's included</h4>
-              <ul class="price-list included-list">
-                <li>Multi-section or multi-page site built around your top services (up to 6 pages)</li>
-                <li>Lead capture and strong CTAs (call/WhatsApp/quote form)</li>
-                <li>Trust sections ready for reviews, gallery/before-after, FAQs, and service areas</li>
-                <li>Launch support and walkthrough so you can use it confidently</li>
-              </ul>
-            </div>
-            <div class="price-col">
-              <h4>Not included</h4>
-              <ul class="price-list excluded-list">
-                <li>Hosting/domain fees</li>
-                <li>Paid ads or SEO campaigns</li>
-                <li>Ongoing monthly edits (use Care plan)</li>
-              </ul>
-            </div>
-          </div>
-          <ul class="price-terms">
-            <li>48-hour launch applies after I receive: logo, services list, area served, contact details, and any photos.</li>
-            <li>2 revision rounds included. Extra edits billed or moved to Care plan.</li>
-            <li>Use your existing hosting/domain OR I can set it up (cost depends on provider).</li>
-            <li>Light copywriting included based on your info. If you want full rewrite/brand messaging, request a quote.</li>
-          </ul>
-
-          <a href="mailto:daniel@quantumtask.io" class="btn btn-primary full">Get the R2499 full site</a>
-        </div>
-
-        <div class="card price-card" data-pack-card>
-          <h3>Ongoing Care</h3>
-          <p class="price">R249 / month</p>
-          <p class="price-sub">For updates and improvements so your site stays fresh, fast, and converting.</p>
-
-          <div class="price-compare">
-            <div class="price-col">
-              <h4>What's included</h4>
-              <ul class="price-list included-list">
-                <li>Monthly edits (text, photos, pricing, hours, promos)</li>
-                <li>Add sections/pages as your services grow</li>
-                <li>Conversion tweaks based on what customers actually do</li>
-                <li>Priority support</li>
-              </ul>
-            </div>
-            <div class="price-col">
-              <h4>Not included</h4>
-              <ul class="price-list excluded-list">
-                <li>New site builds or redesigns</li>
-                <li>Hosting/domain fees</li>
-                <li>Paid ads or SEO campaigns</li>
-              </ul>
-            </div>
-          </div>
-          <p class="price-note">Recommended policy: up to 5 small changes/month. Edit as needed.</p>
-          <ul class="price-terms">
-            <li>48-hour launch applies after I receive: logo, services list, area served, contact details, and any photos.</li>
-            <li>2 revision rounds included. Extra edits billed or moved to Care plan.</li>
-            <li>Use your existing hosting/domain OR I can set it up (cost depends on provider).</li>
-            <li>Light copywriting included based on your info. If you want full rewrite/brand messaging, request a quote.</li>
-          </ul>
-
-          <a href="mailto:daniel@quantumtask.io" class="btn btn-outline full">Add ongoing care</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  
-  <!-- TRUST BAND -->
-  <section class="section trust-section">
-    <div class="section-inner">
-      <div class="trust-box">
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="9"></circle>
-              <path d="M12 7v5l3 2"></path>
-            </svg>
-          </div>
-          <span class="trust-value">24h</span>
-          <span class="trust-label">average quote reply</span>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M5 6h14l-1 12H6L5 6Z"></path>
-              <path d="M9 10h6"></path>
-              <path d="M10 14h4"></path>
-            </svg>
-          </div>
-          <span class="trust-value">48-hour</span>
-          <span class="trust-label">site launch</span>
-        </div>
-        <div class="trust-item">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <rect x="7" y="3" width="10" height="18" rx="2"></rect>
-              <circle cx="12" cy="17" r="0.9"></circle>
-            </svg>
-          </div>
-          <span class="trust-value">Mobile</span>
-          <span class="trust-label">first, fast builds</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-    <!-- WORK / DEMOS -->
-  <section id="work-demos" class="section section-alt">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-label">Work / Demos</span>
-        <h2>Proof and demos you can swap in with your own</h2>
-        <p class="section-intro">
-          If you don't have case studies yet, start with these demo builds. Swap them with your projects later, or request real references.
-        </p>
-      </div>
-
-      <div class="proof-grid">
-        <div class="card proof-deliverables">
-          <h3>What you'll receive</h3>
-          <ul class="proof-list">
-            <li>Conversion-focused structure and copy aligned to your services</li>
-            <li>Lead capture setup (forms + clear calls to action)</li>
-            <li>Mobile-first layout with fast load times</li>
-            <li>Clear service list, service area, and contact pathways</li>
-            <li>Trust blocks ready for your real reviews and photos</li>
-            <li>Launch handoff with simple edit guidance</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grid-3 demo-grid">
-        <div class="card proof-card">
-          <h3>Plumber demo</h3>
-          <p>Simple demo build showing emergency messaging, CTAs, and service-area layout. Swap with your project when ready.</p>
-          <div class="proof-actions">
-            <a href="plumbers.html" class="btn btn-primary">View plumber demo</a>
-            <a href="#contact" class="btn btn-ghost">Use this layout</a>
-          </div>
-        </div>
-        <div class="card proof-card">
-          <h3>Electrician demo</h3>
-          <p>Shows compliance/COC proof blocks, urgent fault CTAs, and quote-first flow. Replace with your own work later.</p>
-          <div class="proof-actions">
-            <a href="electricians.html" class="btn btn-primary">View electrician demo</a>
-            <a href="mailto:daniel@quantumtask.io" class="btn btn-ghost">Ask for references</a>
-          </div>
-        </div>
-        <div class="card proof-card">
-          <h3>Solar/backup demo</h3>
-          <p>Demo of solar/backup offer with fast, mobile-first layout. Swap with your live installs when ready.</p>
-          <div class="proof-actions">
-            <a href="installers.html" class="btn btn-primary">View solar demo</a>
-            <a href="#contact" class="btn btn-ghost">Book a walkthrough</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq" class="section">
-    <div class="section-inner">
-      <div class="section-header">
-        <span class="section-label">FAQ</span>
-        <h2>FAQ</h2>
-      </div>
-
-        <div class="grid-2 faq-grid">
-          <div class="card faq-item">
-            <h3>When do I pay?</h3>
-            <p>Payment: 50% upfront, 50% on go-live. Clear milestones, WhatsApp/call support, and simple approvals.</p>
-          </div>
-          <div class="card faq-item">
-            <h3>What does the guarantee cover?</h3>
-            <p>90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch &mdash; or we keep working until it hits 90+ at no extra cost.</p>
-          </div>
-        </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section section-alt">
-    <div class="section-inner">
-      <div class="contact-left">
-        <div class="section-header">
-          <span class="section-label">Contact</span>
-          <h2>Let's build a site that brings in enquiries</h2>
-        </div>
-        <p class="section-intro">
-          I’ll reply within 24 hours with the best package, timeline, and next steps.
-        </p>
-      </div>
-
-      <div class="contact-right">
-        <h3>Get a quote</h3>
-        <p>I'll reply within 24 hours with the best package, timeline, and next steps.</p>
-        <form class="card contact-form" action="" method="post">
-          <!-- Connect to Formspree/Netlify Forms endpoint -->
-          <div class="form-group">
-            <label for="full-name">Name</label>
-            <input id="full-name" name="full-name" type="text" autocomplete="name" required>
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone/WhatsApp</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4" required placeholder="What do you do, where are you based, and what do you want the site to achieve (calls, bookings, quotes)?"></textarea>
-          </div>
-          <details class="quote-details">
-            <summary>Optional details</summary>
-            <div class="form-group">
-              <label for="business-name">Business name (optional)</label>
-              <input id="business-name" name="business-name" type="text" autocomplete="organization">
-            </div>
-            <div class="form-group">
-              <label for="service-type">Service type (optional)</label>
-              <input id="service-type" name="service-type" type="text">
-            </div>
-            <div class="form-group">
-              <label for="service-area">Area served (optional)</label>
-              <input id="service-area" name="service-area" type="text">
-            </div>
-            <div class="form-group">
-              <label for="website">Existing website (optional)</label>
-              <input id="website" name="website" type="url" placeholder="https://">
-            </div>
-          </details>
-
-          <button class="btn btn-primary full" type="submit">Get my quote in 24 hours</button>
-          <p class="contact-note">No spam. I reply personally.</p>
-          <a class="btn btn-ghost full whatsapp-fastlane whatsapp-cta" href="https://wa.me/27840906474?text=Hi,%20I'd%20like%20a%20quote%20for%20a%20website." rel="noopener noreferrer">Prefer WhatsApp? Message me</a>
-          <ul class="contact-trust">
-            <li>24-hour personal reply</li>
-            <li>Fixed pricing (R949 / R2499)</li>
-            <li>50% deposit, 50% on go-live</li>
-            <li>90+ Performance score on Google PageSpeed Insights (mobile) at launch</li>
-          </ul>
-          <p class="form-success" role="status" aria-live="polite" hidden>
-            Thanks - I've received your details and will reply within 24 hours.
-          </p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<a class="whatsapp-float" href="https://wa.me/27840906474?text=Hi, I'd like to get a quote for a website." aria-label="WhatsApp chat">
-  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-    <path d="M20.52 3.48A11.89 11.89 0 0 0 12.07 0C5.49 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.9 11.9 0 0 0 5.77 1.47h.01c6.58 0 11.92-5.34 11.92-11.92 0-3.18-1.24-6.17-3.48-8.42Zm-8.45 18.3h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.64-.24-.38a9.86 9.86 0 0 1-1.54-5.26C2.15 6.42 6.57 2 12.07 2c2.63 0 5.1 1.02 6.96 2.88a9.78 9.78 0 0 1 2.88 6.96c0 5.5-4.42 9.94-9.84 9.94Zm5.43-7.37c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.29.3-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.58-.9-2.17-.24-.58-.49-.5-.66-.5l-.57-.01c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.86 1.22 3.06.15.2 2.1 3.2 5.08 4.49.71.31 1.27.49 1.7.63.71.23 1.35.2 1.86.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.28.17-1.41-.07-.12-.27-.2-.57-.35Z"/>
-  </svg>
-  <span class="sr-only">WhatsApp</span>
-</a>
-
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <img src="/images/logo.png" alt="QuantumTask logo" class="footer-logo" loading="lazy">
-      <div>
-        <span class="footer-title">QuantumTask</span>
-        <span class="footer-meta">South Africa</span>
-      </div>
-    </div>
-    <div class="footer-links">
-      <a href="#packages">Pricing</a>
-      <a href="#how-it-works">How it works</a>
-      <a href="#contact">Contact</a>
-      <a href="terms.html">Terms</a>
-      <a href="service-terms.html">Service Terms</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="cookies.html">Cookies</a>
-    </div>
-  </div>
-  <p class="footer-note">&copy; 2026 QuantumTask &mdash; Websites built to convert</p>
-</footer>
-
-<script defer src="assets/js/pricing-animate.js?v=20260212"></script>
-<script>
-  // contact badges slide in
-  const contactMeta = document.querySelector('.contact-right .contact-meta');
-  const contactForm = document.querySelector('.contact-form');
-  if (contactMeta && contactForm) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in-bottom');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    observer.observe(contactForm);
-    observer.observe(contactMeta);
-  }
-
-  // pricing fade in
-  const pricingGrid = document.querySelector('#packages .grid-3');
-  if (pricingGrid) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in-bottom');
-        }
-      });
-    });
-    observer.observe(pricingGrid);
-  }
-
-  // packages meta cards: flip/fade in when scrolled into view
-  const metaCards = document.querySelectorAll('#packages .meta-card');
-  if (metaCards.length) {
-    const metaObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('meta-in');
-          metaObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.35 });
-
-    metaCards.forEach((card, idx) => {
-      card.classList.add('meta-prep');
-      card.style.setProperty('--meta-delay', `${idx * 0.12}s`);
-      metaObserver.observe(card);
-    });
-  }
-
-  // why fade in
-  const whyPills = document.querySelector('.pill-row');
-  if (whyPills) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('fade-in-bottom');
-        }
-      });
-    });
-    observer.observe(whyPills);
-  }
-
-  // Mobile menu toggle functionality
-  const mobileMenuButton = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-
-  // Close mobile menu when a link is clicked
-  function closeMobileMenu() {
-    if (mobileMenuButton) mobileMenuButton.classList.remove('open');
-    if (mobileMenu) mobileMenu.classList.remove('open');
-  }
-
-  if (mobileMenuButton && mobileMenu) {
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenuButton.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
-    });
-
-    // Close mobile menu when clicking outside of it
-    document.addEventListener('click', (event) => {
-      const isMenuOpen = mobileMenu.classList.contains('open');
-      const isClickInsideMenu = mobileMenu.contains(event.target);
-      const isClickOnButton = mobileMenuButton.contains(event.target);
-      
-      if (isMenuOpen && !isClickInsideMenu && !isClickOnButton) {
-        closeMobileMenu();
+  <script>
+    (function () {
+      var yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
       }
-    });
-  }
 
-  // contact form success message (no backend)
-  const contactFormEl = document.querySelector('.contact-form');
-  const contactSuccess = document.querySelector('.form-success');
-  if (contactFormEl) {
-    contactFormEl.addEventListener('submit', (event) => {
-      event.preventDefault();
-      if (!contactFormEl.checkValidity()) {
-        contactFormEl.reportValidity();
-        return;
+      var headerRow = document.getElementById("header-row");
+      var toggle = document.getElementById("menu-toggle");
+      if (headerRow && toggle) {
+        toggle.addEventListener("click", function () {
+          var expanded = toggle.getAttribute("aria-expanded") === "true";
+          toggle.setAttribute("aria-expanded", String(!expanded));
+          headerRow.classList.toggle("open");
+        });
       }
-      if (contactSuccess) {
-        contactSuccess.hidden = false;
-      }
-      contactFormEl.reset();
-    });
-  }
 
-  // how-it-works background zoom on scroll
-  const howSection = document.getElementById('how-it-works');
-  if (howSection) {
-    const minScale = 1;
-    const maxScale = window.matchMedia('(max-width: 900px)').matches ? 1.32 : 1.2;
-    const updateHowBg = () => {
-      const rect = howSection.getBoundingClientRect();
-      const viewH = window.innerHeight || document.documentElement.clientHeight;
-      const progress = Math.min(Math.max(0, (viewH - rect.top) / (viewH + rect.height)), 1);
-      const scale = minScale + (maxScale - minScale) * progress;
-      howSection.style.setProperty('--how-bg-scale', scale.toFixed(3));
-    };
-    updateHowBg();
-    window.addEventListener('scroll', updateHowBg, { passive: true });
-    window.addEventListener('resize', updateHowBg);
-  }
-</script>
-
-<!-- BUILD_ID: a5002b5 -->
+    })();
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
