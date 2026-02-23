@@ -1107,7 +1107,7 @@
 
         <div class="card proof-card">
 
-          <h3>Plumber demo (placeholder)</h3>
+          <h3>Plumber demo</h3>
 
           <p>Simple demo build showing emergency messaging, CTAs, and service-area layout. Swap with your project when ready.</p>
 
@@ -1123,7 +1123,7 @@
 
         <div class="card proof-card">
 
-          <h3>Electrician demo (placeholder)</h3>
+          <h3>Electrician demo</h3>
 
           <p>Shows compliance/COC proof blocks, urgent fault CTAs, and quote-first flow. Replace with your own work later.</p>
 
@@ -1139,7 +1139,7 @@
 
         <div class="card proof-card">
 
-          <h3>Solar/backup demo (placeholder)</h3>
+          <h3>Solar/backup demo</h3>
 
           <p>Demo of solar/backup offer with fast, mobile-first layout. Swap with your live installs when ready.</p>
 
@@ -1206,141 +1206,69 @@
   <!-- CONTACT -->
 
   <section id="contact" class="section section-alt">
-
     <div class="section-inner">
-
       <div class="contact-left">
-
         <div class="section-header">
-
           <span class="section-label">Contact</span>
-
           <h2>Let's build a site that brings in enquiries</h2>
-
         </div>
-
         <p class="section-intro">
-
-          Tell me what service you offer, where you operate, and what you want the site to do. I'll reply personally within 24 hours with the best package, timeline, and next steps.
-
+          I'll reply within 24 hours with the best package, timeline, and next steps.
         </p>
-
-        <p>
-
-          If you already have a website, include the link - I'll tell you what's costing you leads (and how we fix it).
-
-        </p>
-
-        <div class="contact-meta">
-
-          <span>Fixed pricing (R949 / R2499)</span>
-
-          <span>Conversion-focused copy included</span>
-
-          <span>Fast, mobile-first build</span>
-
-        </div>
-
-        <div class="contact-logo">
-
-          <img src="/images/logo.png" alt="QuantumTask logo" loading="lazy">
-
-        </div>
-
       </div>
-
-
 
       <div class="contact-right">
-
         <h3>Get a quote</h3>
-
-        <p>I'll get back to you within 24 hours with a clear recommendation.</p>
-
+        <p>I'll reply within 24 hours with the best package, timeline, and next steps.</p>
         <form class="card contact-form" action="" method="post">
-
           <!-- Connect to Formspree/Netlify Forms endpoint -->
-
           <div class="form-group">
-
             <label for="full-name">Name</label>
-
             <input id="full-name" name="full-name" type="text" autocomplete="name" required>
-
           </div>
-
           <div class="form-group">
-
-            <label for="business-name">Business name</label>
-
-            <input id="business-name" name="business-name" type="text" autocomplete="organization" required>
-
-          </div>
-
-          <div class="form-group">
-
             <label for="phone">Phone/WhatsApp</label>
-
             <input id="phone" name="phone" type="tel" autocomplete="tel" required>
-
           </div>
-
           <div class="form-group">
-
-            <label for="service-type">Service type</label>
-
-            <input id="service-type" name="service-type" type="text" required>
-
-          </div>
-
-          <div class="form-group">
-
-            <label for="service-area">Area served</label>
-
-            <input id="service-area" name="service-area" type="text" required>
-
-          </div>
-
-          <div class="form-group">
-
-            <label for="website">Existing website (optional)</label>
-
-            <input id="website" name="website" type="url" placeholder="https://">
-
-          </div>
-
-          <div class="form-group">
-
             <label for="message">Message</label>
-
-            <textarea id="message" name="message" rows="4" required></textarea>
-
+            <textarea id="message" name="message" rows="4" required placeholder="What do you do, where are you based, and what do you want the site to achieve (calls, bookings, quotes)?"></textarea>
           </div>
+          <details class="quote-details">
+            <summary>Optional details</summary>
+            <div class="form-group">
+              <label for="business-name">Business name (optional)</label>
+              <input id="business-name" name="business-name" type="text" autocomplete="organization">
+            </div>
+            <div class="form-group">
+              <label for="service-type">Service type (optional)</label>
+              <input id="service-type" name="service-type" type="text">
+            </div>
+            <div class="form-group">
+              <label for="service-area">Area served (optional)</label>
+              <input id="service-area" name="service-area" type="text">
+            </div>
+            <div class="form-group">
+              <label for="website">Existing website (optional)</label>
+              <input id="website" name="website" type="url" placeholder="https://">
+            </div>
+          </details>
 
-          <button class="btn btn-primary full" type="submit">Get my quote</button>
-
+          <button class="btn btn-primary full" type="submit">Get my quote in 24 hours</button>
+          <p class="contact-note">No spam. I reply personally.</p>
+          <a class="btn btn-ghost full whatsapp-fastlane whatsapp-cta" href="https://wa.me/27840906474?text=Hi,%20I'd%20like%20a%20quote%20for%20a%20website." rel="noopener noreferrer">Prefer WhatsApp? Message me</a>
+          <ul class="contact-trust">
+            <li>24-hour personal reply</li>
+            <li>Fixed pricing (R949 / R2499)</li>
+            <li>50% deposit, 50% on go-live</li>
+            <li>90+ Performance score on Google PageSpeed Insights (mobile) at launch</li>
+          </ul>
           <p class="form-success" role="status" aria-live="polite" hidden>
-
             Thanks - I've received your details and will reply within 24 hours.
-
           </p>
-
         </form>
-
-        <div class="contact-meta">
-
-          <span>50% deposit, 50% on go-live</span>
-
-          <span>24-hour reply guarantee</span>
-
-          <span>90+ Performance score on Google PageSpeed Insights (mobile) at launch for the homepage -- we keep working until it hits 90+</span>
-
-        </div>
-
       </div>
-
     </div>
-
   </section>
 
 
@@ -1621,6 +1549,7 @@
 </body>
 
 </html>
+
 
 
 
