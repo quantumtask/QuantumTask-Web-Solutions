@@ -110,7 +110,17 @@ function buildPage(template, svc, services) {
 
 function writeSitemap(services) {
   const today = new Date().toISOString().split('T')[0];
-  const urls = [ { loc: 'https://quantumtask.io/', lastmod: today }, ...services.map(s => ({ loc: `https://quantumtask.io/${s.filename}`, lastmod: today })) ];
+  const staticPages = [
+    'https://quantumtask.io/terms.html',
+    'https://quantumtask.io/privacy.html',
+    'https://quantumtask.io/cookies.html',
+    'https://quantumtask.io/service-terms.html'
+  ];
+  const urls = [
+    { loc: 'https://quantumtask.io/', lastmod: today },
+    ...services.map(s => ({ loc: `https://quantumtask.io/${s.filename}`, lastmod: today })),
+    ...staticPages.map(loc => ({ loc, lastmod: today }))
+  ];
   const body = urls.map(u => `  <url>\n    <loc>${u.loc}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n  </url>`).join('\n');
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
   fs.writeFileSync(SITEMAP_PATH, xml, 'utf8');
