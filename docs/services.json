@@ -1,0 +1,339 @@
+[
+  {
+    "slug": "plumbers",
+    "filename": "plumbers.html",
+    "heroImage": "images/hero-plumbers.jpg",
+    "pageTitle": "Plumber Website Design in South Africa | QuantumTask",
+    "metaDescription": "Web design for plumbers in South Africa. Fast, conversion-focused pages built to turn visitors into calls and quote requests.",
+    "h1": "Plumber website design in South Africa, live in ~48 hours.",
+    "heroSub": "Built for emergency and maintenance plumbing teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
+    "metaLabel": "For emergency plumbers",
+    "metaList": "Burst pipes | Geysers | Blocked drains | Re-pipes",
+    "tradeDisplay": "Plumbers",
+    "painPoints": [
+      "Emergency callers can't find your number fast",
+      "Slow pages on mobile lose leak jobs",
+      "No proof of licensing or guarantees",
+      "Service areas not listed",
+      "Quote forms that don't reach you"
+    ],
+    "offerBullets": [
+      "Tap-to-call and WhatsApp CTAs on every section",
+      "Built to meet the 90+ Performance score on Google PageSpeed Insights (mobile) guarantee for your homepage.",
+      "Service area list + emergency banner option",
+      "Trust blocks for PIRB/COC, guarantees, reviews",
+      "Quote form routed to your email/WhatsApp"
+    ],
+    "faq": [
+      {
+        "q": "How fast can you launch?",
+        "a": "Within 48 hours once we have your services, areas, and contact details."
+      },
+      {
+        "q": "Can you add after-hours plumbing CTAs?",
+        "a": "Yes, we add emergency badges and a dedicated phone/WhatsApp button."
+      },
+      {
+        "q": "Do you handle hosting?",
+        "a": "We can use your hosting or set up fast static hosting for you."
+      },
+      {
+        "q": "Can I update prices later?",
+        "a": "Yes, you get simple edit instructions or we handle it via the Care plan."
+      }
+    ],
+    "shortProof": [
+      "Emergency and after-hours CTAs ready",
+      "48-hour launch after assets",
+      "Mobile-first, bloat-free plumbing sites"
+    ]
+  },
+  {
+    "slug": "electricians",
+    "filename": "electricians.html",
+    "heroImage": "images/hero-electricians.jpg",
+    "pageTitle": "Electrician Website Design in South Africa | QuantumTask",
+    "metaDescription": "Web design for electricians in South Africa. Conversion-focused pages that drive call-outs, inspections, and quote requests.",
+    "h1": "Electrician website design in South Africa, ready in ~48 hours.",
+    "heroSub": "Built for electrical contractors. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
+    "metaLabel": "For electrical pros",
+    "metaList": "Fault finding \u2022 Rewires \u2022 Compliance certificates \u2022 Solar installs",
+    "tradeDisplay": "Electricians",
+    "painPoints": [
+      "Clients can't see your emergency number quickly",
+      "No clear COC/inspection proof lowers trust",
+      "Slow pages when users are on-site with no power",
+      "Service areas and call-out fees unclear"
+    ],
+    "offerBullets": [
+      "Tap-to-call and WhatsApp for urgent faults",
+      "COC, ECSA reg, and safety proof blocks",
+      "Fast static hosting for low-signal areas",
+      "Service areas + response-time expectations",
+      "Quote/inspection form routed to your inbox"
+    ],
+    "faq": [
+      {
+        "q": "Can you highlight COC and compliance?",
+        "a": "Yes, we add dedicated proof and badge sections for compliance."
+      },
+      {
+        "q": "Do you support solar/backup pages?",
+        "a": "We can add mini-sections for solar, inverters, and batteries in the same build."
+      },
+      {
+        "q": "How soon is the draft ready?",
+        "a": "You get a working draft within 48 hours once assets arrive."
+      },
+      {
+        "q": "Can I link to scheduling apps?",
+        "a": "Yes, we can link to Calendly or your preferred booking tool."
+      }
+    ],
+    "shortProof": [
+      "Built for urgent callouts and compliance work",
+      "48-hour draft turnaround",
+      "Mobile-first so clients can call from site"
+    ]
+  },
+  {
+    "slug": "cleaners",
+    "filename": "cleaners.html",
+    "heroImage": "images/hero-cleaners.jpg",
+    "pageTitle": "Cleaning Business Website Design in South Africa | QuantumTask",
+    "metaDescription": "Web design for cleaning businesses in South Africa. Built to increase bookings, enquiries, and recurring service requests.",
+    "h1": "Cleaning business website design in South Africa, live in ~48 hours.",
+    "heroSub": "Built for cleaning crews. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
+    "metaLabel": "For cleaning crews",
+    "metaList": "Home cleaning \u2022 Deep clean \u2022 Airbnbs \u2022 Offices",
+    "tradeDisplay": "Cleaners",
+    "painPoints": [
+      "Visitors can't see packages or minimum call-out",
+      "No quick way to book recurring cleans",
+      "Few before/after photos lowers trust",
+      "Service areas and availability unclear"
+    ],
+    "offerBullets": [
+      "Clear package cards (once-off, recurring, deep)",
+      "Quick quote form with date/time preference",
+      "Gallery + review placeholders for social proof",
+      "Service areas and turnaround expectations",
+      "Mobile-first CTAs for WhatsApp and phone"
+    ],
+    "faq": [
+      {
+        "q": "Can you show packages?",
+        "a": "Yes, we add package cards with inclusions and starting prices."
+      },
+      {
+        "q": "Do you handle Airbnbs?",
+        "a": "We can add an Airbnb turnover block with linen/restock notes."
+      },
+      {
+        "q": "How fast is go-live?",
+        "a": "48 hours after we get your services, areas, and photos."
+      },
+      {
+        "q": "Can clients book recurring service?",
+        "a": "We add a form option and link to WhatsApp for quick repeats."
+      }
+    ],
+    "shortProof": [
+      "Built to capture recurring cleaning bookings",
+      "48-hour launch after assets",
+      "Mobile-first for on-the-go clients"
+    ]
+  },
+  {
+    "slug": "landscapers",
+    "filename": "landscapers.html",
+    "heroImage": "images/hero-landscapers.jpg",
+    "pageTitle": "Landscaper Website Design in South Africa | QuantumTask",
+    "metaDescription": "Web design for landscapers in South Africa. Fast, portfolio-ready pages that convert visitors into quote requests.",
+    "h1": "Landscaper website design in South Africa, ready in ~48 hours.",
+    "heroSub": "Built for landscaping teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
+    "metaLabel": "For landscaping",
+    "metaList": "Gardens \u2022 Irrigation \u2022 Tree work \u2022 Turf",
+    "tradeDisplay": "Landscapers",
+    "painPoints": [
+      "Portfolio hidden or too slow to load",
+      "No clear service areas for site visits",
+      "Clients unsure about maintenance vs installs",
+      "Weak calls to action for quotes"
+    ],
+    "offerBullets": [
+      "Gallery-ready grid with before/after slots",
+      "Service area list and travel notes",
+      "Separate blocks for installs vs maintenance",
+      "Quote form capturing project scope and budget",
+      "Click-to-call/WhatsApp for quick site walks"
+    ],
+    "faq": [
+      {
+        "q": "Can you show seasonal specials?",
+        "a": "Yes, we add a promo strip or card for seasonal offers."
+      },
+      {
+        "q": "Do you include irrigation info?",
+        "a": "We can add an irrigation/services block with brands you use."
+      },
+      {
+        "q": "Timeline to launch?",
+        "a": "48 hours after receiving your services, areas, and photos."
+      },
+      {
+        "q": "Can I add new projects later?",
+        "a": "Yes, you get simple instructions or we handle updates via Care."
+      }
+    ],
+    "shortProof": [
+      "Portfolio-forward layout for landscaping",
+      "Fast static pages to show photos quickly",
+      "48-hour build once assets arrive"
+    ]
+  },
+  {
+    "slug": "repairs",
+    "filename": "repairs.html",
+    "heroImage": "images/hero-repairs.jpg",
+    "pageTitle": "Repair Service Website Design in South Africa | QuantumTask",
+    "metaDescription": "Web design for repair businesses in South Africa. Conversion-focused pages built for urgent calls and quote requests.",
+    "h1": "Repair service website design in South Africa, live in ~48 hours.",
+    "heroSub": "Built for repair specialists. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
+    "metaLabel": "For repair pros",
+    "metaList": "Handyman \u2022 Appliances \u2022 Doors & windows \u2022 Floors",
+    "tradeDisplay": "Repairs",
+    "painPoints": [
+      "People don't know what you fix",
+      "No urgency messaging for same-day slots",
+      "Lack of proof/photos for past jobs",
+      "Contact options buried or slow"
+    ],
+    "offerBullets": [
+      "Service list with quick filters",
+      "Same-day badge + CTA for urgent repairs",
+      "Photo placeholders for recent jobs",
+      "Fast quote form + click-to-call",
+      "Areas served and travel fees listed"
+    ],
+    "faq": [
+      {
+        "q": "Do you cover appliance repairs?",
+        "a": "We can list each appliance type with a CTA to book."
+      },
+      {
+        "q": "Can you show pricing?",
+        "a": "We add starting-price or call-out notes if you provide them."
+      },
+      {
+        "q": "Timeline to launch?",
+        "a": "48 hours after we receive your info and photos."
+      },
+      {
+        "q": "Can clients book via WhatsApp?",
+        "a": "Yes, we add WhatsApp CTAs across the page."
+      }
+    ],
+    "shortProof": [
+      "Built for urgent repair enquiries",
+      "Clear service lists and urgent CTAs",
+      "Mobile-first, loads fast"
+    ]
+  },
+  {
+    "slug": "salons",
+    "filename": "salons.html",
+    "heroImage": "images/hero-salons.jpg",
+    "pageTitle": "Salon Website Design in South Africa | QuantumTask",
+    "metaDescription": "Web design for salons in South Africa. Fast, mobile-first pages that turn visitors into bookings and enquiries.",
+    "h1": "Salon website design in South Africa, ready in ~48 hours.",
+    "heroSub": "Built for salon owners. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
+    "metaLabel": "For salons",
+    "metaList": "Hair \u2022 Nails \u2022 Aesthetics \u2022 Barbering",
+    "tradeDisplay": "Salons",
+    "painPoints": [
+      "Clients can't see services or pricing quickly",
+      "No easy booking link for calls or WhatsApp",
+      "Few photos of styles or rooms",
+      "Opening hours and location unclear"
+    ],
+    "offerBullets": [
+      "Service menu with key prices/add-ons",
+      "Prominent Book / WhatsApp / Call buttons",
+      "Gallery slots for styles and interiors",
+      "Map, hours, parking notes",
+      "Promo bar for specials or packages"
+    ],
+    "faq": [
+      {
+        "q": "Can you embed my booking app?",
+        "a": "Yes, we link to Fresha/Booksy or your chosen tool."
+      },
+      {
+        "q": "Do you show packages?",
+        "a": "We add package cards for color, cuts, facials, or combos."
+      },
+      {
+        "q": "How soon is the draft ready?",
+        "a": "48 hours after we get your menu, hours, and photos."
+      },
+      {
+        "q": "Can we highlight stylists?",
+        "a": "We can add a small team strip with names and specialties."
+      }
+    ],
+    "shortProof": [
+      "Salon-first layout with booking CTAs",
+      "48-hour draft turnaround",
+      "Mobile-first for clients on the go"
+    ]
+  },
+  {
+    "slug": "installers",
+    "filename": "installers.html",
+    "heroImage": "images/hero-installers.jpg",
+    "pageTitle": "Installer Website Design in South Africa | QuantumTask",
+    "metaDescription": "Web design for installers in South Africa. Conversion-focused pages that generate quote requests and qualified calls.",
+    "h1": "Installer website design in South Africa, live in ~48 hours.",
+    "heroSub": "Built for installation teams. 90+ Performance score on Google PageSpeed Insights (mobile) for the homepage at launch \u2014 or we keep working until it hits 90+ at no extra cost.",
+    "metaLabel": "For installers",
+    "metaList": "HVAC \u2022 Security \u2022 Solar \u2022 AV",
+    "tradeDisplay": "Installers",
+    "painPoints": [
+      "Clients can't tell what you install",
+      "No proof of brands or certifications",
+      "Projects hidden or slow to load",
+      "No clear service areas or response times"
+    ],
+    "offerBullets": [
+      "Service list for HVAC, security, solar, AV",
+      "Brand/cert badge strip (e.g., Hikvision, Daikin)",
+      "Project highlights with before/after slots",
+      "Service area + response time messaging",
+      "Quote form capturing system type and timeline"
+    ],
+    "faq": [
+      {
+        "q": "Can you show brands I install?",
+        "a": "Yes, we add a brand badge strip to boost trust."
+      },
+      {
+        "q": "Do you cover maintenance too?",
+        "a": "We can add a separate block for maintenance vs new installs."
+      },
+      {
+        "q": "Launch time?",
+        "a": "48 hours after assets and service list arrive."
+      },
+      {
+        "q": "Can you add compliance documents?",
+        "a": "We link to or note compliance certificates where relevant."
+      }
+    ],
+    "shortProof": [
+      "Built for multi-trade installers",
+      "Fast static pages with brand credibility",
+      "Mobile-first for quick call/quote"
+    ]
+  }
+]

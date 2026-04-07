@@ -1,0 +1,2 @@
+Backup note: changes will add FAQ link, mobile menu FAQ, FAQ section, and CSS updates in style.css
+Files edited: index.html, style.css
